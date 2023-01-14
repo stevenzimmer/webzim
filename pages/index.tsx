@@ -105,7 +105,7 @@ const buttons = [
     icon: <Github />
   },
   {
-    link: "https://github.com/stevenzimmer",
+    link: "https://www.linkedin.com/in/webdevzim/",
     title: "LinkedIn",
     icon: <LinkedIn />
   },
