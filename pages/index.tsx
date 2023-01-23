@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <Layout>
       <motion.div
-        className="container px-5 xl:px-0"
+        className="container max-w-[600px] px-5 xl:px-0 py-20"
         initial="hidden"
         whileInView="show"
         animate="show"
@@ -38,15 +38,16 @@ export default function Home() {
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
           <Balancer>
-          Military vet turned full-stack engineer specializing in growth marketing, <br />web strategy, and CMS platforms.
+          Military vet turned full-stack engineer specializing in growth marketing, web strategy, and CMS platforms.
           </Balancer>
         </motion.p>
+
+       
         <motion.div
-          className="mx-auto mt-6 mb-6 flex flex-wrap items-center justify-center space-x-5"
+          className="mx-auto mt-6 flex flex-wrap items-center justify-center space-x-5"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
           {buttons.map(({ title, link, icon }, i) => (
-            
               <a
                 key={i}
                 className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-slate-300 bg-white px-5 py-2 my-2 text-sm text-slate-600 shadow-md transition-colors hover:border-slate-800"
@@ -57,16 +58,59 @@ export default function Home() {
                 {icon}
                 <p>{title}</p>
               </a>
-            
           ))}
        
         </motion.div>
-        {/* <motion.h2
-          className="bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem]"
+        <div className="py-6 md:py-12"></div>
+
+        <motion.h2
+          className="bg-gradient-to-br from-black to-stone-500 bg-clip-text  font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem] text-center mb-6"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
-          <Balancer>Services</Balancer>
-        </motion.h2> */}
+          <Balancer>Skills</Balancer>
+        </motion.h2>
+
+        <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS} 
+        className="flex justify-center flex-wrap mx-auto"
+        >
+          {skills.map((skill, i) => (
+            <motion.div key={i} variants={FADE_DOWN_ANIMATION_VARIANTS}  className="w-auto border rounded bg-slate-100 px-3 py-1 shadow m-1">
+            <motion.p
+            className="bg-gradient-to-br from-black to-stone-500 bg-clip-text  font-display  font-bold  text-transparent drop-shadow-sm text-lg  text-left "
+            variants={FADE_DOWN_ANIMATION_VARIANTS}
+            >
+            {skill}
+            </motion.p>
+            </motion.div>
+          ))}
+         
+         
+        </motion.div>
+        <div className="py-6 md:py-12"></div>
+        <motion.h2
+          className="bg-gradient-to-br from-black to-stone-500 bg-clip-text  font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem] text-center mb-6"
+          variants={FADE_DOWN_ANIMATION_VARIANTS}
+        >
+          <Balancer>Certifications</Balancer>
+        </motion.h2>
+
+
+        <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS} >
+        
+        <a target="_blank"  rel="noreferrer" href='https://app.hubspot.com/academy/achievements/qqll3dz8/en/1/steven-zimmer/hubspot-cms-for-developers' title='HubSpot CMS for Developers'>
+          
+        <Image 
+          className="w-full transition duration-200 mx-auto hover:shadow-lg shadow rounded-lg hover:-translate-y-0.5" 
+          alt="Hubspot CMS Certification"
+          src='https://hubspot-academy.s3.amazonaws.com/prod/tracks/user-badges/46809903/24a8e54b9a5a4dbebfebdbfe3d0aafc7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230123T211351Z&X-Amz-SignedHeaders=host&X-Amz-Expires=18000&X-Amz-Credential=AKIAT26QUQEJUSPK7N4B%2F20230123%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=c662c04bb748301fba1b95c57d08d38f99f4e3c4f437f36d12655181fc1b47ca' 
+            width="1500"
+            height="1000"
+          
+          />
+
+        </a>
+        </motion.div>
+
       
         {/* <motion.h2
           className="bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem]"
@@ -96,6 +140,8 @@ export default function Home() {
     </Layout>
   );
 }
+
+const skills = ["HTML", "CSS", "JavaScript", "PHP", "React", "WordPress", "Hubspot", "Marketo", "Webflow", "Figma", "TailwindCSS", "Google Analytics", "Google Tag Manager", "Google Big Query", "Google Optimize", "Hotjar", "Optimizely", "Firebase","Stripe", "Node JS", "MySQL", "Mailchimp", "Elastic Search"]
 const strings = ["Marketing", "Strategy", "Designer", "Developer", "Zim"];
 
 const buttons = [
