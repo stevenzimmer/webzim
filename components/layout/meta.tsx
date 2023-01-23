@@ -3,7 +3,7 @@ import Head from "next/head";
 const DOMAIN = "https://webzim.dev";
 
 export default function Meta({
-  title = "Web Zim | Full Stack | Growth Marketing | WordPress",
+  title = "Web Zim | Full Stack Engineer and Techincal Growth Marketer",
   description = "Full-stack problem solver specializing in WordPress, web strategy, and marketing.",
   image = `${DOMAIN}/api/og`,
 }: {
