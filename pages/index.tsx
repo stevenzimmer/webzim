@@ -95,7 +95,7 @@ export default function Home() {
         </motion.h2>
 
 
-        <motion.div className="mb-6" variants={FADE_DOWN_ANIMATION_VARIANTS} >
+        <motion.div className="mb-12" variants={FADE_DOWN_ANIMATION_VARIANTS} >
         
         <a target="_blank"  rel="noreferrer" href='https://app.hubspot.com/academy/achievements/qqll3dz8/en/1/steven-zimmer/hubspot-cms-for-developers' title='HubSpot CMS for Developers'>
           
@@ -109,6 +109,7 @@ export default function Home() {
           />
 
         </a>
+        <p className="text-center text-slate-500 font-bold">Hubspot CMS Certification</p>
         </motion.div>
 
         <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS} >
@@ -117,7 +118,7 @@ export default function Home() {
           
         <Image 
           className="w-full transition duration-200 mx-auto hover:shadow-lg shadow rounded-lg hover:-translate-y-0.5" 
-          alt="Hubspot CMS Certification"
+          alt="HubSpot CMS for Developers II: Best Practices"
           src='https://hubspot-credentials-na1.s3.amazonaws.com/prod/badges/user/f5ccf36a68f84ee2949af85df33007cd.png' 
             width="1500"
             height="1000"
@@ -125,6 +126,7 @@ export default function Home() {
           />
 
         </a>
+        <p className="text-center text-slate-500 font-bold">Hubspot CMS Certification II</p>
         </motion.div>
 
 
