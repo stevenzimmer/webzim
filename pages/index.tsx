@@ -95,14 +95,14 @@ export default function Home() {
         </motion.h2>
 
 
-        <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS} >
+        <motion.div className="mb-6" variants={FADE_DOWN_ANIMATION_VARIANTS} >
         
         <a target="_blank"  rel="noreferrer" href='https://app.hubspot.com/academy/achievements/qqll3dz8/en/1/steven-zimmer/hubspot-cms-for-developers' title='HubSpot CMS for Developers'>
           
         <Image 
           className="w-full transition duration-200 mx-auto hover:shadow-lg shadow rounded-lg hover:-translate-y-0.5" 
           alt="Hubspot CMS Certification"
-          src='https://hubspot-academy.s3.amazonaws.com/prod/tracks/user-badges/46809903/24a8e54b9a5a4dbebfebdbfe3d0aafc7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230123T211351Z&X-Amz-SignedHeaders=host&X-Amz-Expires=18000&X-Amz-Credential=AKIAT26QUQEJUSPK7N4B%2F20230123%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=c662c04bb748301fba1b95c57d08d38f99f4e3c4f437f36d12655181fc1b47ca' 
+          src='https://hubspot-academy.s3.amazonaws.com/prod/tracks/user-badges/46809903/24a8e54b9a5a4dbebfebdbfe3d0aafc7.png' 
             width="1500"
             height="1000"
           
@@ -110,6 +110,24 @@ export default function Home() {
 
         </a>
         </motion.div>
+
+        <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS} >
+        
+        <a target="_blank"  rel="noreferrer" href='https://app.hubspot.com/academy/achievements/gg7782jv/en/1/steven-zimmer/hubspot-cms-for-developers-ii-best-practices' title='HubSpot CMS for Developers II: Best Practices'>
+          
+        <Image 
+          className="w-full transition duration-200 mx-auto hover:shadow-lg shadow rounded-lg hover:-translate-y-0.5" 
+          alt="Hubspot CMS Certification"
+          src='https://hubspot-credentials-na1.s3.amazonaws.com/prod/badges/user/f5ccf36a68f84ee2949af85df33007cd.png' 
+            width="1500"
+            height="1000"
+          
+          />
+
+        </a>
+        </motion.div>
+
+
 
       
         {/* <motion.h2
@@ -141,7 +159,7 @@ export default function Home() {
   );
 }
 
-const skills = ["HTML", "CSS", "JavaScript", "PHP", "React", "WordPress", "Hubspot", "Marketo", "Webflow", "Figma", "TailwindCSS", "Google Analytics", "Google Tag Manager", "Google Big Query", "Google Optimize", "Hotjar", "Optimizely", "Firebase","Stripe", "Node JS", "MySQL", "Mailchimp", "Elastic Search"]
+const skills = ["HTML", "CSS", "JavaScript", "PHP", "React", "WordPress", "Technical SEO", "Hubspot", "Marketo", "Webflow", "Figma", "TailwindCSS", "Typescript", "Google Analytics", "Google Tag Manager", "Google Big Query", "Google Optimize", "Hotjar", "Optimizely", "Firebase","Stripe", "Node JS", "MySQL", "Mailchimp", "Elastic Search"]
 const strings = ["Marketing", "Strategy", "Designer", "Developer", "Zim"];
 
 const buttons = [
