@@ -109,10 +109,10 @@ export default function Home() {
           />
 
         </a>
-        <p className="text-center text-slate-500 font-bold">Hubspot CMS Certification</p>
+        <p className="text-center text-slate-500 font-bold">Hubspot CMS for Developers Certification</p>
         </motion.div>
 
-        <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS} >
+        <motion.div className="mb-12" variants={FADE_DOWN_ANIMATION_VARIANTS} >
         
         <a target="_blank"  rel="noreferrer" href='https://app.hubspot.com/academy/achievements/gg7782jv/en/1/steven-zimmer/hubspot-cms-for-developers-ii-best-practices' title='HubSpot CMS for Developers II: Best Practices'>
           
@@ -126,12 +126,29 @@ export default function Home() {
           />
 
         </a>
-        <p className="text-center text-slate-500 font-bold">Hubspot CMS Certification II</p>
+        <p className="text-center text-slate-500 font-bold">Hubspot CMS for Developers Certification II</p>
+        </motion.div>
+
+        <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS} >
+        
+        <a target="_blank"  rel="noreferrer" href='https://app.hubspot.com/academy/achievements/lkmshnsl/en/1/steven-zimmer/seo' title='HubSpot SEO Certification'>
+          
+        <Image 
+          className="w-full transition duration-200 mx-auto hover:shadow-lg shadow rounded-lg hover:-translate-y-0.5" 
+          alt="HubSpot SEO Certification"
+          src='https://hubspot-credentials-na1.s3.amazonaws.com/prod/badges/user/dda9fb17f6c84d1eaa7a4e1311fa6c25.png' 
+            width="1500"
+            height="1000"
+          
+          />
+
+        </a>
+        <p className="text-center text-slate-500 font-bold">Hubspot SEO Certification</p>
         </motion.div>
 
 
 
-      
+
         {/* <motion.h2
           className="bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem]"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
