@@ -76,22 +76,41 @@ export default function Home() {
           <Balancer>Skills</Balancer>
         </motion.h2>
 
+       
+
         <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS} 
-        className="flex justify-center flex-wrap mx-auto max-w-[800px]"
+        className="mx-auto max-w-[800px]"
         >
-          {skills.map((skill, i) => (
-            <motion.div key={i} variants={FADE_DOWN_ANIMATION_VARIANTS}  className="w-auto border rounded bg-slate-100 px-3 py-1 shadow m-1">
-            <motion.p
-            className="bg-gradient-to-br from-black to-stone-500 bg-clip-text  font-display  font-bold  text-transparent drop-shadow-sm text-lg  text-left "
-            variants={FADE_DOWN_ANIMATION_VARIANTS}
-            >
-            {skill}
-            </motion.p>
-            </motion.div>
-          ))}
-         
+
+         {Object.keys(dict_skills).map((skill, i) => {
+          return (
+            <motion.div key={i} variants={FADE_DOWN_ANIMATION_VARIANTS}  className="flex items-center mb-12">
+                <div className="w-1/4">
+                  <motion.p className="text-lg md:text-2xl font-bold" variants={FADE_DOWN_ANIMATION_VARIANTS}>{skill}</motion.p>
+                </div>
+                <div className="flex flex-wrap w-full">
+                  {dict_skills[skill].map((item, j) => {
+                    return ( 
+                      <motion.div key={j} variants={FADE_DOWN_ANIMATION_VARIANTS}  className="w-auto border rounded bg-slate-100 px-3 py-1 shadow m-1">
+                        
+                        <motion.p
+                        className="bg-gradient-to-br from-black to-stone-500 bg-clip-text  font-display  font-bold  text-transparent drop-shadow-sm text-lg  text-left "
+                        variants={FADE_DOWN_ANIMATION_VARIANTS}
+                        >
+                          {item}
+                        </motion.p>
+                      </motion.div>
+                    )
+                  })}
+                </div>
+             
+              </motion.div>
+            
+          )
+         })}
          
         </motion.div>
+
         <div className="py-6 md:py-12"></div>
         <motion.h2
           className="bg-gradient-to-br from-black to-stone-500 bg-clip-text  font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem] text-center mb-6"
@@ -163,9 +182,25 @@ const certifications = [{
   "title": "HubSpot SEO Certification",
   "link": "https://app.hubspot.com/academy/achievements/lkmshnsl/en/1/steven-zimmer/seo",
   "src": "https://hubspot-credentials-na1.s3.amazonaws.com/prod/badges/user/dda9fb17f6c84d1eaa7a4e1311fa6c25.png"
-}]
+}];
 
-const skills = ["HTML", "CSS", "JavaScript", "PHP", "React", "WordPress", "Technical SEO", "Hubspot", "Marketo", "Webflow", "Figma", "TailwindCSS", "Typescript", "Google Analytics", "Google Tag Manager", "Google Big Query", "Google Optimize", "Hotjar", "Optimizely", "Firebase","Stripe", "Node JS", "MySQL", "Mailchimp", "Elastic Search"]
+interface iObjectKeys {
+  [key: string]: Array<String>;
+}
+
+
+
+// Frontend Skills
+const dict_skills: iObjectKeys = {
+  "Frontend": ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "Typescript"],
+  "Backend": ["Node JS","PHP", "Laravel", "Next JS", "WordPress", "Gutenberg Blocks", "HubL", "MySQL", "Firebase", "MongoDB", "Stripe", "Technical SEO"],
+  "CMS": [ "WordPress", "Drupal", "Webflow", "Strapi", "Contentful"],
+  "Tools": ["Google Analytics", "Google Optimize", "Google Tag Manager", "Google BigQuery", "Google Search Console", "Elastic Search", "Optimizely", "Hotjar", "Zapier"],
+  "Marketing": ["Hubspot", "Marketo", "Salesforce", "Mailchimp"],
+  "Design": ["Figma", "Adobe Photoshop", "Adobe Illustrator", "Adobe XD", "Sketch"],
+};
+
+
 const strings = ["Marketing", "Strategy", "Designer", "Developer", "Zim"];
 
 const buttons = [
