@@ -112,6 +112,35 @@ export default function Home() {
         </motion.div>
 
         <div className="py-6 md:py-12"></div>
+
+        <motion.h2
+          className="w-full bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem] mb-6"
+          variants={FADE_DOWN_ANIMATION_VARIANTS}
+        >
+          <Balancer>Recent Projects</Balancer>
+        </motion.h2>
+      {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
+      <div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 px-5 lg:grid-cols-3 xl:px-0">
+        {features.map(({ title, description, demo, large }, i) => (
+          <Card
+            key={i}
+            title={title}
+            description={description}
+            demo={
+              title === "Beautiful, reusable components" ? (
+                <ComponentGrid />
+              ) : (
+                demo
+              )
+            }
+            large={large}
+          />
+        ))}
+      </div>
+
+        <div className="py-6 md:py-12"></div>
+
+
         <motion.h2
           className="bg-gradient-to-br from-black to-stone-500 bg-clip-text  font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem] text-center mb-6"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
@@ -142,31 +171,9 @@ export default function Home() {
 
         
       </motion.div>
+     
 
-      {/* <motion.h2
-          className="w-full bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem]"
-          variants={FADE_DOWN_ANIMATION_VARIANTS}
-        >
-          <Balancer>Recent Projects</Balancer>
-        </motion.h2> */}
-      {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
-      {/* <div className="grid w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 px-5 md:grid-cols-3 xl:px-0">
-        {features.map(({ title, description, demo, large }, i) => (
-          <Card
-            key={i}
-            title={title}
-            description={description}
-            demo={
-              title === "Beautiful, reusable components" ? (
-                <ComponentGrid />
-              ) : (
-                demo
-              )
-            }
-            large={large}
-          />
-        ))}
-      </div> */}
+      
     </Layout>
   );
 }
@@ -198,12 +205,12 @@ interface iObjectKeys {
 
 // Frontend Skills
 const dict_skills: iObjectKeys = {
-  "Frontend": ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "PostCSS","Framer Motion", "TypeScript"],
+  "Frontend": ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "PostCSS","Framer Motion", "TypeScript", "Email Development"],
   "Backend": ["Node JS","PHP", "Laravel", "Next JS", "WordPress", "HubL","Stripe","Gutenberg Blocks", "MySQL", "Firebase", "MongoDB",  "Technical SEO"],
   "CMS": [ "WordPress", "Drupal", "Webflow", "Strapi", "Contentful"],
   "Tools": ["Google Analytics", "Google Optimize", "Google Tag Manager", "Optimizely","Google BigQuery", "Google Search Console", "Elastic Search", "Hotjar", "Zapier"],
   "Marketing": ["Hubspot", "Marketo", "Salesforce", "Mailchimp"],
-  "Design": ["Figma", "Adobe Photoshop", "Adobe Illustrator", "Adobe XD", "Sketch"],
+  "UI Design": ["Figma", "Adobe Photoshop", "Adobe Illustrator", "Adobe XD", "Sketch"],
 };
 
 
@@ -227,19 +234,36 @@ const buttons = [
   },
 ];
 
-// const features = [
-  // {
-  //   title: "Marketing Agency",
-  //   description:
-  //     "Improved performance of website, web core vitals, technical SEO, and fixed spam link issues",
-  //   demo: <WebVitals />,
-  // },
-    // {
-  //   title: "Teaching Institution",
-  //   description:
-  //     "CMS migration, webauth, Box integration",
-  //   demo: <WebVitals />,
-  // },
+const features = [
+  {
+    title: "B2B Startup",
+    description:
+      "Technical lead on website redesign, go-to-market strategizing, and email automation.",
+    demo: (
+      <div className="border-4 p-6 rounded-full border-[#263D5C]">
+      <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 1024 1024" className="w-20 text-[#4AC1E0]" xmlns="http://www.w3.org/2000/svg"><path d="M209.68 883.264c-20.112 41.807-32.802 69.666-144.689 73.73 3.216-107.968 23.792-119.552 64.992-140.08 17.296-8.624 38.832-19.344 62.113-37.248l-38.96-49.744c-18.4 14.128-35.329 21.568-51.697 29.712C32.8 793.858.45 827.569.45 988.289l.543 32.704 31.456-.704c169.632 0 201.328-38.32 233.104-104.32 6.96-14.464 10.832-24.24 22.56-43.729l-47.456-43.104c-14.224 19.408-23.104 37.872-30.976 54.128zm495.279-694.607c-70.768 0-128.352 57.583-128.352 128.335 0 70.784 57.6 128.353 128.352 128.353s128.336-57.584 128.336-128.352c0-70.752-57.6-128.336-128.336-128.336zm0 192.415c-35.328 0-64.08-28.752-64.08-64.08 0-35.313 28.752-64.08 64.08-64.08s64.08 28.767 64.08 64.08c-.016 35.344-28.752 64.08-64.08 64.08zm318.821-351.76c-.976-15.968-13.63-28.771-29.598-29.955 0 0-179.088-13.056-351.376 51.28-62.944 23.504-114.752 60.737-163.104 117.137-40.32 47.025-80.385 132.032-115.745 202.608-13.664 27.248-26.72 53.313-37.792 73.217H148.15a32.003 32.003 0 0 0-23.936 10.768L6.917 581.503A31.993 31.993 0 0 0 .388 612.51c3.44 10.785 12.32 18.945 23.329 21.44l190.944 43.665c13.007 16.064 34.687 40.097 69.376 78.593l72.335 80.192 38.945 164.72a31.984 31.984 0 0 0 21.231 23.056c3.233 1.024 6.576 1.568 9.904 1.568a31.95 31.95 0 0 0 20.832-7.712l118.56-117.936a31.981 31.981 0 0 0 11.184-24.288v-165.12c15.936-9.904 44.191-25.152 70.783-40.032 72.464-40.496 180.624-90.912 225.472-130.784 63.153-56.128 86.16-97.28 108.752-158.112 53.712-144.688 42.288-344.031 41.744-352.447zM922.001 359.469c-19.712 53.072-37.568 84.83-91.248 132.558-39.664 35.232-148.128 85.824-214.192 122.769-49.312 27.568-78.848 43.664-91.792 54.256a31.949 31.949 0 0 0-11.76 24.784v167.248l-67.52 74.193-28.752-121.6a31.949 31.949 0 0 0-7.393-14.064c-58.847-65.216-147.743-163.808-154.56-171.632a32.017 32.017 0 0 0-17.568-10.848L90.624 583.597l71.904-76H344.56a31.988 31.988 0 0 0 27.264-15.248c14.08-22.928 30.416-55.536 49.344-93.296 32.048-63.952 71.92-148.544 107.12-189.632 41.584-48.528 83.824-79.009 136.896-98.848C783.28 66.445 905.152 61.805 960.864 62.22c1.04 59.008-1.184 195.824-38.863 297.248z"></path></svg></div>
+    ),
+  },
+  {
+    title: "Design Agency",
+    description:
+      "Improved overall website performance, web core vitals, and technical SEO.",
+    demo: (
+      <div className="border-4 p-6 rounded-full border-[#4D4F53]">
+      <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="w-20 text-slate-500" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M16.24 11.51l1.57-1.57-3.75-3.75-1.57 1.57-4.14-4.13c-.78-.78-2.05-.78-2.83 0l-1.9 1.9c-.78.78-.78 2.05 0 2.83l4.13 4.13L3 17.25V21h3.75l4.76-4.76 4.13 4.13c.95.95 2.23.6 2.83 0l1.9-1.9c.78-.78.78-2.05 0-2.83l-4.13-4.13zm-7.06-.44L5.04 6.94l1.89-1.9L8.2 6.31 7.02 7.5l1.41 1.41 1.19-1.19 1.45 1.45-1.89 1.9zm7.88 7.89l-4.13-4.13 1.9-1.9 1.45 1.45-1.19 1.19 1.41 1.41 1.19-1.19 1.27 1.27-1.9 1.9zM20.71 7.04a.996.996 0 000-1.41l-2.34-2.34c-.47-.47-1.12-.29-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg></div>
+      ),
+  },
+    {
+    title: "Teaching Institution",
+    description:
+      "Drupal upgrades 7/8 to 9, host migrations, SAML authentication, Box integration.",
+    demo: (
+      <div className="border-4 p-6 rounded-full border-[#4D4F53]">
+        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 20 20" className="text-[#8C1515] w-20" xmlns="http://www.w3.org/2000/svg"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path></svg>
+      </div>
+    ),
+    large: false
+  },
   
   // {
   //   title: "Performance first",
@@ -248,12 +272,7 @@ const buttons = [
   //   demo: <WebVitals />,
   //   large:true
   // },
-  // {
-  //   title: "B2B Startup",
-  //   description:
-  //     "Technical lead on website redesign, go-to-market strategizing for go-to-market initiatives",
-  //   demo: <WebVitals />,
-  // },
+  
   // {
   //   title: "Beautiful, reusable components",
   //   description:
@@ -303,4 +322,4 @@ const buttons = [
   //     </div>
   //   ),
   // },
-// ];
+];

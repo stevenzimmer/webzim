@@ -10,6 +10,9 @@ module.exports = {
     hoverOnlyWhenSupported: true,
   },
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       fontFamily: {
         display: ["var(--font-sf)", "system-ui", "sans-serif"],

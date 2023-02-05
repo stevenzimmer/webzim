@@ -28,7 +28,7 @@ export default function Layout({
     <>
       <Meta {...meta} />
       {/* <SignInModal /> */}
-      <div className="fixed h-full w-screen bg-gradient-to-br from-blue-50 via-white to-blue-100" />
+      <div className=" bg-gradient-to-br from-blue-50 via-white to-blue-100" >
       {/* <div
         className={`fixed top-0 w-full ${
           scrolled
@@ -64,9 +64,11 @@ export default function Layout({
           </div>
         </div>
       </div> */}
-      <main className="flex w-screen  flex-col items-center justify-center py-12">
+      <div className="flex w-screen flex-col items-center justify-center py-12">
         {children}
-      </main>
+      </div>
+     
+    </div>
   
     </>
   );
