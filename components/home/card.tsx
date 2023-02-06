@@ -18,10 +18,10 @@ export default function Card({
 }) {
   return (
     <div
-      className={`relative col-span-1 h-96 overflow-hidden rounded-xl border-gray-200 bg-white shadow-md border ${
+      className={`relative col-span-1 h-96 overflow-hidden rounded-xl border bg-white shadow-md ${
         large ? "md:col-span-2" : ""
       } ${
-        href ? "hover:-translate-y-0.5 transition-transform duration-200 hover:border-blue-500" : ""
+        href ? "hover:-translate-y-0.5 transition-transform duration-200 hover:border-blue-300" : ""
       }`} 
     >
       {href && (

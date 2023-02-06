@@ -113,6 +113,35 @@ export default function Home() {
 
         <div className="py-6 md:py-12"></div>
 
+<motion.h2
+  className="w-full bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem] mb-6"
+  variants={FADE_DOWN_ANIMATION_VARIANTS}
+>
+  <Balancer>Recent Work</Balancer>
+</motion.h2>
+{/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
+<div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 px-5 lg:grid-cols-3 xl:px-0">
+{features.map(({ title, description, demo, large, href }, i) => (
+  <Card
+    href={href}
+    key={i}
+    title={title}
+    description={description}
+    demo={
+      title === "Beautiful, reusable components" ? (
+        <ComponentGrid />
+      ) : (
+        demo
+      )
+    }
+    large={large}
+  />
+))}
+</div>
+
+
+        <div className="py-6 md:py-12"></div>
+
         <motion.h2
           className="w-full bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem] mb-6"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
@@ -142,33 +171,7 @@ export default function Home() {
 
         <div className="py-6 md:py-12"></div>
         
-         <div className="py-6 md:py-12"></div>
-
-        <motion.h2
-          className="w-full bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem] mb-6"
-          variants={FADE_DOWN_ANIMATION_VARIANTS}
-        >
-          <Balancer>Recent Work</Balancer>
-        </motion.h2>
-      {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
-      <div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 px-5 lg:grid-cols-3 xl:px-0">
-        {features.map(({ title, description, demo, large, href }, i) => (
-          <Card
-            href={href}
-            key={i}
-            title={title}
-            description={description}
-            demo={
-              title === "Beautiful, reusable components" ? (
-                <ComponentGrid />
-              ) : (
-                demo
-              )
-            }
-            large={large}
-          />
-        ))}
-      </div>
+       
 
         <div className="py-6 md:py-12"></div>
 
@@ -187,7 +190,7 @@ export default function Home() {
               <a className="mb-3 block" target="_blank"  rel="noreferrer" href={link} title={title}>
                 
                 <Image 
-                  className=" transition duration-200 mx-auto hover:shadow-lg shadow rounded-lg hover:-translate-y-0.5 aspect-video object-cover" 
+                  className=" transition duration-200 mx-auto shadow-md rounded-lg hover:-translate-y-0.5 aspect-video object-cover border hover:border-blue-300" 
                   alt={title}
                   src={src}
                     width="1500"
