@@ -25,7 +25,7 @@ export default function Card({
       }`} 
     >
       {href && (
-        <Link target={"_blank"} href={`${href}`} className="w-full h-full inset-0 absolute"></Link>
+        <Link href={`${href}`} className="w-full h-full inset-0 absolute"></Link>
       )}
       <div className="flex h-48 items-center justify-center">{demo}</div>
       <div className="mx-auto max-w-md text-center">

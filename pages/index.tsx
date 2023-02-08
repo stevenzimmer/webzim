@@ -4,7 +4,6 @@ import Balancer from "react-wrap-balancer";
 import { motion } from "framer-motion";
 import {  FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
 import { Github, LinkedIn, Email } from "@/components/shared/icons";
-import WebVitals from "@/components/home/web-vitals";
 import ComponentGrid from "@/components/home/component-grid";
 import Image from "next/image";
 
@@ -76,8 +75,6 @@ export default function Home() {
           <Balancer>Skills</Balancer>
         </motion.h2>
 
-       
-
         <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS} 
         className="mx-auto max-w-[800px]"
         >
@@ -113,31 +110,31 @@ export default function Home() {
 
         <div className="py-6 md:py-12"></div>
 
-<motion.h2
-  className="w-full bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem] mb-6"
-  variants={FADE_DOWN_ANIMATION_VARIANTS}
->
-  <Balancer>Recent Work</Balancer>
-</motion.h2>
-{/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
-<div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 px-5 lg:grid-cols-3 xl:px-0">
-{features.map(({ title, description, demo, large, href }, i) => (
-  <Card
-    href={href}
-    key={i}
-    title={title}
-    description={description}
-    demo={
-      title === "Beautiful, reusable components" ? (
-        <ComponentGrid />
-      ) : (
-        demo
-      )
-    }
-    large={large}
-  />
-))}
-</div>
+        <motion.h2
+          className="w-full bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem] mb-6"
+          variants={FADE_DOWN_ANIMATION_VARIANTS}
+        >
+          <Balancer>Recent Work</Balancer>
+        </motion.h2>
+        {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
+        <div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 px-5 lg:grid-cols-3 xl:px-0">
+        {features.map(({ title, description, demo, large, href }, i) => (
+          <Card
+            href={href}
+            key={i}
+            title={title}
+            description={description}
+            demo={
+              title === "Beautiful, reusable components" ? (
+                <ComponentGrid />
+              ) : (
+                demo
+              )
+            }
+            large={large}
+          />
+        ))}
+        </div>
 
 
         <div className="py-6 md:py-12"></div>
@@ -170,10 +167,6 @@ export default function Home() {
       </div>
 
         <div className="py-6 md:py-12"></div>
-        
-       
-
-        <div className="py-6 md:py-12"></div>
 
 
         <motion.h2
@@ -202,13 +195,9 @@ export default function Home() {
              </motion.div>
           ))}
         </motion.div>
-          
-
         
       </motion.div>
-     
-
-      
+    
     </Layout>
   );
 }
@@ -284,11 +273,25 @@ const features = [
   {
     title: "Design Agency",
     description:
-      "Optimized website performance, improved technical SEO, and unmasked and fixed a malicious spam link infection.",
+      "Optimized website performance, improved technical SEO, and unmasked, fixed, and purged a malicious spam link infection.",
     demo: (
       <div className="border-4 p-6 rounded-full border-[#4D4F53]">
       <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="w-20 text-slate-500" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M16.24 11.51l1.57-1.57-3.75-3.75-1.57 1.57-4.14-4.13c-.78-.78-2.05-.78-2.83 0l-1.9 1.9c-.78.78-.78 2.05 0 2.83l4.13 4.13L3 17.25V21h3.75l4.76-4.76 4.13 4.13c.95.95 2.23.6 2.83 0l1.9-1.9c.78-.78.78-2.05 0-2.83l-4.13-4.13zm-7.06-.44L5.04 6.94l1.89-1.9L8.2 6.31 7.02 7.5l1.41 1.41 1.19-1.19 1.45 1.45-1.89 1.9zm7.88 7.89l-4.13-4.13 1.9-1.9 1.45 1.45-1.19 1.19 1.41 1.41 1.19-1.19 1.27 1.27-1.9 1.9zM20.71 7.04a.996.996 0 000-1.41l-2.34-2.34c-.47-.47-1.12-.29-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg></div>
       ),
+    href:""
+  },
+  {
+    title: "AI Startup",
+    description:
+      "Manage website and email development and hold technical marketing reins.",
+    demo: (
+      <div className="flex items-center justify-center w-32 h-32 border-4 rounded-full border-[#4D4F53] ">
+        <div className="flex items-center justify-center">
+          <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" className="w-16 text-[#514eb5] translate-x-3" xmlns="http://www.w3.org/2000/svg"><desc></desc><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 20v-12a4 4 0 0 1 4 -4h2a4 4 0 0 1 4 4v12"></path><line x1="7" y1="13" x2="17" y2="13"></line></svg>
+          <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" className="w-16 text-[#514eb5] -translate-x-3" xmlns="http://www.w3.org/2000/svg"><desc></desc><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+        </div>
+      </div>
+    ),
     href:""
 
   },

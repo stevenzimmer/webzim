@@ -54,8 +54,8 @@ export default function Dalle() {
         </motion.h1>
      
         <form className="our-form mb-12" onSubmit={handleSubmit}>
-          <input placeholder="Describe the image..." className="prompt-field w-full border-slate-200 rounded mb-2" type="text" onChange={handleChange} />
-          <button className="prompt-button bg-indigo-200 rounded px-3 py-2">Generate image</button>
+          <input placeholder="Describe the image you want to generate..." className="w-full border-slate-200 rounded mb-2" type="text" onChange={handleChange} />
+          <button className=" bg-indigo-200 rounded px-3 py-2">Generate image</button>
         </form>
         <div className="h-screen">
           {errorMsg && (
