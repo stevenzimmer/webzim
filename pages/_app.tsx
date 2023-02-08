@@ -26,7 +26,7 @@ export default function MyApp({
   pageProps: { session, ...pageProps },
 }: AppProps<{ session: Session }>) {
   return (
-    <SessionProvider session={session}>
+ 
       <RWBProvider>
         <main className={cx(sfPro.variable, inter.variable)}>
           <Component {...pageProps} />
@@ -60,8 +60,7 @@ export default function MyApp({
           </div>
         </footer>
       </RWBProvider>
-      <Analytics />
-    </SessionProvider>
+   
   );
 }
 const buttons = [

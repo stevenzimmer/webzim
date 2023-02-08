@@ -18,7 +18,7 @@ export default function Card({
 }) {
   return (
     <div
-      className={`relative col-span-1 h-96 overflow-hidden rounded-xl border bg-white shadow-md ${
+      className={`relative col-span-1 overflow-hidden rounded-xl border bg-white shadow-md ${
         large ? "md:col-span-2" : ""
       } ${
         href ? "hover:-translate-y-0.5 transition-transform duration-200 hover:border-blue-300" : ""
@@ -27,7 +27,7 @@ export default function Card({
       {href && (
         <Link target={"_blank"} href={`${href}`} className="w-full h-full inset-0 absolute"></Link>
       )}
-      <div className="flex h-60 items-center justify-center">{demo}</div>
+      <div className="flex h-48 items-center justify-center">{demo}</div>
       <div className="mx-auto max-w-md text-center">
         <h2 className="bg-gradient-to-br from-black to-stone-500 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal">
           <Balancer>{title}</Balancer>
