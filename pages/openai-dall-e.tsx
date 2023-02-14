@@ -50,7 +50,7 @@ export default function Dalle() {
           className="bg-gradient-to-br from-black to-slate-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[3rem] mb-6"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
-          <Balancer>Generate an image with a text prompt using Open AI&apos;s Dall-E</Balancer>
+          <Balancer>Generate an image with a text prompt using OpenAI&apos;s Dall-E</Balancer>
         </motion.h1>
      
         <form className="our-form mb-12" onSubmit={handleSubmit}>
