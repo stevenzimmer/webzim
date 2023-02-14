@@ -33,7 +33,6 @@ export default function DogBreedGuessingGame() {
     }, []);
 
     useEffect(() => {
-      console.log(typeof state.highScore);
         if (state.highScore > 0) {
             localStorage.setItem("highScore", state.highScore);
         }

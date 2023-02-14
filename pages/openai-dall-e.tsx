@@ -28,7 +28,7 @@ export default function Dalle() {
         body: JSON.stringify({ prompt })
       })
       const data = await response.json()
-      console.log({data});
+      // console.log({data});
       setAnswer(data.img);
       setIsLoading(false);
     } else {
