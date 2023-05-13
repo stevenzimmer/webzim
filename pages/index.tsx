@@ -230,10 +230,10 @@ interface iObjectKeys {
 // Frontend Skills
 const dict_skills: iObjectKeys = {
   "Frontend": ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "PostCSS","Framer Motion", "TypeScript", "Email Development"],
-  "Backend": ["Node JS","PHP", "Laravel", "Next JS", "Gatsby", "HubL","Stripe","Gutenberg Blocks", "MySQL", "Firebase", "REST APIs", "MongoDB",  "Technical SEO"],
-  "CMS": [ "WordPress", "Drupal", "Webflow", "Strapi", "Contentful"],
-  "Tools": ["Google Analytics", "Google Optimize", "Google Tag Manager", "Optimizely","Google BigQuery", "Google Search Console", "Elastic Search", "Hotjar", "Zapier", "Webpack", "Vite"],
-  "Marketing": ["Hubspot", "Marketo", "Salesforce", "Mailchimp"],
+  "Backend": ["Node JS","PHP", "Laravel", "Next JS", "Gatsby", "HubL","Stripe", "AWS","Gutenberg Blocks", "MySQL", "Firebase", "REST APIs", "MongoDB",  "Technical SEO"],
+  "CMS": [ "WordPress", "Drupal", "Webflow", "Strapi", "Contentful","Hugo"],
+  "Tools": [ "Optimizely","Google BigQuery", "Google Search Console", "Elastic Search", "Hotjar", "Zapier", "Webpack", "Terminal/Command Line", "Vite"],
+  "Marketing": ["Hubspot", "Marketo", "Salesforce", "Mailchimp","Google Analytics 4", "Google Optimize", "Google Tag Manager"],
   "UI Design": ["Figma", "Adobe Photoshop", "Adobe Illustrator", "Adobe XD", "Sketch"],
 };
 
@@ -268,7 +268,17 @@ const features = [
       <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 1024 1024" className="w-20 text-[#4AC1E0]" xmlns="http://www.w3.org/2000/svg"><path d="M209.68 883.264c-20.112 41.807-32.802 69.666-144.689 73.73 3.216-107.968 23.792-119.552 64.992-140.08 17.296-8.624 38.832-19.344 62.113-37.248l-38.96-49.744c-18.4 14.128-35.329 21.568-51.697 29.712C32.8 793.858.45 827.569.45 988.289l.543 32.704 31.456-.704c169.632 0 201.328-38.32 233.104-104.32 6.96-14.464 10.832-24.24 22.56-43.729l-47.456-43.104c-14.224 19.408-23.104 37.872-30.976 54.128zm495.279-694.607c-70.768 0-128.352 57.583-128.352 128.335 0 70.784 57.6 128.353 128.352 128.353s128.336-57.584 128.336-128.352c0-70.752-57.6-128.336-128.336-128.336zm0 192.415c-35.328 0-64.08-28.752-64.08-64.08 0-35.313 28.752-64.08 64.08-64.08s64.08 28.767 64.08 64.08c-.016 35.344-28.752 64.08-64.08 64.08zm318.821-351.76c-.976-15.968-13.63-28.771-29.598-29.955 0 0-179.088-13.056-351.376 51.28-62.944 23.504-114.752 60.737-163.104 117.137-40.32 47.025-80.385 132.032-115.745 202.608-13.664 27.248-26.72 53.313-37.792 73.217H148.15a32.003 32.003 0 0 0-23.936 10.768L6.917 581.503A31.993 31.993 0 0 0 .388 612.51c3.44 10.785 12.32 18.945 23.329 21.44l190.944 43.665c13.007 16.064 34.687 40.097 69.376 78.593l72.335 80.192 38.945 164.72a31.984 31.984 0 0 0 21.231 23.056c3.233 1.024 6.576 1.568 9.904 1.568a31.95 31.95 0 0 0 20.832-7.712l118.56-117.936a31.981 31.981 0 0 0 11.184-24.288v-165.12c15.936-9.904 44.191-25.152 70.783-40.032 72.464-40.496 180.624-90.912 225.472-130.784 63.153-56.128 86.16-97.28 108.752-158.112 53.712-144.688 42.288-344.031 41.744-352.447zM922.001 359.469c-19.712 53.072-37.568 84.83-91.248 132.558-39.664 35.232-148.128 85.824-214.192 122.769-49.312 27.568-78.848 43.664-91.792 54.256a31.949 31.949 0 0 0-11.76 24.784v167.248l-67.52 74.193-28.752-121.6a31.949 31.949 0 0 0-7.393-14.064c-58.847-65.216-147.743-163.808-154.56-171.632a32.017 32.017 0 0 0-17.568-10.848L90.624 583.597l71.904-76H344.56a31.988 31.988 0 0 0 27.264-15.248c14.08-22.928 30.416-55.536 49.344-93.296 32.048-63.952 71.92-148.544 107.12-189.632 41.584-48.528 83.824-79.009 136.896-98.848C783.28 66.445 905.152 61.805 960.864 62.22c1.04 59.008-1.184 195.824-38.863 297.248z"></path></svg></div>
     ),
     href:""
-
+  },
+  {
+    title: "Comms Startup",
+    description:
+      "Migrated company website from Webflow to Hubspot CMS and technical lead for rebrand initiatives.",
+    demo: (
+      <div className="border-4 p-6 rounded-full border-[#4D4F53]">
+        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" className="w-20 text-[#ff7e69]" xmlns="http://www.w3.org/2000/svg"><path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-11zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25.222 25.222 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56V3.224zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009a68.14 68.14 0 0 1 .496.008 64 64 0 0 1 1.51.048zm1.39 1.081c.285.021.569.047.85.078l.253 1.69a1 1 0 0 1-.983 1.187h-.548a1 1 0 0 1-.916-.599l-1.314-2.48a65.81 65.81 0 0 1 1.692.064c.327.017.65.037.966.06z"></path></svg>
+     </div>
+      ),
+    href:""
   },
   {
     title: "Design Agency",
@@ -283,7 +293,7 @@ const features = [
   {
     title: "AI Startup",
     description:
-      "Manage website and email development and hold technical marketing reins.",
+      "Manage Hubspot CMS website, email development, and hold technical marketing reins.",
     demo: (
       <div className="flex items-center justify-center w-32 h-32 border-4 rounded-full border-[#4D4F53] ">
         <div className="flex items-center justify-center">

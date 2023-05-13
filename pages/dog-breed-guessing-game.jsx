@@ -1,9 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useImmerReducer } from "use-immer";
 
-import Balancer from "react-wrap-balancer";
-import { motion } from "framer-motion";
-import {  FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
 import Link from "next/link";
 
 // Helpers
@@ -86,11 +83,9 @@ export default function DogBreedGuessingGame() {
 
   return (        
   <Layout  meta={{title: "Dog Breed Guessing Game | Webzim Project", "description": "Demonstration of state management using Immer and dog.ceo API"}}>    
-    
-      
+     
         <Link href="/" className="font-bold  mb-4 block">&#8592; Back home</Link>
      
-    
         {state.currentQuestion && (
           <div className="w-full py-20">
               <div className="text-center mb-6">
