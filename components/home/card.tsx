@@ -8,13 +8,15 @@ export default function Card({
   description,
   demo,
   large,
-  href
+  href,
+  bullets,
 }: {
   title: string;
   description: string;
   demo: ReactNode;
   large?: boolean;
   href?: string;
+  bullets?: string[];
 }) {
   return (
     <div
@@ -27,13 +29,21 @@ export default function Card({
       {href && (
         <Link href={`${href}`} className="w-full h-full inset-0 absolute"></Link>
       )}
-      <div className="flex h-48 items-center justify-center">{demo}</div>
-      <div className="mx-auto max-w-md text-center">
-        <h2 className="bg-gradient-to-br from-black to-stone-500 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal">
+      <div className="flex h-32 items-center justify-center">{demo}</div>
+      <div className="px-6">
+        <h2 className="bg-gradient-to-br from-black to-stone-500 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal text-center mb-6">
           <Balancer>{title}</Balancer>
         </h2>
-        <div className="prose-sm leading-normal text-gray-500 md:prose">
-          <Balancer>
+        <div className="prose-md leading-normal text-gray-500 md:prose max-w-full px-6 pb-6">
+      
+          
+          {bullets ? (
+              <ul className="list-disc text-left ">
+                {bullets.map((bullet, i) => (
+                  <li className="mb-2" key={i}>{bullet}</li>
+                ))}
+              </ul>
+            ) : (
             <ReactMarkdown
               components={{
                 a: ({ node, ...props }) => (
@@ -56,7 +66,9 @@ export default function Card({
             >
               {description}
             </ReactMarkdown>
-          </Balancer>
+             )}
+          
+         
         </div>
       </div>
     </div>
