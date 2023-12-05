@@ -259,7 +259,7 @@ const features: DictItem[] = [
     ),
     href:""
   },{
-    title: "CI/CDs Startup",
+    title: "CI/CD Startup",
     bullets: [ "Rebuilt website in tandem with a company rebrand", "Technical lead for go-to-market strategizing", "Revamped email automation and built easy-to-use templates."],
   
     demo: (
@@ -304,7 +304,7 @@ const features: DictItem[] = [
 
   },
     {
-    title: "Teaching Institution",
+    title: "Academic Institution",
     bullets: [ "Drupal upgrades 7 to 9", "Migrated websites to more robusting server architecture", "Integrated websites with Box and SAML authentication."],
   
     demo: (
