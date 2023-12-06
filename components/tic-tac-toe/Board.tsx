@@ -8,7 +8,7 @@ export default function Board({tiles, onTileClick, playerTurn, winningStrike}: {
   return (
     <>
       <div className='mb-6'>
-        <p className="text-lg text-center mb-4 font-semibold">Player {playerTurn}'s turn</p>
+        <p className="text-lg text-center mb-4 font-semibold">Player {playerTurn}&apos;s turn</p>
       </div>
       <div className={`${styles.board} grid relative place-content-center`}>
         {tiles.map( (tile, i) => {
