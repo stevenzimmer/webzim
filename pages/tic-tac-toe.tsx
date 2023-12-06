@@ -59,8 +59,10 @@ const [winner, setWinner] = useState<null | string>(null);
       if (tiles[a] && tiles[a] === tiles[b] && tiles[a] === tiles[c]) {
         console.log("tiles[a]", tiles[a])
         setWinningStrike(winningCombos[i].strikeClass);
-        
         return tiles[a];
+      } else {
+        console.log("tiles", tiles)
+
       }
     }
     return null;
@@ -91,19 +93,34 @@ const [winner, setWinner] = useState<null | string>(null);
           <Board winningStrike={winningStrike} playerTurn={playerTurn} tiles={tiles} onTileClick={handleTileClick} />
           {winningStrike && (
             <>
-<div className={`border-dotted border-emerald-400 border-4 p-6 text-xl text-center mt-12`}>
-            Player {winner} wins!
+            <div className={`border-dotted border-emerald-400 border-4 p-6 text-xl text-center mt-12`}>
+              Player {winner} wins!
             </div>     
-          <button className={`mt-12 p-6 rounded text-white w-full text-2xl bg-blue-400`} onClick={() => {
-            setTiles(Array(9).fill(null));
-            setPlayerTurn(PLAYER_X);
-            setWinningStrike("");
-          }}>Reset</button>
+            <button className={`mt-12 p-6 rounded text-white w-full text-2xl bg-blue-400`} onClick={() => {
+              setTiles(Array(9).fill(null));
+              setPlayerTurn(PLAYER_X);
+              setWinningStrike("");
+            }}>Reset</button>
           </>
           )}
-        </div>
+          {/* Set Draw state */}
+          {!winningStrike && !tiles.includes(null) && (
+            <>
+            <div className={`border-dotted border-red-400 border-4 p-6 text-xl text-center mt-12`}>
+              Draw!
+            </div>     
+            <button className={`mt-12 p-6 rounded text-white w-full text-2xl bg-blue-400`} onClick={() => {
+              setTiles(Array(9).fill(null));
+              setPlayerTurn(PLAYER_X);
+              setWinningStrike("");
+            }}>Reset</button>
+          </>
+          )}
+        
+      </div>
       </div>
       <div className="py-20"></div>
     </Layout>
   )
 }
+
