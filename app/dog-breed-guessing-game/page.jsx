@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef } from "react";
 import { useImmerReducer } from "use-immer";
 
@@ -134,7 +135,7 @@ export default function DogBreedGuessingGame() {
                   {state.currentQuestion.breed.replace("-", " ")}
               </h1>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 px-5 py-20">
-                  {state.currentQuestion.photos.map(
+                  {state.currentQuestion?.photos?.map(
                       (photo, i) => {
                           return (
                               <Photo

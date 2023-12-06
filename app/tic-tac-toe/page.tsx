@@ -1,4 +1,4 @@
-
+"use client";
 import Layout from "@/components/layout";
 import { motion } from "framer-motion";
 import {  FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";

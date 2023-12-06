@@ -1,6 +1,7 @@
+import { Metadata } from 'next'
 import "@/styles/globals.css";
-import type { AppProps } from "next/app";
-import type { Session } from "next-auth";
+// import type { AppProps } from "next/app";
+// import type { Session } from "next-auth";
 import { Provider as RWBProvider } from "react-wrap-balancer";
 import cx from "classnames";
 import localFont from "next/font/local";
@@ -17,17 +18,46 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const buttons = [
+  {
+    link: "https://github.com/stevenzimmer",
+    title: "GitHub",
+    icon: <Github />
+  },
+  {
+    link: "https://www.linkedin.com/in/webdevzim/",
+    title: "LinkedIn",
+    icon: <LinkedIn />
+  },
+  {
+    link: "mailto:steven@webzim.dev",
+    title: "steven@webzim.dev",
+    icon: <Email />
+  },
+];
+
 const d = new Date();
 
-export default function MyApp({
-  Component,
-  pageProps: { session, ...pageProps },
-}: AppProps<{ session: Session }>) {
+export const metadata: Metadata = {
+  title: 'Home',
+  description: 'Welcome to Next.js',
+}
+export default function RootLayout({
+  // Layouts must accept a children prop.
+  // This will be populated with nested layouts or pages
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
- 
+    <html lang="en">
+      <body>
+        
       <RWBProvider>
         <main className={cx(sfPro.variable, inter.variable)}>
-          <Component {...pageProps} />
+          {/* <Component {...pageProps} />
+                {children} */}
+                      {children}
         </main>
         <footer className="bg-slate-100 py-3 text-black w-full">
           <div className="container px-6">
@@ -58,23 +88,9 @@ export default function MyApp({
           </div>
         </footer>
       </RWBProvider>
-   
-  );
+      
+
+      </body>
+    </html>
+  )
 }
-const buttons = [
-  {
-    link: "https://github.com/stevenzimmer",
-    title: "GitHub",
-    icon: <Github />
-  },
-  {
-    link: "https://www.linkedin.com/in/webdevzim/",
-    title: "LinkedIn",
-    icon: <LinkedIn />
-  },
-  {
-    link: "mailto:steven@webzim.dev",
-    title: "steven@webzim.dev",
-    icon: <Email />
-  },
-];
