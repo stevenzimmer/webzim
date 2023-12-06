@@ -6,8 +6,11 @@ import styles from "@/styles/TicTacToe.module.css"
 export default function Board({tiles, onTileClick, playerTurn, winningStrike}: {tiles: Array<string>, onTileClick: (i: number) => void; playerTurn: string; winningStrike: string}) {
 
   return (
-    <>    
-      <div className={`${styles.board} grid relative`}>
+    <>
+      <div className='mb-6'>
+        <p className="text-lg text-center mb-4 font-semibold">Player {playerTurn}'s turn</p>
+      </div>
+      <div className={`${styles.board} grid relative place-content-center`}>
         {tiles.map( (tile, i) => {
           let className = ""
           switch (i) {
@@ -32,7 +35,7 @@ export default function Board({tiles, onTileClick, playerTurn, winningStrike}: {
         )})}
        <Strike winningStrike={winningStrike} />
       </div>
-     
+      
     </>
 )
 }

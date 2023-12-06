@@ -53,16 +53,13 @@ const [winner, setWinner] = useState<null | string>(null);
   ]
   
   const checkWinner = (tiles: Array<string>) => {
-  console.log("check winner");
+  // console.log("check winner");
     for (let i = 0; i < winningCombos.length; i++) {
       const [a,b,c] = winningCombos[i].combo;
       if (tiles[a] && tiles[a] === tiles[b] && tiles[a] === tiles[c]) {
-        console.log("tiles[a]", tiles[a])
+        // console.log("tiles[a]", tiles[a])
         setWinningStrike(winningCombos[i].strikeClass);
         return tiles[a];
-      } else {
-        console.log("tiles", tiles)
-
       }
     }
     return null;
@@ -80,16 +77,19 @@ const [winner, setWinner] = useState<null | string>(null);
   
 
   return (
-    <Layout>
+    <Layout meta={{title: "Tic Tac Toe | Webzim Project", "description": "A showcase of React, State Management, and TailwindCSS."}}>
       <div className="py-20 px-6 max-w-[800px]">
         <div className="container">
           <Link href="/" className="font-bold mb-4 block">&#8592; Back to Portfolio</Link>
           <motion.h1
-            className="bg-gradient-to-br from-black to-slate-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-7xl md:leading-[5rem] mb-12"
+            className="bg-gradient-to-br from-black to-slate-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-7xl md:leading-[5rem] mb-6"
             variants={FADE_DOWN_ANIMATION_VARIANTS}
           >
             Tic Tac Toe
           </motion.h1>
+          <p className="text-center text-xl mb-12">
+            A showcase of React, State Management, and TailwindCSS.
+          </p>
           <Board winningStrike={winningStrike} playerTurn={playerTurn} tiles={tiles} onTileClick={handleTileClick} />
           {winningStrike && (
             <>
