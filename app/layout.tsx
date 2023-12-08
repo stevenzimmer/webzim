@@ -38,7 +38,7 @@ const buttons = [
 const d = new Date();
 
 export const metadata: Metadata = {
-  title: 'Web Zim Consulting | Steven Zimmer',
+  title: 'Web Zim Consulting | Full Stack, Web Strategy, Growth Marketing',
   description: 'Full Stack | Web Strategy | Growth Marketing',
 };
 export default function RootLayout({

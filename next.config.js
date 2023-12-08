@@ -3,7 +3,25 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["lh3.googleusercontent.com","hubspot-academy.s3.amazonaws.com","hubspot-credentials-na1.s3.amazonaws.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname:"lh3.googleusercontent.com",
+        pathname:"**"
+      },
+      {
+        protocol: "https",
+        hostname:"hubspot-academy.s3.amazonaws.com",
+        pathname:"**"
+
+      },
+      {
+        protocol: "https",
+        hostname:"hubspot-credentials-na1.s3.amazonaws.com",
+        pathname:"**"
+
+      }
+    ],
   },
 };
 

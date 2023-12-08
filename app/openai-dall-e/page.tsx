@@ -10,6 +10,8 @@ import Header from "@/components/layout/header";
 export default function Dalle() {
 
   const [answer, setAnswer] = useState("");
+  const [aiPrompt, setAiPrompt] = useState("");
+
   const [prompt, setPrompt] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -29,9 +31,11 @@ export default function Dalle() {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({ prompt })
-      })
+      });
+      console.log({response})
       const data = await response.json()
-      // console.log({data});
+      console.log({data});
+      setAiPrompt(data.aiPrompt);
       setAnswer(data.img);
       setIsLoading(false);
     } else {
@@ -78,10 +82,17 @@ export default function Dalle() {
           )}
         
           {!isLoading && answer && (
-            <div className="bg-blue-200 p-6 max-w-[512px] mx-auto">
+            <div className="bg-slate-800 rounded p-6 max-w-[512px] mx-auto mb-6">
               <img className="aspect-square w-full" src={answer} alt={`${prompt} AI generated Image`} />
             </div>
+            
           )}
+          {aiPrompt && (
+              <div className="text-white bg-slate-800 rounded p-6">
+                <p className="font-semibold mb-3">Revised Prompt</p>
+<p>                {aiPrompt}</p>
+              </div>
+            )}
         </div>
       </div>
     </div>
