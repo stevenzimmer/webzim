@@ -20,7 +20,6 @@ export async function POST(
   res: NextApiResponse<ResponseData>
 ) {
   const {prompt} = await req.json();
-  console.log({prompt});
 
   if( typeof prompt === "string") {
 
@@ -34,31 +33,13 @@ export async function POST(
           size: "1024x1024"
         });
 
-        // const response = {
-        //   data: "hello",
-        //   img: "https://images.unsplash.com/photo-1632836926809-4b9b0b0b0b0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjI0NjB8MHwxfHNlYXJjaHwxfHxwYWludGluZyUyMG1hcmtldHxlbnwwfHx8fDE2MzQxNjY0NjI&ixlib=rb-1.2.1&q=80&w=1080"
-        // }
-
-        console.log("---------------------------------")
-        console.log(response);
-
-        // console.log({response});
-
-        // console.log(response.data.error);
-
-
       return NextResponse.json({
         aiPrompt: response.data[0].revised_prompt, 
         img: response.data[0].url 
       }, {
         status: 200
       });
-      // return NextResponse.json({
-      //   payload: response.data, 
-      //   img: response.img
-      // }, {
-      //   status: 200
-      // });
+    
     } catch (error) {
       console.log({error});
       return NextResponse.json({
