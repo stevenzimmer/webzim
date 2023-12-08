@@ -50,7 +50,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='bg-black'>
+      <body className='bg-black/80'>
         
       <RWBProvider>
         <main className={`${sfPro.variable} ${inter.variable}`}>
