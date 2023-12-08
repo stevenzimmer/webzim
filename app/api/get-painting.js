@@ -7,15 +7,19 @@ const openai = new OpenAIApi(configuration)
 
 export default async function handler(req, res) {
 
+  console.log(req.body.prompt);
+
   if( typeof req.body.prompt === "string") {
     const response = await openai.createImage({
       prompt: req.body.prompt,
       n:1,
       size: "1024x1024"
     });
+
+    console.log(response.data);
   
     res.status(200).json({ payload: response.data, img: response.data.data[0].url });
   } else {
-    res.status(200).json({ text: "Input provided is now allowed" });
+    res.status(200).json({ text: "Input provided is not allowed" });
   }
 }

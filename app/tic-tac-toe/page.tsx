@@ -6,6 +6,8 @@ import Link from "next/link";
 import Board from "@/components/tic-tac-toe/Board";
 import { useState, useEffect } from "react";
 import styles from "@/styles/TicTacToe.module.css"
+import Header from "@/components/layout/header";
+
 const PLAYER_X = "X";
 const PLAYER_O = "O";
 export default function TicTacToe() {
@@ -80,20 +82,17 @@ const [winner, setWinner] = useState<null | string>(null);
     <Layout meta={{title: "Tic Tac Toe | Webzim Project", "description": "A showcase of React, State Management, and TailwindCSS."}}>
       <div className="py-20 px-6 max-w-[800px]">
         <div className="container">
-          <Link href="/" className="font-bold mb-4 block">&#8592; Back to Portfolio</Link>
-          <motion.h1
-            className="bg-gradient-to-br from-black to-slate-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-7xl md:leading-[5rem] mb-6"
-            variants={FADE_DOWN_ANIMATION_VARIANTS}
-          >
-            Tic Tac Toe
-          </motion.h1>
-          <p className="text-center text-xl mb-12">
+          <Link href="/" className="font-bold mb-4 block text-white">&#8592; Back to Portfolio</Link>
+      
+          <Header>Tic Tac Toe</Header>
+
+          <p className="text-center text-xl mb-6 text-white mt-6">
             A showcase of React, State Management, and TailwindCSS.
           </p>
           <Board winningStrike={winningStrike} playerTurn={playerTurn} tiles={tiles} onTileClick={handleTileClick} />
           {winningStrike && (
             <>
-            <div className={`border-dotted border-emerald-400 border-4 p-6 text-xl text-center mt-12`}>
+            <div className={`border-dotted border-emerald-400 border-4 p-6 text-xl text-center mt-12 text-white`}>
               Player {winner} wins!
             </div>     
             <button className={`mt-12 p-6 rounded text-white w-full text-2xl bg-blue-400`} onClick={() => {
@@ -106,7 +105,7 @@ const [winner, setWinner] = useState<null | string>(null);
           {/* Set Draw state */}
           {!winningStrike && !tiles.includes(null) && (
             <>
-            <div className={`border-dotted border-red-400 border-4 p-6 text-xl text-center mt-12`}>
+            <div className={`border-dotted border-red-400 border-4 p-6 text-xl text-center mt-12 text-white`}>
               Draw!
             </div>     
             <button className={`mt-12 p-6 rounded text-white w-full text-2xl bg-blue-400`} onClick={() => {

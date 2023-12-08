@@ -1,14 +1,17 @@
-import React from "react";
+import Header from "../layout/header";
+
+
 
 export default function HomeScreen() {
     return (
         <div className="max-w-[800px]">
-            <h1 className="text-center mb-12  text-4xl md:text-7xl">
+            <Header>
                 Dog breed guessing game
-            </h1>
+            </Header>
+           
             <div className="mb-12 text-left px-12">
-                <p className="text-xl md:text-2xl font-semibold mb-2">Rules:</p>
-                <ul className="list-disc pl-8">
+                <p className="text-xl md:text-2xl font-semibold mb-2 text-white">Rules:</p>
+                <ul className="list-disc pl-8 text-white">
                     <li>Choose the dog that corresponds to the breed.</li>
                     <li>You&apos;ll have 30 seconds to pick as many dog breeds.</li>
                     <li>You&apos;re allowed three incorrect guesses.</li>
@@ -20,11 +23,12 @@ export default function HomeScreen() {
                 </ul>
             </div>
             <div className="mb-12 text-left px-12">
-                <p className="text-xl md:text-2xl font-semibold mb-2">
+                <p className="text-xl md:text-2xl font-semibold mb-2 text-white">
                     Built with:
                 </p>
-                <ul className="list-disc pl-8">
+                <ul className="list-disc pl-8 text-white">
                     <li>React</li>
+                    <li>TypeScript</li>
                     <li>TailwindCSS</li>
                     <li>Immer</li>
                     <li>dog.ceo API</li>

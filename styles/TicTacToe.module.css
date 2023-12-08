@@ -14,12 +14,12 @@
 
 .x-hover:hover::after {
   content: "X";
-  opacity: 0.4;
+  opacity: 0.2;
 }
 
 .o-hover:hover::after {
   content: "O";
-  opacity: 0.4;
+  opacity: 0.2;
 }
 
 .strike-row-1 {
@@ -40,29 +40,29 @@
 .strike-col-1 {
   height: 100%;
   width: 4px;
-  left: 15%;
+  left: 30%;
 }
 .strike-col-2 {
   height: 100%;
   width: 4px;
-  left: 45%;
+  left: 49%;
 }
 .strike-col-3 {
   height: 100%;
   width: 4px;
-  left: 76%;
+  left: 69%;
 }
 .strike-diag-1 {
   width: 90%;
   height: 4px;
   top: 50%;
-  left: 2%;
+  left: 6%;
   transform: skewY(45deg);
 }
 .strike-diag-2 {
   width: 90%;
   height: 4px;
   top: 50%;
-  left: 0%;
+  left: 4%;
   transform: skewY(-45deg);
 }

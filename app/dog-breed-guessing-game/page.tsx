@@ -1,4 +1,5 @@
 "use client";
+import type { Metadata } from 'next';
 import { useEffect, useRef } from "react";
 import { useImmerReducer } from "use-immer";
 
@@ -17,22 +18,31 @@ import KillScreen from "@/components/dog-breed/KillScreen";
 import Photo from "@/components/dog-breed/Photo";
 import Layout from "@/components/layout";
 
+import type { InitialState, Action } from "@/lib/dog-breed/types";
+import Header from '@/components/layout/header';
+
+
+// export const metadata: Metadata = {
+//     title: 'Dog Breed Guessing Game | Web Zim Project',
+//     description: 'Demonstration of state management using Immer and dog.ceo API',
+//   };
+
+
 export default function DogBreedGuessingGame() {
 
-  const timer = useRef(null);
-  
-  const [state, dispatch] = useImmerReducer(ourReducer, initialState);
+  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [state, dispatch] = useImmerReducer<InitialState, Action>(ourReducer, initialState);
 
     useEffect(() => {
         dispatch({
             type: "receiveHighScore",
-            value: localStorage.getItem("highScore"),
+            value: Number(localStorage.getItem("highScore")),
         });
     }, []);
 
     useEffect(() => {
         if (state.highScore > 0) {
-            localStorage.setItem("highScore", state.highScore);
+            localStorage.setItem("highScore", Number(state.highScore as number).toString());
         }
     }, [state.highScore]);
 
@@ -45,12 +55,12 @@ export default function DogBreedGuessingGame() {
     }, [state.bigCollection]);
 
     useEffect(() => {
-        if (state.playing) {
+        if (state.playing ) {
             timer.current = setInterval(() => {
                 dispatch({ type: "decreaseTime" });
             }, 1000);
             return () => {
-                clearInterval(timer.current);
+                clearInterval(timer.current as ReturnType<typeof setInterval>);
             };
         }
     }, [state.playing]);
@@ -83,9 +93,9 @@ export default function DogBreedGuessingGame() {
 
 
   return (        
-  <Layout  meta={{title: "Dog Breed Guessing Game | Webzim Project", "description": "Demonstration of state management using Immer and dog.ceo API"}}>    
-     
-        <Link href="/" className="font-bold  mb-4 block">&#8592; Back home</Link>
+  <Layout >    
+     <div className='min-h-[800px]'>
+        <Link href="/" className="font-bold  mb-4 block text-white">&#8592; Back home</Link>
      
         {state.currentQuestion && (
           <div className="w-full py-20">
@@ -95,7 +105,7 @@ export default function DogBreedGuessingGame() {
                           xmlns="http://www.w3.org/2000/svg"
                           width="32"
                           height="32"
-                          fill="currentColor"
+                          fill="#fffff"
                           className={`inline-block ${
                               state.playing && "animate-spin"
                           }`}
@@ -106,7 +116,7 @@ export default function DogBreedGuessingGame() {
                           <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z" />
                       </svg>
                   </span>
-                  <span className="font-mono text-3xl relative top-2 ml-3">
+                  <span className="font-mono text-3xl relative top-2 ml-3 text-white">
                       0:
                       {state.timeRemaining < 10
                           ? `0${state.timeRemaining}`
@@ -131,12 +141,13 @@ export default function DogBreedGuessingGame() {
                       );
                   })}
               </div>
-              <h1 className="text-center text-4xl md:text-7xl mb-6 capitalize">
-                  {state.currentQuestion.breed.replace("-", " ")}
-              </h1>
+              <Header>
+              {state.currentQuestion.breed.replace("-", " ")}
+              </Header>
+            
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 px-5 py-20">
                   {state.currentQuestion?.photos?.map(
-                      (photo, i) => {
+                      (photo: string, i: number) => {
                           return (
                               <Photo
                                   key={i}
@@ -170,6 +181,7 @@ export default function DogBreedGuessingGame() {
                 </div>
             </div>
       )}
+      </div>
   </Layout>
 
   )

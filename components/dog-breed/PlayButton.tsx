@@ -1,4 +1,7 @@
-export default function PlayButton({ dispatch, children }) {
+export default function PlayButton({ dispatch, children }: {
+    dispatch: React.Dispatch<any>;
+    children: React.ReactNode;
+}) {
     return (
         <div>
             <button

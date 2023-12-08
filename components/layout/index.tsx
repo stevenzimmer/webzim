@@ -20,7 +20,7 @@ export default function Layout({
     <>
       <Meta {...meta} />
       {/* <SignInModal /> */}
-      <div className=" bg-gradient-to-br from-blue-50 via-white to-blue-100" >
+      <div className=" " >
       {/* <div
         className={`fixed top-0 w-full ${
           scrolled

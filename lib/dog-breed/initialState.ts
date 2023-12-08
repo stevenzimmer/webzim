@@ -1,5 +1,6 @@
+import type { InitialState } from "@/lib/dog-breed/types";
 
-export const initialState = {
+export const initialState: InitialState = {
     points: 0,
     strikes: 0,
     timeRemaining: 0,

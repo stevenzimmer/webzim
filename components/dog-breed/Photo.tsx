@@ -1,5 +1,12 @@
 import { useState, useEffect } from "react";
-export default function Photo({ photo, index, dispatch }) {
+import type { InitialState, Action } from "@/lib/dog-breed/types";
+
+export default function Photo({ photo, index, dispatch }: {
+    photo: string;
+    index: number;
+    dispatch: React.Dispatch<Action> ;
+
+}) {
     const [disabled, setDisabled] = useState(false);
 
     useEffect(() => {

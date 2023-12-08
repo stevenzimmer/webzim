@@ -45,7 +45,7 @@
     "**/*.tsx",
     "pages/dog-breed-guessing-game.jsx",
     ".next/types/**/*.ts"
-, "app/dog-breed-guessing-game/page.jsx"  ],
+, "app/dog-breed-guessing-game/page.tsx"  ],
   "exclude": [
     "node_modules"
   ]

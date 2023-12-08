@@ -7,6 +7,8 @@ import {  FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
 import { Github, LinkedIn, Email } from "@/components/shared/icons";
 import ComponentGrid from "@/components/home/component-grid";
 import Image from "next/image";
+import Header from "@/components/layout/header";
+import Subheader from "@/components/layout/subheader";
 
 interface DictSkills {
   [key: string]: string[];
@@ -44,14 +46,10 @@ export default function Home() {
           className="max-w-[600px] mx-auto"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
-        <motion.h1
-          className="bg-gradient-to-br from-black to-slate-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-7xl md:leading-[5rem]"
-          variants={FADE_DOWN_ANIMATION_VARIANTS}
-        >
-          <Balancer>Steven Zimmer</Balancer>
-        </motion.h1>
+      
+        <Header>Steven Zimmer</Header>
         <motion.p
-          className="mt-6 text-center text-slate-500 md:text-xl"
+          className="mt-6 text-center text-white md:text-xl"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
           <Balancer>
@@ -68,7 +66,7 @@ export default function Home() {
           {buttons.map(({ title, link, icon }, i) => (
               <a
                 key={i}
-                className="flex max-w-fit items-center justify-center mspace-x-2 rounded-full border border-slate-300 bg-white px-3 md:px-5 py-2 my-2 text-sm text-slate-600 shadow-md transition-colors hover:border-slate-800"
+                className="flex max-w-fit items-center justify-center mspace-x-2 rounded-full border border-slate-800 bg-slate-900 px-3 md:px-5 py-2 my-2 text-sm text-white shadow-md transition-colors hover:border-slate-700"
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -81,13 +79,10 @@ export default function Home() {
         </motion.div>
 
         <div className="py-6 md:py-12"></div>
-
-        <motion.h2
-          className="bg-gradient-to-br from-black to-stone-500 bg-clip-text  font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem] text-center mb-6"
-          variants={FADE_DOWN_ANIMATION_VARIANTS}
-        >
-          <Balancer>Skills</Balancer>
-        </motion.h2>
+            <Subheader>
+            Skills
+            </Subheader>
+       
 
         <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS} 
         className="mx-auto max-w-[800px]"
@@ -97,15 +92,15 @@ export default function Home() {
           return (
             <motion.div key={i} variants={FADE_DOWN_ANIMATION_VARIANTS}  className="flex items-center flex-wrap mb-12">
                 <div className="w-full md:w-1/4 mb-3 md:mb-0">
-                  <motion.p className=" md:text-2xl font-bold" variants={FADE_DOWN_ANIMATION_VARIANTS}>{skill}</motion.p>
+                  <motion.p className="md:text-2xl font-bold text-white" variants={FADE_DOWN_ANIMATION_VARIANTS}>{skill}</motion.p>
                 </div>
                 <div className="flex flex-wrap w-full md:w-3/4 -mx-1">
                   {dictSkills[skill].map((item, j) => {
                     return ( 
-                      <motion.div key={j} variants={FADE_DOWN_ANIMATION_VARIANTS}  className="w-auto border rounded bg-slate-100 px-2 md:px-3 py-1 shadow m-1">
+                      <motion.div key={j} variants={FADE_DOWN_ANIMATION_VARIANTS}  className="w-auto border border-slate-700 bg-slate-900 rounded px-2 md:px-3 py-1 shadow m-1">
                         
                         <motion.p
-                        className="bg-gradient-to-br from-black to-stone-500 bg-clip-text font-display  font-bold text-transparent drop-shadow-sm text-sm md:text-lg  text-left"
+                        className="bg-gradient-to-br from-white to-slate-50 bg-clip-text font-display  font-bold text-transparent drop-shadow-sm text-sm md:text-lg text-left"
                         variants={FADE_DOWN_ANIMATION_VARIANTS}
                         >
                           {item}
@@ -122,13 +117,11 @@ export default function Home() {
         </motion.div>
 
         <div className="py-6 md:py-12"></div>
+        <Subheader>
+        Recent Work
+        </Subheader>
 
-        <motion.h2
-          className="w-full bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem] mb-6"
-          variants={FADE_DOWN_ANIMATION_VARIANTS}
-        >
-          <Balancer>Recent Work</Balancer>
-        </motion.h2>
+       
         {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
         <div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:px-5 lg:grid-cols-3 xl:px-0">
         {features.map(({ title, description, demo, large, href, bullets }, i: number) => (
@@ -153,12 +146,10 @@ export default function Home() {
 
         <div className="py-6 md:py-12"></div>
 
-        <motion.h2
-          className="w-full bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem] mb-6"
-          variants={FADE_DOWN_ANIMATION_VARIANTS}
-        >
-          <Balancer>Recent Projects</Balancer>
-        </motion.h2>
+       
+        <Subheader>
+        Recent Projects
+        </Subheader>
       {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
       <div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:px-5 lg:grid-cols-3 xl:px-0">
         {projects.map(({ title, description, demo, href, large, bullets }, i) => (
@@ -183,12 +174,10 @@ export default function Home() {
 
         <div className="py-6 md:py-12"></div>
 
-        <motion.h2
-          className="bg-gradient-to-br from-black to-stone-500 bg-clip-text  font-display text-3xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[5rem] text-center mb-6"
-          variants={FADE_DOWN_ANIMATION_VARIANTS}
-        >
-          <Balancer>Certifications</Balancer>
-        </motion.h2>
+        
+        <Subheader>
+        Certifications
+        </Subheader>
 
           <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS} className="grid gap-4 md:grid-cols-2 max-w-5xl mx-auto ">
         {certifications.map(({title, src, link}, i) => (
@@ -205,7 +194,7 @@ export default function Home() {
                   />
       
               </a>
-              <p className="text-center text-slate-500 font-bold">{title}</p>
+              <p className="text-center text-white font-bold">{title}</p>
              </motion.div>
           ))}
         </motion.div>
@@ -222,17 +211,17 @@ const buttons = [
   {
     link: "https://github.com/stevenzimmer",
     title: "GitHub",
-    icon: <Github />
+    icon: <Github className="text-white" />
   },
   {
     link: "https://www.linkedin.com/in/webdevzim/",
     title: "LinkedIn",
-    icon: <LinkedIn />
+    icon: <LinkedIn className="fill-white" />
   },
   {
     link: "mailto:steven@webzim.dev",
     title: "steven@webzim.dev",
-    icon: <Email />
+    icon: <Email className="text-white" />
   },
 ];
 
@@ -379,6 +368,35 @@ const features: DictItem[] = [
 
 // https://mdrndsgn.webzim.dev/
 const projects: DictItem[] = [
+  // {
+  //   title: "Todos",
+  //   bullets: [ "React, State Management, and TailwindCSS."],
+    
+  //   href: "/todos",
+  //   demo: (
+
+
+    
+  //     <svg stroke="#06b6d4" fill="#06b6d4"  strokeWidth="2" viewBox="0 0 24 24"  strokeLinecap="round" strokeLinejoin="round" className="w-16 " xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="6" height="6" rx="1"></rect><path d="m3 17 2 2 4-4"></path><path d="M13 6h8"></path><path d="M13 12h8"></path><path d="M13 18h8"></path></svg>
+       
+  //   ),
+  //   large:false
+  
+  // },
+  // {
+  //   title: "Quizzes",
+  //   bullets: [ "Next JS, Postgres DB, React, State Management, and TailwindCSS."],
+    
+  //   href: "/quizzes",
+  //   demo: (
+
+
+  //     <svg stroke="#a78bfa" fill="#a78bfa" strokeWidth="0" viewBox="0 0 24 24" className="w-16 text-violet-400" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"></path><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5.99 13c-.59 0-1.05-.47-1.05-1.05 0-.59.47-1.04 1.05-1.04.59 0 1.04.45 1.04 1.04-.01.58-.45 1.05-1.04 1.05zm2.5-6.17c-.63.93-1.23 1.21-1.56 1.81-.13.24-.18.4-.18 1.18h-1.52c0-.41-.06-1.08.26-1.65.41-.73 1.18-1.16 1.63-1.8.48-.68.21-1.94-1.14-1.94-.88 0-1.32.67-1.5 1.23l-1.37-.57C11.51 5.96 12.52 5 13.99 5c1.23 0 2.08.56 2.51 1.26.37.61.58 1.73.01 2.57z"></path></svg>
+       
+  //   ),
+  //   large:false
+  
+  // },
   {
   title: "Tic Tac Toe",
   bullets: [ "A showcase of React, State Management, and TailwindCSS."],

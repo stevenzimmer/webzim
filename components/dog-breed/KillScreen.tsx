@@ -1,6 +1,13 @@
 import React from "react";
 
-export default function KillScreen({ state }) {
+export default function KillScreen({ state }: {
+    state: {
+        timeRemaining: number;
+        strikes: number;
+        points: number;
+        highScore: number;
+    };
+}) {
     return (
         <div>
             <h2 className="font-semibold text-5xl mb-3">Game over</h2>

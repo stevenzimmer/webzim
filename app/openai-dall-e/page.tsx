@@ -5,6 +5,8 @@ import Balancer from "react-wrap-balancer";
 import { motion } from "framer-motion";
 import {  FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
 import Link from "next/link";
+import Header from "@/components/layout/header";
+
 export default function Dalle() {
 
   const [answer, setAnswer] = useState("");
@@ -46,9 +48,9 @@ export default function Dalle() {
   <Layout  meta={{title: "Open AI Dall-E Demonstration | Webzim Project", "description": "Demonstration of the Open AI APIs using Dall-E to generate images"}}>    
     <div className="py-20 px-6 max-w-[800px]">
       <div className="container">
-        <Link href="/" className="font-bold mb-4 block">&#8592; Back home</Link>
+        <Link href="/" className="font-bold mb-4 block text-white">&#8592; Back home</Link>
         <motion.h1
-          className="bg-gradient-to-br from-black to-slate-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[3rem] mb-6"
+          className="bg-gradient-to-br from-white to-slate-50 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm md:text-5xl md:leading-[3rem] mb-6"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
           <Balancer>Generate an image with a text prompt using OpenAI&apos;s Dall-E</Balancer>
