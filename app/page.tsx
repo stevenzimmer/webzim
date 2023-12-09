@@ -83,14 +83,13 @@ export default function Home() {
             Skills
             </Subheader>
        
-
         <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS} 
         className="mx-auto max-w-[800px]"
         >
 
          {Object.keys(dictSkills).map((skill, i) => {
           return (
-            <motion.div key={i} variants={FADE_DOWN_ANIMATION_VARIANTS}  className="flex items-center flex-wrap mb-12">
+            <motion.div key={i} variants={FADE_DOWN_ANIMATION_VARIANTS}  className="flex items-center flex-wrap py-6 first:pt-0  border-b border-slate-500 ">
                 <div className="w-full md:w-1/4 mb-3 md:mb-0">
                   <motion.p className="md:text-2xl font-bold text-white" variants={FADE_DOWN_ANIMATION_VARIANTS}>{skill}</motion.p>
                 </div>
