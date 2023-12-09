@@ -57,7 +57,7 @@ export default function Home() {
           Military vet turned full-stack engineer specializing in growth marketing, web strategy, and CMS platforms.
           </Balancer>
         </motion.p>
-        </motion.div>
+      </motion.div>
 
        
         <motion.div
