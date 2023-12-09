@@ -9,8 +9,6 @@ export default function Board({tiles, onTileClick, playerTurn, winningStrike}: {
     <>
       <div className='mb-6'>
         
-          
-        
         <p className="text-lg text-center font-semibold text-white">{!winningStrike ? (
           `Player ${playerTurn}'s turn` ) : `Winner!`}</p>
       </div>

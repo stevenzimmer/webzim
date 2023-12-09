@@ -39,7 +39,7 @@ const d = new Date();
 
 export const metadata: Metadata = {
   title: 'Web Zim Consulting | Full Stack, Web Strategy, Growth Marketing',
-  description: 'Full Stack | Web Strategy | Growth Marketing',
+  description: 'Military vet turned full-stack engineer specializing in web strategy, eCommerce, and growth marketing.',
 };
 export default function RootLayout({
   // Layouts must accept a children prop.

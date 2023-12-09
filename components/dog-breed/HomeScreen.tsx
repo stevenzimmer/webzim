@@ -9,7 +9,7 @@ export default function HomeScreen() {
                 Dog breed guessing game
             </Header>
            
-            <div className="mb-12 text-left px-12">
+            <div className="my-12 text-left px-12">
                 <p className="text-xl md:text-2xl font-semibold mb-2 text-white">Rules:</p>
                 <ul className="list-disc pl-8 text-white">
                     <li>Choose the dog that corresponds to the breed.</li>
