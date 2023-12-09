@@ -94,11 +94,11 @@ export default function DogBreedGuessingGame() {
 
   return (        
   <Layout >    
-     <div className='min-h-[800px]'>
-        <Link href="/" className="font-bold  mb-4 block text-white">&#8592; Back home</Link>
+     <div className='min-h-[800px] w-full'>
+     <Link href="/" className="font-bold  block text-white text-center mb-6">&#8592; Back home</Link>
      
         {state.currentQuestion && (
-          <div className="w-full py-20">
+          <div className="w-full pb-20">
               <div className="text-center mb-6">
                   <span className="text-zing-300 mr-3">
                       <svg
@@ -164,7 +164,7 @@ export default function DogBreedGuessingGame() {
       {state.playing === false &&
           Boolean(state.bigCollection.length) &&
           !state.currentQuestion && (
-              <div className="max-w-[800px] py-20">
+              <div className="max-w-[800px] mx-auto pb-20">
                   <HomeScreen />
                   <PlayButton dispatch={dispatch}>
                       Play

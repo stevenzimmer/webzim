@@ -123,7 +123,7 @@ export default function Home() {
 
        
         {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
-        <div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:px-5 lg:grid-cols-3 xl:px-0">
+        <div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:px-5 md:grid-cols-2 lg:grid-cols-3 xl:px-0">
         {features.map(({ title, description, demo, large, href, bullets }, i: number) => (
           <Card
             href={href}
@@ -151,7 +151,7 @@ export default function Home() {
         Recent Projects
         </Subheader>
       {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
-      <div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:px-5 lg:grid-cols-3 xl:px-0">
+      <div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:px-5 md:grid-cols-2 lg:grid-cols-3 xl:px-0">
         {projects.map(({ title, description, demo, href, large, bullets }, i) => (
           <Card
  
