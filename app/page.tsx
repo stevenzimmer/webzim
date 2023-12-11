@@ -233,9 +233,9 @@ const dictSkills: DictSkills = {
   "Frontend": ["HTML/CSS", "Vanilla JavaScript", "TypeScript", "React", "xState","Redux","Zustand", "Tailwind CSS", "PostCSS","Framer Motion", "Email Development"],
   "Backend": ["Node JS", "PHP", "Laravel", "Next JS", "Remix", "Gatsby","AWS", "HubL","Stripe","Gutenberg Blocks", "MySQL","GraphQL", "Firebase", "REST APIs", "MongoDB", "Technical SEO"],
   
-  "Tools": ["Okta", "Elastic Search", "Hotjar", "Zapier","Git", "Webpack", "Vite", "Clerk", "Auth0"],
+  "Tools": ["Okta", "Elastic Search","Statsig", "Optimizely","Microsoft Clarity","Hotjar", "Zapier","Git", "Webpack", "Vite", "Clerk", "Auth0"],
   "CMS": [ "WordPress", "Hubspot","Webflow", "Strapi", "Contentful"],
-  "Marketing": ["Marketo", "Pardot", "Salesforce", "Mailchimp", "Google Analytics",  "Google Tag Manager", "Google Search Console","Optimizely",],
+  "Marketing": ["Marketo", "Pardot", "Salesforce", "Mailchimp", "Google Analytics",  "Google Tag Manager", "Google Search Console"],
   "UI Design": ["Figma", "Adobe ", "Sketch"],
 };
 
