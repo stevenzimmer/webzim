@@ -54,7 +54,7 @@ export default function Home() {
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
           <Balancer>
-          Military vet turned full-stack engineer specializing in growth marketing, web strategy, and CMS platforms.
+          Military vet turned full-stack engineer specializing in web strategy, project management, technical SEO, and growth marketing.
           </Balancer>
         </motion.p>
       </motion.div>
