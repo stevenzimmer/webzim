@@ -25,16 +25,10 @@ export async function POST(
         content: prompt
       }],
       model: "gpt-3.5-turbo",
-      max_tokens:10,
+      max_tokens: 100,
       stream: false,
     });
 
-    console.log({completion});
-
-    // for await(const chunk of stream) {
-    //   // console.log({chunk});
-    //   console.log(chunk.choices[0]?.delta?.content || "nope");
-    // }
 
     return NextResponse.json({
       completion
