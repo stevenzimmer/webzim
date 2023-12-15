@@ -97,7 +97,7 @@ export default function Home() {
                 <div className="flex flex-wrap w-full md:w-3/4 -mx-1">
                   {dictSkills[skill].map((item, j) => {
                     return ( 
-                      <motion.div key={j} variants={FADE_DOWN_ANIMATION_VARIANTS}  className="w-auto border border-slate-700 bg-slate-900 rounded px-2 md:px-3 py-1 shadow m-1">
+                      <motion.div key={j} variants={FADE_DOWN_ANIMATION_VARIANTS}  className="w-auto border border-teal-600 bg-teal-600 rounded px-2 md:px-3 py-1 shadow m-1">
                         
                         <motion.p
                         className="bg-gradient-to-br from-white to-slate-50 bg-clip-text font-display  font-bold text-transparent drop-shadow-sm text-sm md:text-lg text-left"

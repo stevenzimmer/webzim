@@ -32,7 +32,7 @@ export default function Card({
 // }
   return (
     <div
-      className={`relative col-span-1 overflow-hidden rounded-xl border bg-slate-800 border-slate-700 shadow-md ${
+      className={`relative col-span-1 overflow-hidden rounded-xl border bg-slate-700 border-slate-700 shadow-md ${
         large ? "md:col-span-2" : ""
       } ${
         href ? "hover:-translate-y-0.5 transition-transform duration-200 hover:border-blue-300" : ""
@@ -46,7 +46,7 @@ export default function Card({
         </>
       )}
     
-          <div className="relative w-full overflow-hidden  bg-slate-100/50 ">
+          <div className="relative w-full overflow-hidden bg-teal-400/50 ">
           {logo ? (
             <Image src={logo} alt={`${title} logo`} className="grayscale mx-auto " width={200} height={200} />
             ) : (
