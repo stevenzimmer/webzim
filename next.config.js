@@ -20,6 +20,12 @@ const nextConfig = {
         hostname:"hubspot-credentials-na1.s3.amazonaws.com",
         pathname:"**"
 
+      },
+      {
+        protocol: "https",
+        hostname:"shikimori.one",
+        pathname:"**"
+
       }
     ],
   },
