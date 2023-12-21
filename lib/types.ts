@@ -1,7 +1,11 @@
 export type ISItemProp = {
-  name: string;
-  score: number;
-  image: {
-    original: string;
-  }
+  artist: string;
+  title: string;
+  cover: string;
+  rank: number;
+  position: {
+    positionLastWeek: number;
+    peakPosition: number;
+    weeksOnChart: number;
+  };
 }

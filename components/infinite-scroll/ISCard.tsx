@@ -11,6 +11,7 @@ export default function ISCard({item, index}: {
   item: ISItemProp;
   index: number;
 }) {
+  console.log({item});
   return (
     <MotionDiv
     variants={variants}
@@ -23,9 +24,11 @@ export default function ISCard({item, index}: {
     }}
     viewport={{ amount:0}}
     className='bg-gray-200 p-4 rounded-lg'>
-      <Image src={`https://shikimori.one${item.image.original}`} alt={item.name} width={200} height={200} />
-      <h3 className='text-lg font-bold'>{item.name}</h3>
-      <p className='text-sm'>{item.score}</p>
+      <p>#{item.rank}</p>
+      <Image src={item.cover} alt={item.title} width={200} height={200} />
+      <h3 className='text-lg font-bold'>{item.artist}</h3>
+      <p className='text-sm'>{item.title}</p>
+      <p>Weeks on Chart: {item.position.weeksOnChart}</p>
     </MotionDiv>
   )
 }

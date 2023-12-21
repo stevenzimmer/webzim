@@ -23,7 +23,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname:"shikimori.one",
+        hostname:"charts-static.billboard.com",
         pathname:"**"
 
       }
