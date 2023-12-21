@@ -3,18 +3,27 @@ import { fetchWeeklyChart } from "@/lib/action";
 import { useEffect, useState } from "react";
 import { useInView }from "react-intersection-observer";
 import ISSection from "./ISSection";
+import {format} from "date-fns";
+import { ISItemProp } from "@/lib/types";
+
+const currentDate = format(new Date(), "yyyy-MM-dd");
+
+// console.log({currentDate})
 
 export default function LoadMore() {
   const [ref, inView] = useInView();
   const [data, setData] = useState<JSX.Element[]>([]);
- const [pageNumber, setPageNumber] = useState(0);
+  const [pageNumber, setPageNumber] = useState(0);
+  const [date, setDate] = useState(currentDate);
   useEffect(() => {
     if (inView) {
-      console.log("in view");
+      // console.log("in view");
 
-      fetchWeeklyChart("2022-10-08", pageNumber).then((res) => {
-        console.log({res});
+      fetchWeeklyChart(date, pageNumber).then((res) => {
+        // console.log({res});
         if(!res) return;
+        
+        if(!isIterable(res)) return;
         
         setData([...data, ...res as JSX.Element[]]);
         setPageNumber(pageNumber + 1);
@@ -36,4 +45,13 @@ export default function LoadMore() {
       </section>
     </>
   )
+}
+
+
+function isIterable(obj : any) {
+  // checks for null and undefined
+  if (obj == null) {
+    return false;
+  }
+  return typeof obj[Symbol.iterator] === 'function';
 }

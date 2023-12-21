@@ -23,6 +23,17 @@ try {
 	const response = await fetch(url, options);
 	const data = await response.json();
 
+  // console.log({data})
+
+  if(data.message) {
+    return (
+      <div className='text-center text-2xl text-white py-20'>
+        <div>
+          {data.message}
+        </div>
+      </div>
+    )
+  }
   const paginatedData = createPaginatedArray(data.chart.entries, pageSize);
 
   return paginatedData[pageNumber].map((item: ISItemProp, i: number) => <ISCard key={i} item={item} index={i} /> );
@@ -30,7 +41,7 @@ try {
 } catch (error) {
 	console.error(error);
 }
-
+// format(YYYY-MM-DD)
 }
 
 // Function to create an array of arrays

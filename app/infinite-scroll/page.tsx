@@ -1,7 +1,9 @@
 import LoadMore from '@/components/infinite-scroll/LoadMore'
 import Header from '@/components/layout/header'
 import { fetchWeeklyChart } from '@/lib/action'
-import ISSection from '@/components/infinite-scroll/ISSection'
+import ISSection from '@/components/infinite-scroll/ISSection';
+
+// const currentDate = format(new Date(), "yyyy-MM-dd");
 
 export default async function InfiniteScroll() {
   // const data = await fetchWeeklyChart("2022-10-08", 0) as JSX.Element[];
