@@ -5,10 +5,16 @@ import { ISItemProp } from "@/lib/types";
 export const fetchWeeklyChart = async (date: string, pageNumber: number) => {
   const pageSize = 6;
   const url = `https://billboard-api5.p.rapidapi.com/api/charts/hot-100?week=${date}`;
-  const options = {
+  const options: {
+    method: string;
+    headers: {
+      'X-RapidAPI-Key': string;
+      'X-RapidAPI-Host': string;
+    };
+  } = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': process.env.RAPID_API_KEY,
+      'X-RapidAPI-Key': process.env.RAPID_API_KEY as string,
       'X-RapidAPI-Host': 'billboard-api5.p.rapidapi.com'
     }
   };
