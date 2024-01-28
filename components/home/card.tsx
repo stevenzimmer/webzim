@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import Balancer from "react-wrap-balancer";
 import Link from "next/link";
 import Image from "next/image";
+import { sub } from "date-fns";
 
 export default function Card({
   title,
@@ -11,7 +12,8 @@ export default function Card({
   large,
   href,
   bullets,
-  logo
+  logo,
+  subtitle
 }: {
   title: string;
   description: string;
@@ -20,6 +22,7 @@ export default function Card({
   href?: string;
   bullets?: string[];
   logo?: string;
+  subtitle?: string;
 }) {
 
   // const isInternal = (url: string) => {
@@ -50,16 +53,17 @@ export default function Card({
           {logo ? (
             <Image src={logo} alt={`${title} logo`} className="grayscale mx-auto " width={200} height={200} />
             ) : (
-            <div className="flex h-32 items-center justify-center ">{demo}</div>
+            <div className="flex h-[113px] items-center justify-center ">{demo}</div>
             )}
           </div>
        
           
    
       <div className="p-6">
-        <h3 className="bg-gradient-to-br from-white to-slate-50 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal text-center mb-6">
+        <h3 className={`bg-gradient-to-br from-white to-slate-50 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal text-center mb-3`}>
           <Balancer>{title}</Balancer>
         </h3>
+     
         <div className="prose-md leading-normal text-white md:prose max-w-full px-6 pb-6">
           {bullets ? (
               <ul className="list-disc text-left text-white ">
