@@ -437,7 +437,7 @@ const projects: DictItem[] = [
     title: "Mdrn Dsgn",
     bullets: [ "A showcase of modern design trends on a fake company website."],
     
-    href: "https://mdrndsgn.webzim.dev/",
+    href: "https://mdrndsgn.webdevzim.com/",
     demo: (
 
       <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 576 512" className="w-16 text-slate-600" xmlns="http://www.w3.org/2000/svg"><path d="M339.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L568.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S517.7-4.4 499.1 9.6L262.4 187.2c-24 18-38.2 46.1-38.4 76.1L339.3 367.1zm-19.6 25.4l-116-104.4C143.9 290.3 96 339.6 96 400c0 3.9 .2 7.8 .6 11.6C98.4 429.1 86.4 448 68.8 448H64c-17.7 0-32 14.3-32 32s14.3 32 32 32H208c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"></path></svg>
@@ -449,7 +449,7 @@ const projects: DictItem[] = [
     title: "Stats and Graphs",
     bullets: [ "A demonstration of data visualization using random stats and charts library."],
     
-    href: "https://stats.webzim.dev/",
+    href: "https://stats.webdevzim.com/",
     demo: (
         <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 1024 1024" className="w-16 text-slate-600" xmlns="http://www.w3.org/2000/svg"><path d="M944 224c-44.192 0-79.999 35.824-79.999 80 0 9.072 1.84 17.632 4.607 25.76L673.6 497.68C659.92 486.784 642.848 480 624 480c-21.743 0-41.407 8.736-55.808 22.816l-152.752-76.48C412.465 384.848 378.241 352 336 352c-44.175 0-80 35.824-80 80 0 12.096 2.88 23.44 7.68 33.712L107.936 645.296C99.2 642.032 89.872 640 80 640c-44.176 0-80 35.824-80 80s35.824 80 80 80 80-35.824 80-80c0-10.64-2.176-20.767-5.952-30.048l158.272-181.92C319.856 510.368 327.696 512 336 512c23.28 0 44.047-10.112 58.671-26l149.408 74.912C544.608 604.656 580.127 640 624 640c44.193 0 80-35.824 80-80 0-1.424-.336-2.752-.416-4.16L911.68 377.072C921.584 381.456 932.463 384 944 384c44.193 0 80-35.808 80-80 0-44.176-35.807-80-79.999-80z"></path></svg>
     ),
@@ -459,7 +459,7 @@ const projects: DictItem[] = [
     title: "Box Scores App",
     bullets: [ "A web app that displays box scores for NBA and MLB game scores."],
     
-    href: "https://boxscores.webzim.dev/",
+    href: "https://boxscores.webdevzim.com/",
     demo: (
    
         <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="w-16 text-slate-600" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM5.23 7.75C6.1 8.62 6.7 9.74 6.91 11H4.07a8.12 8.12 0 011.16-3.25zM4.07 13h2.84a5.972 5.972 0 01-1.68 3.25A8.12 8.12 0 014.07 13zM11 19.93c-1.73-.22-3.29-1-4.49-2.14A7.952 7.952 0 008.93 13H11v6.93zM11 11H8.93A7.99 7.99 0 006.5 6.2 8.035 8.035 0 0111 4.07V11zm8.93 0h-2.84c.21-1.26.81-2.38 1.68-3.25.6.97 1.01 2.07 1.16 3.25zM13 4.07c1.73.22 3.29.99 4.5 2.13a7.99 7.99 0 00-2.43 4.8H13V4.07zm0 15.86V13h2.07a8.006 8.006 0 002.42 4.79A7.988 7.988 0 0113 19.93zm5.77-3.68A6.004 6.004 0 0117.09 13h2.84a8.12 8.12 0 01-1.16 3.25z"></path></svg>
