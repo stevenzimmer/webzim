@@ -4,11 +4,8 @@ import { useEffect, useState } from "react";
 import { useInView }from "react-intersection-observer";
 import ISSection from "./ISSection";
 import {format} from "date-fns";
-import { ISItemProp } from "@/lib/types";
 
 const currentDate = format(new Date(), "yyyy-MM-dd");
-
-// console.log({currentDate})
 
 export default function LoadMore() {
   const [ref, inView] = useInView();
@@ -17,7 +14,6 @@ export default function LoadMore() {
   const [date, setDate] = useState(currentDate);
   useEffect(() => {
     if (inView) {
-      // console.log("in view");
 
       fetchWeeklyChart(date, pageNumber).then((res) => {
         // console.log({res});

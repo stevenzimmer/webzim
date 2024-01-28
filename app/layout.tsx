@@ -38,8 +38,11 @@ const buttons = [
 const d = new Date();
 
 export const metadata: Metadata = {
-  title: 'Web Zim Consulting | Full Stack Engineer and Technical Growth Marketer',
+  title: 'Full Stack Engineer and Technical Growth Marketer',
   description: 'Full-stack problem solver specializing in WordPress ecosystem, web strategy, technical SEO, and growth marketing.',
+  alternates: {
+    canonical: 'https://www.webdevzim.com',
+  }
 };
 export default function RootLayout({
   // Layouts must accept a children prop.
