@@ -36,12 +36,26 @@ const buttons = [
 ];
 
 const d = new Date();
-
+const DOMAIN = "https://www.webdevzim.com";
 export const metadata: Metadata = {
   title: 'Full Stack Web Developer | Steven Zimmer',
   description: 'Full stack problem solver specializing in web technologies, growth marketing, and CMSs.',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: DOMAIN,
+    images: [
+      {
+        url: `${DOMAIN}/api/og`,
+        width: 1200,
+        height: 630,
+        alt: 'Steven Zimmer Headshot',
+      },
+    ],
+  },
   alternates: {
-    canonical: 'https://www.webdevzim.com',
+    canonical: DOMAIN,
+    
   }
 };
 export default function RootLayout({

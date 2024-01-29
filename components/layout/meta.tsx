@@ -1,5 +1,4 @@
 import Head from "next/head";
-
 const DOMAIN = "https://www.webdevzim.com";
 
 export default function Meta({
