@@ -26,6 +26,12 @@ const nextConfig = {
         hostname:"charts-static.billboard.com",
         pathname:"**"
 
+      },
+      {
+        protocol: "https",
+        hostname:"github.com",
+        pathname:"**"
+
       }
     ],
   },

@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <Layout>
       <motion.div
-        className="container  px-5 xl:px-0 md:py-20"
+        className="container  px-5 xl:px-0 md:py-10"
         initial="hidden"
         whileInView="show"
         animate="show"
@@ -48,6 +48,7 @@ export default function Home() {
           className="max-w-[600px] mx-auto"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
+          <Image  src={`https://github.com/stevenzimmer.png`} alt="Steven Zimmer Headshot" className="rounded-full mx-auto mb-5 border-4" width="200" height="200"/>
       
         <Header>Steven Zimmer</Header>
         <motion.h2
@@ -231,7 +232,7 @@ const buttons = [
 
 // Frontend Skills
 const dictSkills: DictSkills = {
-  "Frontend": ["HTML/CSS", "Vanilla JavaScript", "TypeScript", "React", "xState","Redux","Zustand","Gutenberg Blocks","HubL","Liquid", "Tailwind CSS", "PostCSS","Framer Motion", "MJML","Email Development"],
+  "Frontend": ["HTML/CSS", "Vanilla JavaScript", "TypeScript", "React","jQuery", "xState","Redux","Zustand","Gutenberg Blocks","HubL","Liquid", "Tailwind CSS", "PostCSS","Framer Motion", "MJML","Email Development"],
   "Backend": ["Node JS", "Next JS", "Remix",  "PHP", "Laravel","Gatsby","AWS","Prisma ORM","NoSQL","PostgreSQL", "MySQL","GraphQL", "REST APIs", "MongoDB", "Technical SEO"],
   
   "Tools": ["Webpack","Git","Vite","Okta", "Elastic Search","Statsig", "Optimizely","Microsoft Clarity","Hotjar", "Zapier","Stripe","Firebase","Clerk", "Auth0"],

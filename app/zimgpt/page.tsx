@@ -40,7 +40,7 @@ export default function ZimGPT() {
         body: JSON.stringify({ prompt })
       });
       const {completion} = await response.json()
-      console.log( completion );
+      // console.log( completion );
       setMessage(completion.choices[0].message);
       setNumberOfChats(numberOfChats + 1);
       localStorage.setItem("numberOfChats", JSON.stringify(numberOfChats + 1));
