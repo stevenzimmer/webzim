@@ -6,7 +6,7 @@ import Header from "@/components/layout/header";
 import Form from "@/components/openai-dall-e/form";
 
 export const metadata: Metadata = {
-    title: 'Open AI Dall-E Demonstration | Web Zim Consulting Project',
+    title: 'Open AI Dall-E Demonstration | Web Dev Zim Project',
     description: 'A demonstration of the Open AI API using Dall-E 3 to generate images with revised prompt',
   };
 export default function Dalle() {

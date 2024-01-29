@@ -60,9 +60,12 @@ export default function Card({
           
    
       <div className="p-6">
-        <h3 className={`bg-gradient-to-br from-white to-slate-50 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal text-center mb-3`}>
+        {title && (
+          <h3 className={`bg-gradient-to-br from-white to-slate-50 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal text-center mb-3`}>
           <Balancer>{title}</Balancer>
         </h3>
+        )}
+        
      
         <div className="prose-md leading-normal text-white md:prose max-w-full px-6 pb-6">
           {bullets ? (

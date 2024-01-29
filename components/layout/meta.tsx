@@ -1,10 +1,10 @@
 import Head from "next/head";
 
-const DOMAIN = "https://webzim.dev";
+const DOMAIN = "https://www.webdevzim.com";
 
 export default function Meta({
-  title = "Web Zim | Full Stack Engineer and Technical Growth Marketer",
-  description = "Full-stack problem solver specializing in WordPress ecosystem, web strategy, technical SEO, and growth marketing.",
+  title = "Web Dev Zim | Full Stack Web Developer and Technical Growth Marketer",
+  description = "A technical problem solver specializing in WordPress ecosystem, Hubspot CMS, web strategy, technical SEO, and growth marketing.",
   image = `${DOMAIN}/api/og`,
 }: {
   title?: string;

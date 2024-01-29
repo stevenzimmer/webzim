@@ -5,14 +5,14 @@ import Header from "@/components/layout/header";
 import TicTacToeWrapper from "@/components/tic-tac-toe/Wrapper";
 
 export const metadata: Metadata = {
-  title: 'Tic Tac Toe | Web Zim Project',
+  title: 'Tic Tac Toe | WebDev Zim Project',
   description: 'A showcase of React, State Management, and Tailwind CSS.',
 };
 
 export default function TicTacToe() {
 
   return (
-    <Layout meta={{title: "Tic Tac Toe | Webzim Project", "description": "A showcase of React, State Management, and TailwindCSS."}}>
+    <Layout meta={{title: "Tic Tac Toe | Web Dev Zim Project", "description": "A showcase of React, State Management, and TailwindCSS."}}>
       <div className="py-20 px-6 max-w-[800px]">
         <div className="container">
           <Link href="/" className="font-bold mb-4 block text-white">&#8592; Back to Portfolio</Link>

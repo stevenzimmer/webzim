@@ -50,14 +50,12 @@ export default function Home() {
         >
       
         <Header>Steven Zimmer</Header>
-        <motion.p
+        <motion.h2
           className="mt-6 text-center text-white md:text-xl"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
-          <Balancer>
-          Military vet turned full-stack engineer specializing in web strategy, project management, technical SEO, and growth marketing.
-          </Balancer>
-        </motion.p>
+         Full stack problem solver specializing in web technologies, growth marketing, and CMSs, and excelling in dynamic, fast-paced, collaborative environments.
+        </motion.h2>
       </motion.div>
 
        
@@ -82,7 +80,7 @@ export default function Home() {
 
         <div className="py-6 md:py-12"></div>
             <Subheader>
-            Skills
+            Web Dev Skill Set
             </Subheader>
        
         <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS} 
@@ -225,19 +223,19 @@ const buttons = [
     icon: <LinkedIn className="fill-white" />
   },
   {
-    link: "mailto:steven@webzim.dev",
-    title: "steven@webzim.dev",
+    link: "mailto:webdevzim@gmail.com",
+    title: "webdevzim@gmail.com",
     icon: <Email className="text-white" />
   },
 ];
 
 // Frontend Skills
 const dictSkills: DictSkills = {
-  "Frontend": ["HTML/CSS", "Vanilla JavaScript", "TypeScript", "React", "xState","Redux","Zustand", "Tailwind CSS", "PostCSS","Framer Motion", "Email Development"],
-  "Backend": ["Node JS", "PHP", "Laravel", "Next JS", "Remix", "Gatsby","AWS", "HubL","Stripe","Gutenberg Blocks", "MySQL","GraphQL", "Firebase", "REST APIs", "MongoDB", "Technical SEO"],
+  "Frontend": ["HTML/CSS", "Vanilla JavaScript", "TypeScript", "React", "xState","Redux","Zustand","Gutenberg Blocks","HubL","Liquid", "Tailwind CSS", "PostCSS","Framer Motion", "MJML","Email Development"],
+  "Backend": ["Node JS", "Next JS", "Remix",  "PHP", "Laravel","Gatsby","AWS","Prisma ORM","NoSQL","PostgreSQL", "MySQL","GraphQL", "REST APIs", "MongoDB", "Technical SEO"],
   
-  "Tools": ["Okta", "Elastic Search","Statsig", "Optimizely","Microsoft Clarity","Hotjar", "Zapier","Git", "Webpack", "Vite", "Clerk", "Auth0"],
-  "CMS": [ "WordPress", "Hubspot","Webflow", "Strapi", "Contentful"],
+  "Tools": ["Webpack","Git","Vite","Okta", "Elastic Search","Statsig", "Optimizely","Microsoft Clarity","Hotjar", "Zapier","Stripe","Firebase","Clerk", "Auth0"],
+  "CMS": [ "WordPress", "HubSpot","Webflow", "Strapi", "Contentful"],
   "Marketing": ["Marketo", "Pardot", "Salesforce", "Mailchimp", "Google Analytics",  "Google Tag Manager", "Google Search Console"],
   "UI Design": ["Figma", "Adobe ", "Sketch"],
 };
@@ -276,7 +274,7 @@ const features: DictItem[] = [
 
     title: "Armory",
     subtitle: "Acquired by Harness",
-    bullets: [ "Rebuilt website in tandem with a company rebrand", "Technical lead for go-to-market strategizing", "Revamped email automation and built easy-to-use templates."],
+    bullets: [ "Rebuilt website using WordPress CMS and a custom Gutenberg block theme in tandem with a company rebrand", "Technical lead for go-to-market strategizing", "Revamped email automation and built easy-to-use templates."],
   
     demo: (
       
@@ -288,7 +286,7 @@ const features: DictItem[] = [
     logo: "/logos/prokeep-logo.png",
 
     title: "Prokeep",
-    bullets: [ "Migrated company website from Webflow to Hubspot CMS","Technical lead for rebrand initiatives."],
+    bullets: [ "Migrated company website from Webflow to HubSpot CMS","Technical lead for rebrand initiatives."],
     
     demo: (
      
@@ -311,7 +309,7 @@ const features: DictItem[] = [
   {
     logo: "/logos/verta-logo.png",
     title: "Verta AI",
-    bullets: ["Rebuilt corporate marketing website in tandem with company rebrand.", "Manage Hubspot CMS website, email development, and hold technical marketing reins."],
+    bullets: ["Rebuilt website using HubSpot CMS in tandem with company rebrand initiatives.", "Manage website, email development, and hold technical marketing reins."],
     
     demo: (
       
@@ -325,7 +323,7 @@ const features: DictItem[] = [
   {
     logo: "/logos/nue-logo-dark.png",
   title: "Nue",
-  bullets: [ "Built a sleek company website using React, Next JS, and with a headless CMS.", "AWS S3, Amplify, and Cloudfront to host and serve static assets.", "Used Framer Motion to create a smooth, interactive experience.", ],
+  bullets: [ "Built a sleek company website using React, Next JS, and with a headless CMS.", "AWS S3, Amplify, and Cloudfront to host and serve static assets.", "Framer Motion to create a smooth, interactive experience.", ],
 
   demo: (
    
@@ -408,8 +406,6 @@ const features: DictItem[] = [
   // },
 ];
 
-
-// https://mdrndsgn.webzim.dev/
 const projects: DictItem[] = [
   // {
   //   title: "Todos",
