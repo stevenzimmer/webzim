@@ -36,7 +36,7 @@ const buttons = [
 ];
 
 const d = new Date();
-const DOMAIN = "https://www.webdevzim.com";
+const DOMAIN = "https://webdevzim.com";
 export const metadata: Metadata = {
   title: 'Full Stack Web Developer | Steven Zimmer',
   description: 'Full stack problem solver specializing in web technologies, growth marketing, and CMSs.',

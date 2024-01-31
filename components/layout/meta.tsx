@@ -1,5 +1,5 @@
 import Head from "next/head";
-const DOMAIN = "https://www.webdevzim.com";
+const DOMAIN = "https://webdevzim.com";
 
 export default function Meta({
   title = "Web Dev Zim | Full Stack Web Developer and Technical Growth Marketer",
