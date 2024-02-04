@@ -25,14 +25,7 @@ export default function Card({
   subtitle?: string;
 }) {
 
-  // const isInternal = (url: string) => {
-  //   const regex = new RegExp(window.location.hostname);
-  //   // console.log(regex)
-  //   return regex.test(url);
-  // }
-// if(href) {
-//   console.log(isInternal(href));
-// }
+ 
   return (
     <div
       className={`relative col-span-1 overflow-hidden rounded-xl border bg-slate-700 border-slate-700 shadow-md ${
@@ -44,7 +37,7 @@ export default function Card({
       {href && (
         <>
       
-          <Link href={`${href}`} className="w-full h-full inset-0 absolute z-10"></Link>
+          <Link href={`${href}`} target="_blank" className="w-full h-full inset-0 absolute z-10"></Link>
         
         </>
       )}
