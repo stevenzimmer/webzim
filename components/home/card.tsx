@@ -3,7 +3,6 @@ import ReactMarkdown from "react-markdown";
 import Balancer from "react-wrap-balancer";
 import Link from "next/link";
 import Image from "next/image";
-import { sub } from "date-fns";
 
 export default function Card({
   title,
@@ -13,7 +12,6 @@ export default function Card({
   href,
   bullets,
   logo,
-  subtitle
 }: {
   title: string;
   description: string;
@@ -52,7 +50,7 @@ export default function Card({
        
           
    
-      <div className="p-6">
+      <div className="py-6">
         {title && (
           <h3 className={`bg-gradient-to-br from-white to-slate-50 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal text-center mb-3`}>
           <Balancer>{title}</Balancer>
