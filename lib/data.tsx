@@ -2,7 +2,6 @@ import { Github, LinkedIn, Email } from "@/components/shared/icons";
 import type { DictItem, DictSkills } from "./types";
 
 
-
 // Frontend Skills
 export const dictSkills: DictSkills = {
   "Frontend": ["HTML/CSS", "Vanilla JavaScript", "TypeScript", "React","jQuery", "xState","Redux","Zustand","Gutenberg Blocks","HubL","Liquid", "Tailwind CSS", "PostCSS","Framer Motion", "MJML","Email Development"],
@@ -37,7 +36,7 @@ export const features: DictItem[] = [
   {
     logo: "/logos/verta-logo.png",
     title: "Verta AI",
-    bullets: ["Spearheaded the rebuild of the company website on the HubSpot CMS platform, aligning with comprehensive rebranding efforts to enhance brand visibility and coherence.", "Oversaw the management of web and email development projects, assuming responsibility for technical marketing strategies and execution to drive engagement and conversion."],
+    bullets: ["Rebuilt the company website on the HubSpot CMS platform, aligning with comprehensive rebranding efforts to enhance brand visibility and go-to-market initiatives.", "Oversaw the development of web and email projects, assuming responsibility for technical marketing strategies and execution to drive engagement and conversion."],
     
     demo: (
       
@@ -61,7 +60,7 @@ export const features: DictItem[] = [
   {
     logo: "/logos/nue-logo-dark.png",
   title: "Nue",
-  bullets: [ "Developed a modern, visually appealing company website utilizing React, Next.js, and a headless CMS for dynamic content management.", "Employed AWS S3, Amplify, and Cloudfront for efficient hosting and delivery of static assets, ensuring optimal site performance.", "Integrated Framer Motion to craft a seamless and interactive user experience, elevating the site's engagement level.", ],
+  bullets: [ "Developed a modern, visually appealing company website utilizing React, Next.js, and a headless CMS architecture for dynamic content management.", "Employed AWS S3, Amplify, and Cloudfront for efficient hosting and delivery of static assets, ensuring optimal site performance.", "Integrated Framer Motion to craft a seamless and interactive user experience, elevating the site's engagement level.", ],
 
   demo: (
    
@@ -88,7 +87,7 @@ export const features: DictItem[] = [
   logo: "/logos/prokeep-logo.png",
 
   title: "Prokeep",
-  bullets: [ "Led the technical migration of the company website from Webflow to HubSpot CMS, facilitating content management and scalability.","Acted as the technical lead during rebranding initiatives, ensuring a consistent and impactful brand representation across digital assets."],
+  bullets: [ "Led the technical migration of the company website from Webflow to HubSpot CMS, facilitating content management and scalability.","Served as the technical lead during rebranding initiatives, ensuring a consistent and impactful brand representation across digital assets."],
   
   demo: (
    
@@ -103,7 +102,6 @@ export const features: DictItem[] = [
     bullets: [ "Enhanced website performance and conducted technical SEO optimizations, significantly improving search visibility and user experience.","Identified and eradicated a sophisticated spam link infection, restoring website integrity and safeguarding against future security threats."],
    
     demo: (
-
       <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" className="w-16 text-slate-200" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M16.24 11.51l1.57-1.57-3.75-3.75-1.57 1.57-4.14-4.13c-.78-.78-2.05-.78-2.83 0l-1.9 1.9c-.78.78-.78 2.05 0 2.83l4.13 4.13L3 17.25V21h3.75l4.76-4.76 4.13 4.13c.95.95 2.23.6 2.83 0l1.9-1.9c.78-.78.78-2.05 0-2.83l-4.13-4.13zm-7.06-.44L5.04 6.94l1.89-1.9L8.2 6.31 7.02 7.5l1.41 1.41 1.19-1.19 1.45 1.45-1.89 1.9zm7.88 7.89l-4.13-4.13 1.9-1.9 1.45 1.45-1.19 1.19 1.41 1.41 1.19-1.19 1.27 1.27-1.9 1.9zM20.71 7.04a.996.996 0 000-1.41l-2.34-2.34c-.47-.47-1.12-.29-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg>
       ),
     // href:"https://punchcut.com/"

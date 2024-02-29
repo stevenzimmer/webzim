@@ -12,6 +12,7 @@ export default function Card({
   href,
   bullets,
   logo,
+  subtitle
 }: {
   title: string;
   description: string;
