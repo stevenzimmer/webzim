@@ -12,7 +12,7 @@ export default function Card({
   href,
   bullets,
   logo,
-  subtitle
+  nofollow,
 }: {
   title: string;
   description: string;
@@ -22,6 +22,7 @@ export default function Card({
   bullets?: string[];
   logo?: string;
   subtitle?: string;
+  nofollow?: boolean;
 }) {
 
  
@@ -36,7 +37,7 @@ export default function Card({
       {href && (
         <>
       
-          <Link href={`${href}`} target="_blank" className="w-full h-full inset-0 absolute z-10"></Link>
+          <Link  rel={`${nofollow ? "nofollow noreferrer" : "noopener"}`} href={`${href}`} target="_blank" className="w-full h-full inset-0 absolute z-10"></Link>
         
         </>
       )}
@@ -51,7 +52,7 @@ export default function Card({
        
           
    
-      <div className="py-6">
+      <div className="p-6">
         {title && (
           <h3 className={`bg-gradient-to-br from-white to-slate-50 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal text-center mb-3`}>
           <Balancer>{title}</Balancer>

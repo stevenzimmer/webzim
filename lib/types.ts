@@ -19,6 +19,7 @@ export type DictItem = {
   href?: string;
   bullets?: string[];
   large?: boolean;
+  nofollow?: boolean;
 }
 
 export type DictSkills = {

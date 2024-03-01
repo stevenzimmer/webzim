@@ -40,7 +40,7 @@ export default function Home() {
           className="mt-6 text-center text-white md:text-xl"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
-         Full stack problem solver specializing in web technologies, growth marketing, and CMSs, and excelling in dynamic, fast-paced, collaborative environments.
+         Full stack problem solver specializing in web technologies, growth marketing, ecommerce, and CMS platforms, and excelling in dynamic, fast-paced, collaborative environments.
         </motion.h2>
       </motion.div>
 
@@ -108,8 +108,8 @@ export default function Home() {
 
        
         {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
-        <div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:px-5 md:grid-cols-2 lg:grid-cols-3 xl:px-0">
-        {features.map(({ title, description, demo, large, href, bullets, logo, subtitle }, i: number) => (
+        <div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:px-5 md:grid-cols-2 xl:px-0">
+        {features.map(({ title, description, demo, large, href, bullets, logo, subtitle, nofollow }, i: number) => (
           <Card
             href={href}
             key={i}
@@ -117,6 +117,7 @@ export default function Home() {
             description={description || ""}
             bullets={bullets}
             logo={logo}
+            nofollow={nofollow}
             demo={
               title === "Beautiful, reusable components" ? (
                 <ComponentGrid />

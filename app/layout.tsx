@@ -38,24 +38,23 @@ const buttons = [
 const d = new Date();
 const DOMAIN = "https://webdevzim.com";
 export const metadata: Metadata = {
-  title: 'Full Stack Web Developer | Steven Zimmer',
-  description: 'Full stack problem solver specializing in web technologies, growth marketing, and CMSs.',
+  metadataBase: new URL(DOMAIN),
+  title: 'Steven Zimmer | Full Stack Web Developer',
+  description: 'Full stack problem solver specializing in web technologies, growth marketing, e-commerce, and CMS platforms.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: DOMAIN,
     images: [
       {
-        url: `${DOMAIN}/api/og`,
+        url: `/api/og`,
         width: 1200,
         height: 630,
-        alt: 'Steven Zimmer Headshot',
+        alt: 'Steven Zimmer | Full Stack Web Developer',
       },
     ],
   },
   alternates: {
     canonical: DOMAIN,
-    
   }
 };
 export default function RootLayout({
