@@ -1,3 +1,4 @@
+"use client";
 import { useRouter } from "next/router";
 import {
   Dispatch,
@@ -22,23 +23,23 @@ export default function Modal({
   bgColor?: string;
   closeWithX?: boolean;
 }) {
-  const router = useRouter();
-  const { key } = router.query;
+  // const router = useRouter();
+  // const { key } = router.query;
   const mobileModalRef = useRef<HTMLDivElement>(null);
   const desktopModalRef = useRef(null);
 
-  const closeModal = useCallback(
-    (closeWithX?: boolean) => {
-      if (closeWithX) {
-        return;
-      } else if (key) {
-        router.push("/");
-      } else {
-        setShowModal(false);
-      }
-    },
-    [key, router, setShowModal],
-  );
+  // const closeModal = useCallback(
+  //   (closeWithX?: boolean) => {
+  //     if (closeWithX) {
+  //       return;
+  //     } else if (key) {
+  //       router.push("/");
+  //     } else {
+  //       setShowModal(false);
+  //     }
+  //   },
+  //   [key, router, setShowModal],
+  // );
 
   const onKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === "Escape" && !closeWithX) {

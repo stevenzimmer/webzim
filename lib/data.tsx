@@ -1,6 +1,6 @@
 import { Github, LinkedIn, Email } from "@/components/shared/icons";
 import type { DictItem, DictSkills } from "./types";
-
+import Image from "next/image";
 
 // Frontend Skills
 export const dictSkills: DictSkills = {
@@ -184,7 +184,7 @@ export const features: DictItem[] = [
   //   title: "Performance first",
   //   description:
   //     "Built on [Next.js](https://nextjs.org/) primitives like `@next/font` and `next/image` for stellar performance.",
-  //   demo: <WebVitals />,
+  //   // demo: <WebVitals />,
   //   large:true
   // },
   
