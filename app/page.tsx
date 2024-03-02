@@ -8,6 +8,7 @@ import Image from "next/image";
 import Header from "@/components/layout/header";
 import Subheader from "@/components/layout/subheader";
 import { features, dictSkills, certifications, buttons, projects } from "@/lib/data";
+import Balancer from "react-wrap-balancer";
 
 
 export default function Home() {
@@ -40,7 +41,7 @@ export default function Home() {
           className="mt-6 text-center text-white md:text-xl"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
-         Full stack problem solver specializing in web technologies, growth marketing, ecommerce, and CMS platforms, and excelling in dynamic, fast-paced, collaborative environments.
+         Full stack web developer specializing in modern web technologies, growth marketing, ecommerce, and CMS platforms, and excelling in dynamic, fast-paced, collaborative environments.
         </motion.h2>
       </motion.div>
 
@@ -66,7 +67,7 @@ export default function Home() {
 
         <div className="py-6 md:py-12"></div>
             <Subheader>
-            Web Dev Skill Set
+            Web Dev Toolbox
             </Subheader>
        
         <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS} 
@@ -108,7 +109,7 @@ export default function Home() {
 
        
         {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
-        <div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:px-5 md:grid-cols-2 xl:px-0">
+        <div className="grid mx-auto w-full max-w-screen-lg animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:px-5 md:grid-cols-2 xl:px-0">
         {features.map(({ title, description, demo, large, href, bullets, logo, subtitle, nofollow }, i: number) => (
           <Card
             href={href}
@@ -118,13 +119,7 @@ export default function Home() {
             bullets={bullets}
             logo={logo}
             nofollow={nofollow}
-            demo={
-              title === "Beautiful, reusable components" ? (
-                <ComponentGrid />
-              ) : (
-                demo
-              )
-            }
+            demo={demo}
             large={large}
             subtitle={subtitle}
           />
@@ -136,13 +131,13 @@ export default function Home() {
 
        
         <Subheader>
-        Recent Projects
+        Personal Projects
         </Subheader>
+        
       {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
       <div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:px-5 md:grid-cols-2 lg:grid-cols-3 xl:px-0">
         {projects.map(({ title, description, demo, href, large, bullets,logo, subtitle }, i) => (
           <Card
- 
             key={i}
             href={href}
             title={title}

@@ -6,6 +6,7 @@ import { Provider as RWBProvider } from "react-wrap-balancer";
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import { Github, LinkedIn, Email } from "@/components/shared/icons";
+import { DOMAIN } from "@/lib/constants";
 
 const sfPro = localFont({
   src: "../styles/SF-Pro-Display-Medium.otf",
@@ -36,7 +37,7 @@ const buttons = [
 ];
 
 const d = new Date();
-const DOMAIN = "https://webdevzim.com";
+
 export const metadata: Metadata = {
   metadataBase: new URL(DOMAIN),
   title: 'Steven Zimmer | Full Stack Web Developer',

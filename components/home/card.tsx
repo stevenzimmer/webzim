@@ -44,7 +44,7 @@ export default function Card({
     
           <div className="relative w-full overflow-hidden bg-teal-400/50 ">
           {logo ? (
-            <Image src={logo} alt={`${title} logo`} className="grayscale mx-auto " width={200} height={200} />
+            <Image src={logo} alt={`${title} logo`} className="grayscale mx-auto   bg-transparent" width={200} height={200} />
             ) : (
             <div className="flex h-[113px] items-center justify-center ">{demo}</div>
             )}
@@ -54,7 +54,7 @@ export default function Card({
    
       <div className="p-6">
         {title && (
-          <h3 className={`bg-gradient-to-br from-white to-slate-50 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal text-center mb-3`}>
+          <h3 className={`bg-gradient-to-br from-white to-slate-50 bg-clip-text font-display text-xl font-bold text-transparent md:text-2xl md:font-normal text-center mb-3`}>
           <Balancer>{title}</Balancer>
         </h3>
         )}
