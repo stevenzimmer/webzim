@@ -12,10 +12,10 @@ export default function TodoItem({todo, index,todos}: {
   const [value, setValue] = useState(todo);
   const [error, setError] = useState("");
   const handleDelete = () => {
-    console.log("delete", index)
+    // console.log("delete", index)
   }
   const handleEdit = () => {
-    console.log("edit", index);
+    // console.log("edit", index);
     setIsEditing(true)
   }
 
@@ -25,7 +25,7 @@ export default function TodoItem({todo, index,todos}: {
   }
 
   const handleSave = () => {
-    console.log("save", index, value);
+    // console.log("save", index, value);
     if (!todos.includes(value)) {
       const newTodos = [...todos];
       newTodos[index] = value;

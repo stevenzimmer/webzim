@@ -54,7 +54,7 @@ function createPaginatedArray(data:ISItemProp[], pageSize:number) {
       paginatedArray.push(page);
   }
 
-  console.log({paginatedArray})
+  // console.log({paginatedArray})
 
   return paginatedArray;
 }

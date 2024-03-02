@@ -66,6 +66,7 @@ export default function ZimGPT() {
 
   const createNewChat = () => {
     setPrompt("");
+    toggleMenu();
     setCurrentTitle(null);
     setMessage(null);
   }
@@ -121,23 +122,28 @@ export default function ZimGPT() {
   }, [previousChats]);
 
   const toggleMenu = () => {
-    // const aside = document.querySelector("aside");
-    // aside?.classList.toggle("-translate-x-full");
     setMobileOpen(!mobileOpen);
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if(e.key === "Enter") {
+      getMessages();
+    }
   }
 
   const isDisabled = numberOfChats >= 10;
 
   return (
     <div className='text-slate-50 flex relative'>
-      {/* {mobileOpen && (
-  <div className="absolute w-full h-full inset-0 bg-black/80"></div>
-      )} */}
+      {mobileOpen && (
+        <div className="absolute w-full h-full inset-0 bg-black/80 z-0 md:hidden" onClick={toggleMenu}></div>
+      )}
     
-      <aside className={`w-4/5 md:w-1/4 h-screen p-6 flex flex-col justify-between bg-slate-700   absolute md:relative z-50 transition-transform duration-200 shadow-lg ${mobileOpen ? "-translate-x-full md:-translate-x-0" : "" }` }>
+      <aside className={`w-4/5 md:w-1/4 h-screen p-6 flex flex-col justify-between bg-slate-700   absolute md:relative z-50 transition-transform duration-200 shadow-lg md:-translate-x-0 ${mobileOpen ? "" : "-translate-x-full "  }` }>
       
         <div className="flex md:hidden mb-6 group cursor-pointer" onClick={toggleMenu}>
-        <svg className="w-8 border rounded p-1 w-content group-hover:bg-slate-900" stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg"><path d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z" fill="currentColor"></path></svg>
+        <svg className="w-8 border rounded p-1 w-content group-hover:bg-slate-900 "  stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" strokeWidth="2" d="M7,7 L17,17 M7,17 L17,7"></path></svg>
+         
         </div>
         <button disabled={isDisabled} onClick={createNewChat} className='rounded border bg-transparent border-slate-50 px-6 py-3 w-full disabled:bg-slate-800 disabled:border-0 disabled:text-slate-600 disabled:cursor-not-allowed'>Start New Chat</button>
         {isDisabled && <AllottedChats />}
@@ -181,7 +187,7 @@ export default function ZimGPT() {
         <div className="max-w-[650px] mx-auto">
           <div className="flex justify-center items-center w-full">
             <div className="md:hidden w-1/2 text-left cursor-pointer group" onClick={toggleMenu}>
-            <svg className="w-8 border rounded p-1 w-content group-hover:bg-slate-900" stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512"  xmlns="http://www.w3.org/2000/svg"><path d="M464 256H48a48 48 0 0 0 0 96h416a48 48 0 0 0 0-96zm16 128H32a16 16 0 0 0-16 16v16a64 64 0 0 0 64 64h352a64 64 0 0 0 64-64v-16a16 16 0 0 0-16-16zM58.64 224h394.72c34.57 0 54.62-43.9 34.82-75.88C448 83.2 359.55 32.1 256 32c-103.54.1-192 51.2-232.18 116.11C4 180.09 24.07 224 58.64 224zM384 112a16 16 0 1 1-16 16 16 16 0 0 1 16-16zM256 80a16 16 0 1 1-16 16 16 16 0 0 1 16-16zm-128 32a16 16 0 1 1-16 16 16 16 0 0 1 16-16z"></path></svg>
+            <svg className="w-8 border rounded p-1 w-content group-hover:bg-slate-900 " stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path><path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"></path></svg>
             </div>
             <div className="w-1/2 text-right">
             <Header>ZimGPT </Header>
@@ -210,7 +216,7 @@ export default function ZimGPT() {
          
           <div className='w-full flex flex-col justify-center items-center my-12 relative bottom-0 z-10  '>
             
-            <input disabled={isDisabled}  onChange={handlePromptChange} className='w-full border-0 px-4 py-3 bg-white/20 rounded focus:outline-none shadow-md disabled:bg-slate-900 disabled:text-slate-600 disabled:cursor-not-allowed' value={prompt} type="text" name="prompt-input" id="prompt-input" />
+            <input onKeyDown={handleKeyDown} disabled={isDisabled} onChange={handlePromptChange} className='w-full border-0 px-4 py-3 bg-white/20 rounded focus:outline-none shadow-md disabled:bg-slate-900 disabled:text-slate-600 disabled:cursor-not-allowed' value={prompt} type="text" name="prompt-input" id="prompt-input" />
             <button disabled={isDisabled} onClick={getMessages} className='absolute right-6 text-lg disabled:text-slate-600 disabled:cursor-not-allowed' type="submit">Submit</button>
           </div>
           <p className='text-slate-300 text-sm mt-6'>

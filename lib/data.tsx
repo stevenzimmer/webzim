@@ -18,6 +18,7 @@ export const dictSkills: DictSkills = {
 export const features: DictItem[] = [
   {
     title: "Scalable Web Infrastructure & Reusable Components",
+
     bullets: [ "Collaborate with marketing and design teams to develop a scalable and high-performance web infrastructure, ensuring a consistent and engaging user experience across platforms.", "Built a library of reusable components and templates, streamlining future development efforts for both web and email content creators."],
     demo: (
       <svg className="w-48 text-slate-200" stroke="currentColor" fill="currentColor"  viewBox="0 0 232 38"  xmlns="http://www.w3.org/2000/svg">

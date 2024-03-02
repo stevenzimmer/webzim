@@ -1,9 +1,10 @@
-import { ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import Balancer from "react-wrap-balancer";
 import Link from "next/link";
 import Image from "next/image";
-
+import type { DictItem } from "@/lib/types";
+import { motion } from "framer-motion";
+import {  FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
 export default function Card({
   title,
   description,
@@ -13,17 +14,8 @@ export default function Card({
   bullets,
   logo,
   nofollow,
-}: {
-  title: string;
-  description: string;
-  demo: ReactNode;
-  large?: boolean;
-  href?: string;
-  bullets?: string[];
-  logo?: string;
-  subtitle?: string;
-  nofollow?: boolean;
-}) {
+  tech,
+}: DictItem) {
 
  
   return (
@@ -52,7 +44,7 @@ export default function Card({
        
           
    
-      <div className="p-6">
+      <div className="px-6 pt-6 pb-3">
         {title && (
           <h3 className={`bg-gradient-to-br from-white to-slate-50 bg-clip-text font-display text-xl font-bold text-transparent md:text-2xl md:font-normal text-center mb-3`}>
           <Balancer>{title}</Balancer>
@@ -60,7 +52,7 @@ export default function Card({
         )}
         
      
-        <div className="prose-md leading-normal text-white md:prose max-w-full px-6 pb-6">
+        <div className="prose-md leading-normal text-white md:prose max-w-full px-6 pb-3">
           {bullets ? (
               <ul className="list-disc text-left text-white ">
                 {bullets.map((bullet, i) => (
@@ -68,6 +60,9 @@ export default function Card({
                 ))}
               </ul>
             ) : (
+              <>
+              {description && (
+                
             <ReactMarkdown
               components={{
                 a: ({ node, ...props }) => (
@@ -90,10 +85,27 @@ export default function Card({
             >
               {description}
             </ReactMarkdown>
+              )}
+              </>
              )}
           
          
         </div>
+      
+          
+        {tech && (
+        <div className="flex flex-wrap justify-center gap-1 "> 
+          {tech.map((skill, i) => (
+          <motion.div key={i} variants={FADE_DOWN_ANIMATION_VARIANTS}  className="w-auto border border-teal-600 bg-teal-600 rounded px-1 md:px-3 py-1 shadow m-1">
+            <motion.p
+            className="bg-gradient-to-br from-white to-slate-50 bg-clip-text font-display font-bold text-transparent drop-shadow-sm text-sm "
+            variants={FADE_DOWN_ANIMATION_VARIANTS}
+            >{skill}</motion.p>
+          </motion.div>
+            
+          ))}
+        </div>
+      )}
       </div>
     </div>
   );

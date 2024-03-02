@@ -16,7 +16,7 @@ export async function POST(
 ) {
 
   const {prompt} = await req.json();
-  console.log({prompt})
+  // console.log({prompt})
 
   try {
     const completion = await openai.chat.completions.create({
@@ -37,7 +37,7 @@ export async function POST(
     });
 
   } catch (error) {
-    console.log({error});
+    // console.log({error});
     return NextResponse.json({
       message: "Error"
     }, {

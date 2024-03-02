@@ -8,7 +8,6 @@ import Image from "next/image";
 import Header from "@/components/layout/header";
 import Subheader from "@/components/layout/subheader";
 import { features, dictSkills, certifications, buttons, projects } from "@/lib/data";
-import Balancer from "react-wrap-balancer";
 
 
 export default function Home() {
@@ -110,18 +109,10 @@ export default function Home() {
        
         {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
         <div className="grid mx-auto w-full max-w-screen-lg animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:px-5 md:grid-cols-2 xl:px-0">
-        {features.map(({ title, description, demo, large, href, bullets, logo, subtitle, nofollow }, i: number) => (
+        {features.map((props, i: number) => (
           <Card
-            href={href}
             key={i}
-            title={title}
-            description={description || ""}
-            bullets={bullets}
-            logo={logo}
-            nofollow={nofollow}
-            demo={demo}
-            large={large}
-            subtitle={subtitle}
+            {...props}
           />
         ))}
         </div>

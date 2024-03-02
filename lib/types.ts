@@ -20,6 +20,7 @@ export type DictItem = {
   bullets?: string[];
   large?: boolean;
   nofollow?: boolean;
+  tech?: string[];
 }
 
 export type DictSkills = {
