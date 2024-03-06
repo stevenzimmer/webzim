@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 export type ISItemProp = {
   artist: string;
   title: string;
@@ -26,3 +27,29 @@ export type DictItem = {
 export type DictSkills = {
   [key: string]: string[];
 }
+
+export type Message = {
+  content: string | "";
+  role: string | "";
+}
+
+
+export interface Chat extends Message {
+  title: string;
+} 
+
+export type ZimAppContext = {
+  message: Message | null;
+  setMessage: Dispatch<SetStateAction<Message | null>>;
+  prompt: string;
+  setPrompt: Dispatch<SetStateAction<string>>;
+  previousChats: Array<Chat>;
+  setPreviousChats: Dispatch<SetStateAction<Chat[] | []>>;
+  currentTitle: string | null;
+  setCurrentTitle: Dispatch<SetStateAction<string | null>>;
+  mobileOpen: boolean;
+  setMobileOpen: Dispatch<SetStateAction<boolean>>;
+  isLoading: boolean;
+  setIsLoading: Dispatch<SetStateAction<boolean>>;
+  toggleMenu: ()  => void;
+};

@@ -216,7 +216,7 @@ export const projects: DictItem[] = [
   // },
   {
     title: "ZimGPT",
-    bullets: [ "A showcase of TypeScript, React, OpenAI Chat API, and persisted state management."],
+    bullets: [ "A showcase of the OpenAI API and SDK, React, TypeScript, State Management, and Context API"],
     
     href: "/zimgpt",
     demo: (
