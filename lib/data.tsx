@@ -171,6 +171,7 @@ export const buttons = [
 
 
 export const projects: DictItem[] = [
+ 
   // {
   //   title: "Todos",
   //   bullets: [ "React, State Management, and TailwindCSS."],
@@ -235,6 +236,18 @@ export const projects: DictItem[] = [
 
     <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 256 256" className="w-16 text-slate-600"  xmlns="http://www.w3.org/2000/svg"><path d="M216,148H172V108h44a12,12,0,0,0,0-24H172V40a12,12,0,0,0-24,0V84H108V40a12,12,0,0,0-24,0V84H40a12,12,0,0,0,0,24H84v40H40a12,12,0,0,0,0,24H84v44a12,12,0,0,0,24,0V172h40v44a12,12,0,0,0,24,0V172h44a12,12,0,0,0,0-24Zm-108,0V108h40v40Z"></path></svg>
      
+  ),
+  large:false
+
+},
+{
+  title: "Floating Clock",
+  bullets: [ "A showcase of JavaScript Date object, CSS positioning, and color contrast management."],
+  
+  href: "/floating-clock",
+  demo: (
+  
+    <svg className="w-16 text-slate-600"   stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path></svg>
   ),
   large:false
 
