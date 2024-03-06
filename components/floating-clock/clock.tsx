@@ -11,9 +11,9 @@ function Clock() {
   useEffect(() => {
     setIsClient(true);
     const interval = setInterval(() => {
-      console.log('This will run every second!');
+
       setCurrentTime(new Date().toLocaleTimeString());
-    }, 1000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 

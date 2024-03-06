@@ -53,3 +53,8 @@ export type ZimAppContext = {
   setIsLoading: Dispatch<SetStateAction<boolean>>;
   toggleMenu: ()  => void;
 };
+
+export type Todo =  {
+  title: string;
+  completed: boolean;
+}
