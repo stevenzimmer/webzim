@@ -52,12 +52,13 @@ export default function TodoItem({
     console.log({ newTodos });
     console.log({ index });
     setTodos(newTodos);
+    setIsEditing(false);
     localStorage.setItem("todos", JSON.stringify(newTodos));
   };
 
   return (
     <div className="mb-2 flex items-center justify-between">
-      <div className="w-full">
+      <div className="w-3/4">
         <div className="flex items-center">
           <input
             className="mx-2"
@@ -98,7 +99,7 @@ export default function TodoItem({
           </div>
         )}
       </div>
-      <div className="w-full px-2">
+      <div className="w-1/4 px-2">
         {!todo.completed && (
           <>
             {isEditing ? (

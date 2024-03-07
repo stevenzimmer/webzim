@@ -15,7 +15,7 @@ export default function Home() {
   return (
 
       <motion.div
-        className="container px-5 xl:px-0 md:py-20"
+        className="container px-5 xl:px-0 py-12 md:py-20"
         initial="hidden"
         whileInView="show"
         animate="show"
@@ -35,8 +35,10 @@ export default function Home() {
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
           <Image  src={`https://github.com/stevenzimmer.png`} alt="Steven Zimmer Headshot" className="rounded-full mx-auto mb-5 border-4" width="200" height="200"/>
+          <div className="text-center">
+            <Header>Steven Zimmer</Header>
+          </div>
       
-        <Header>Steven Zimmer</Header>
         <motion.h2
           className="mt-6 text-center text-white md:text-xl"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
@@ -47,7 +49,7 @@ export default function Home() {
 
 
         <motion.div
-          className="container mx-auto mt-6 flex flex-wrap items-center justify-center space-x-2 md:space-x-5"
+          className="container mx-auto mt-6 flex flex-wrap items-center justify-center space-x-2 md:space-x-5 "
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
           {buttons.map(({ title, link, icon }, i) => (     
