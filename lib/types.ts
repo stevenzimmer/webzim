@@ -22,6 +22,7 @@ export type DictItem = {
   large?: boolean;
   nofollow?: boolean;
   tech?: string[];
+  sameTab?: boolean;
 }
 
 export type DictSkills = {

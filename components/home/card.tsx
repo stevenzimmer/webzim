@@ -5,6 +5,7 @@ import Image from "next/image";
 import type { DictItem } from "@/lib/types";
 import { motion } from "framer-motion";
 import {  FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
+import { title } from "process";
 export default function Card({
   title,
   demo,
@@ -14,21 +15,22 @@ export default function Card({
   logo,
   nofollow,
   tech,
+  sameTab
 }: DictItem) {
 
  
   return (
     <div
-      className={`relative col-span-1 overflow-hidden rounded-xl border bg-slate-700 border-slate-700 shadow-md ${
+      className={`relative col-span-1 overflow-hidden rounded-xl border-2 bg-slate-700 border-transparent shadow-md ${
         large ? "md:col-span-2" : ""
       } ${
-        href ? "hover:-translate-y-0.5 transition-transform duration-200 hover:border-blue-300" : ""
+        href ? "hover:-translate-y-0.5 transition-transform duration-200 hover:border-teal-300/50" : ""
       }`} 
     >
       {href && (
         <>
       
-          <Link  rel={`${nofollow ? "nofollow noreferrer" : "noopener"}`} href={`${href}`} target="_blank" className="w-full h-full inset-0 absolute z-10"></Link>
+          <Link  rel={`${nofollow ? "nofollow noreferrer" : "noopener"}`} href={`${href}`} target={!sameTab ? "_blank" : "" } className="w-full h-full inset-0 absolute z-10"></Link>
         
         </>
       )}

@@ -8,10 +8,9 @@ export default function Button({className, href, children, icon}: {
   icon: React.ReactNode;
 }) {
   const renderButton = () => (
-    <a href={href} className={`${className ?? ""} button relative z-10 inline-flex items-center justify-center text-n-1 transition-colors h-11 px-7 hover:text-n-2`} >
+    <a href={href} target='_blank' className={`${className ?? ""} button relative z-10 inline-flex items-center justify-center text-n-1 transition-all duration-200 h-11 px-7 hover:text-n-2 hover:-translate-y-0.5`} >
       {icon}
       <span className='ml-2'>{children}</span>
-  
       {ButtonSvg()}
     </a>
   )

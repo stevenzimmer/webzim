@@ -41,13 +41,13 @@ export default function Home() {
           className="mt-6 text-center text-white md:text-xl"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
-         Full stack web developer specializing in modern web technologies, growth marketing, ecommerce, and CMS platforms, and excelling in dynamic, fast-paced, collaborative environments.
+         Full stack web developer specializing in modern web technologies, growth marketing, technical SEO, and CMS platforms, and excelling in dynamic, fast-paced, collaborative environments.
         </motion.h2>
       </motion.div>
 
 
         <motion.div
-          className="max-w-[600px] mx-auto mt-6 flex flex-wrap items-center justify-center space-x-2 md:space-x-5"
+          className="container mx-auto mt-6 flex flex-wrap items-center justify-center space-x-2 md:space-x-5"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
           {buttons.map(({ title, link, icon }, i) => (     
@@ -130,7 +130,7 @@ export default function Home() {
             bullets={bullets}
             logo={logo}
             subtitle={subtitle}
-
+            sameTab={true}
             demo={
               title === "Beautiful, reusable components" ? (
                 <ComponentGrid />

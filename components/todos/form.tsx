@@ -9,6 +9,7 @@ export default function TodoForm({
   todos: Todo[];
   setTodos: Dispatch<SetStateAction<Todo[]>>;
 }) {
+
   const [value, setValue] = useState("");
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -38,8 +39,9 @@ export default function TodoForm({
           onChange={(e) => setValue(e.target.value)}
         />
         <button
-          className="mx-3 whitespace-nowrap rounded border border-slate-900 bg-slate-800 px-6 py-2 text-white"
+          className="mx-3 whitespace-nowrap rounded border border-teal-200/50 bg-teal-200/50 px-6 py-2 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-teal-300/50 transition-all duration-200 ease-in-out shadow-lg"
           type="submit"
+          disabled={!value}
         >
           Add task
         </button>
@@ -47,7 +49,7 @@ export default function TodoForm({
       <div>
         <p className="mb-3">Number of Todos: {incompleteTodos.length}</p>
         {todos.map((todo, i) => {
-          if (!todo.completed) {
+         
             return (
               <TodoItem
                 key={i}
@@ -57,7 +59,7 @@ export default function TodoForm({
                 setTodos={setTodos}
               />
             );
-          }
+          
         })}
       </div>
     </div>

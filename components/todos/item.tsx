@@ -19,10 +19,10 @@ export default function TodoItem({
 
   const [error, setError] = useState("");
 
-  const handleDelete = () => {
-    const newTodos = todos.filter((_, i) => i !== index);
-    setTodos(newTodos);
-  };
+  // const handleDelete = () => {
+  //   const newTodos = todos.filter((_, i) => i !== index);
+  //   setTodos(newTodos);
+  // };
 
   const handleEdit = () => {
     setIsEditing(true);
@@ -32,6 +32,7 @@ export default function TodoItem({
     const newTodos = [...todos];
     newTodos[index].title = e.target.value;
     setTodos(newTodos);
+    localStorage.setItem("todos", JSON.stringify(newTodos));
     // setValue(e.target.value);
   };
 
@@ -39,6 +40,7 @@ export default function TodoItem({
     const newTodos = [...todos];
     newTodos[index].title = todo.title;
     setTodos(newTodos);
+    localStorage.setItem("todos", JSON.stringify(newTodos));
     setIsEditing(false);
     // setError("");
   };
@@ -50,6 +52,7 @@ export default function TodoItem({
     console.log({ newTodos });
     console.log({ index });
     setTodos(newTodos);
+    localStorage.setItem("todos", JSON.stringify(newTodos));
   };
 
   return (
@@ -64,9 +67,9 @@ export default function TodoItem({
             checked={todo.completed}
           />
           {isEditing ? (
-            <div className="relative">
+            <div className="relative w-full">
               <input
-                className="w-full rounded border text-slate-900"
+                className="rounded border w-full text-slate-900 p-3"
                 onChange={handleChange}
                 type="text"
                 value={todo.title}
@@ -76,10 +79,16 @@ export default function TodoItem({
           ) : (
             <div
               className={`w-full rounded  p-3 ${
-                todo.completed ? "bg-slate-600" : "bg-slate-400"
+                todo.completed ? "bg-teal-100/50" : "bg-slate-400"
               }`}
             >
-              {todo.title}
+
+              {todo.completed ? (
+                <s>{todo.title}</s>
+              ) : (
+                todo.title
+              )}
+        
             </div>
           )}
         </div>
@@ -107,12 +116,12 @@ export default function TodoItem({
                 Edit Item
               </button>
             )}
-            <button
+            {/* <button
               onClick={handleDelete}
               className="mx-1 whitespace-nowrap rounded border border-red-900 bg-red-800 px-3 py-2 text-white"
             >
               Delete Item
-            </button>
+            </button> */}
           </>
         )}
       </div>
