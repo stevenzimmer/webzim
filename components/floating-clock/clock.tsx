@@ -13,7 +13,7 @@ function Clock() {
     const interval = setInterval(() => {
 
       setCurrentTime(new Date().toLocaleTimeString());
-    }, 5000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -34,7 +34,7 @@ function Clock() {
     const interval = setInterval(() => {
       setPositionAndColor();
 
-    }, 1000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
