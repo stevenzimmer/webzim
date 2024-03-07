@@ -9,6 +9,7 @@ import Subheader from "@/components/layout/subheader";
 import { features, dictSkills, certifications, buttons, projects } from "@/lib/data";
 import Button from "@/components/layout/Button";
 import ButtonGradient from "@/components/svg/ButtonGradient";
+import Pill from "@/components/shared/pill";
 
 
 export default function Home() {
@@ -40,7 +41,7 @@ export default function Home() {
           </div>
       
         <motion.h2
-          className="mt-6 text-center text-white md:text-xl"
+          className="mt-6 text-center text-white md:text-xl tagline"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
          Full stack web developer specializing in modern web technologies, growth marketing, technical SEO, and CMS platforms, and excelling in dynamic, fast-paced, collaborative environments.
@@ -78,15 +79,7 @@ export default function Home() {
                 <div className="flex flex-wrap w-full md:w-3/4 -mx-1">
                   {dictSkills[skill].map((item, j) => {
                     return ( 
-                      <motion.div key={j} variants={FADE_DOWN_ANIMATION_VARIANTS}  className="w-auto border border-teal-200/50 bg-teal-200/50 rounded px-2 md:px-3 py-1 shadow m-1">
-                        
-                        <motion.p
-                        className="text-white  font-semibold drop-shadow-sm text-sm md:text-base font-code"
-                        variants={FADE_DOWN_ANIMATION_VARIANTS}
-                        >
-                          {item}
-                        </motion.p>
-                      </motion.div>
+                      <Pill key={j} item={item} />
                     )
                   })}
                 </div>
