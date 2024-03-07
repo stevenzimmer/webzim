@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import {  FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
 export default function Card({
   title,
-  description,
   demo,
   large,
   href,
@@ -34,7 +33,7 @@ export default function Card({
         </>
       )}
     
-          <div className="relative w-full overflow-hidden bg-teal-400/50 ">
+          <div className="relative w-full overflow-hidden bg-teal-200/50 ">
           {logo ? (
             <Image src={logo} alt={`${title} logo`} className="grayscale mx-auto   bg-transparent" width={200} height={200} />
             ) : (
@@ -53,43 +52,13 @@ export default function Card({
         
      
         <div className="prose-md leading-normal text-white md:prose max-w-full px-6 pb-3">
-          {bullets ? (
+          {bullets && (
               <ul className="list-disc text-left text-white ">
                 {bullets.map((bullet, i) => (
-                  <li className="mb-2" key={i}>{bullet}</li>
+                  <li key={i} className="mb-2" >{bullet}</li>
                 ))}
               </ul>
-            ) : (
-              <>
-              {description && (
-                
-            <ReactMarkdown
-              components={{
-                a: ({ node, ...props }) => (
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    {...props}
-                    className="font-medium text-gray-800 underline transition-colors"
-                  />
-                ),
-                code: ({ node, ...props }) => (
-                  <code
-                    {...props}
-                    // @ts-ignore (to fix "Received `true` for a non-boolean attribute `inline`." warning)
-                    inline="true"
-                    className="rounded-sm bg-gray-100 px-1 py-0.5 font-mono font-medium text-white"
-                  />
-                ),
-              }}
-            >
-              {description}
-            </ReactMarkdown>
-              )}
-              </>
-             )}
-          
-         
+            )}
         </div>
       
           

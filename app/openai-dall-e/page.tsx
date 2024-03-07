@@ -1,6 +1,5 @@
 
 import type { Metadata } from 'next';
-import Layout from "@/components/layout";
 import Link from "next/link";
 import Header from "@/components/layout/header";
 import Form from "@/components/openai-dall-e/form";
@@ -11,8 +10,7 @@ export const metadata: Metadata = {
   };
 export default function Dalle() {
 
-  return (        
-  <Layout>    
+  return (    
     <div className="py-20 px-6 max-w-[800px]">
       <div className="container">
         <Link href="/" className="font-bold mb-4 block text-white">&#8592; Back home</Link>
@@ -24,7 +22,6 @@ export default function Dalle() {
         
       </div>
     </div>
-  </Layout>
 
   )
 }

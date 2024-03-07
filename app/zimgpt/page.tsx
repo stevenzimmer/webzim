@@ -22,7 +22,7 @@ export default function ZimGPT() {
         <div className="max-w-[650px] mx-auto">
           <div className="flex justify-center items-center w-full">
             <Hamburger />
-            <div className="w-1/2 text-right">
+            <div>
               <Header>ZimGPT </Header>
             </div>
          

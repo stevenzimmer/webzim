@@ -15,7 +15,7 @@ export default function Sidebar() {
     <>
     <MobileBGOverlay />
     
-    <aside className={`w-4/5 md:w-1/4 h-screen p-6 flex flex-col justify-between bg-slate-700   absolute md:relative z-50 transition-transform duration-200 shadow-lg md:-translate-x-0 ${mobileOpen ? "" : "-translate-x-full "  }` }>
+    <aside className={`w-4/5 md:w-1/4 h-screen p-6 flex flex-col justify-between bg-slate-800   absolute md:relative z-50 transition-transform duration-200 shadow-lg md:-translate-x-0 ${mobileOpen ? "" : "-translate-x-full "  }` }>
     
      
       <Close />

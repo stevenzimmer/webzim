@@ -1,8 +1,6 @@
 import { Github, LinkedIn, Email } from "@/components/shared/icons";
 import type { DictItem, DictSkills } from "./types";
 
-
-
 // Frontend Skills
 export const dictSkills: DictSkills = {
   "Frontend": ["HTML/CSS", "Vanilla JavaScript", "TypeScript", "React","jQuery","Redux","Zustand","Gutenberg Blocks","HubL","Liquid", "Tailwind CSS", "PostCSS","Framer Motion", "MJML","Email Templates"],
@@ -153,17 +151,17 @@ export const buttons = [
   {
     link: "https://github.com/stevenzimmer",
     title: "GitHub",
-    icon: <Github className="text-white" />
+    icon: <Github className="text-white w-5" />
   },
   {
     link: "https://www.linkedin.com/in/webdevzim/",
     title: "LinkedIn",
-    icon: <LinkedIn className="fill-white" />
+    icon: <LinkedIn className="fill-white w-5" />
   },
   {
     link: "mailto:webdevzim@gmail.com",
     title: "webdevzim@gmail.com",
-    icon: <Email className="text-white" />
+    icon: <Email className="text-white w-5" />
   },
 ];
 

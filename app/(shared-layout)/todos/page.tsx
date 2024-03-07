@@ -1,7 +1,7 @@
-"use client"
-import { useState } from "react"
-import Header from "@/components/layout/header"
-import TodoForm from "@/components/todos/form"
+"use client";
+import { useState } from "react";
+import Header from "@/components/layout/header";
+import TodoForm from "@/components/todos/form";
 import type { Todo } from "@/lib/types";
 
 export default function Todos() {
@@ -10,7 +10,7 @@ export default function Todos() {
   return (
     <>
       <Header>Todos</Header>
-      <TodoForm todos={todos} setTodos={setTodos}  />
+      <TodoForm todos={todos} setTodos={setTodos} />
     </>
-  )
+  );
 }

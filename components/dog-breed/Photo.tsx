@@ -25,15 +25,15 @@ export default function Photo({ photo, index, dispatch }: {
                         setDisabled(true);
                     }
                 }}
-                className={`rounded-lg relative h-40 lg:h-80 bg-cover bg-center cursor-pointer ${
-                    disabled && "grayscale cursor-not-allowed"
+                className={`rounded-lg relative h-40 lg:h-80 bg-cover bg-center cursor-pointer border   overflow-hidden ${
+                    disabled ? "grayscale cursor-not-allowed border-slate-800" : "border-transparent hover:border-teal-200"
                 }`}
                 style={{
                     backgroundImage: `url(${photo})`,
                 }}
             >
                 {disabled && (
-                    <div className="bg-black/60 absolute w-full h-full flex items-center backdrop-blur-sm justify-center">
+                    <div className="bg-black/60 absolute w-full h-full flex items-center backdrop-blur-sm justify-center ">
                         <p className="text-center text-white capitalize text-xl">
                             Breed: {photo.split("/")[4].replace("-", " ")}
                         </p>

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Layout from "@/components/layout";
 import Link from "next/link";
 import Header from "@/components/layout/header";
 import TicTacToeWrapper from "@/components/tic-tac-toe/Wrapper";
@@ -12,8 +11,8 @@ export const metadata: Metadata = {
 export default function TicTacToe() {
 
   return (
-    <Layout meta={{title: "Tic Tac Toe | Web Dev Zim Project", "description": "A showcase of React, State Management, and TailwindCSS."}}>
-      <div className="py-20 px-6 max-w-[800px]">
+<>
+      <div className="py-20 px-6 max-w-[800px] mx-auto">
         <div className="container">
           <Link href="/" className="font-bold mb-4 block text-white">&#8592; Back to Portfolio</Link>
       
@@ -27,7 +26,8 @@ export default function TicTacToe() {
       </div>
       </div>
       <div className="py-20"></div>
-    </Layout>
+      </>
+
   )
 }
 

@@ -1,6 +1,5 @@
 "use client";
 import Card from "@/components/home/card";
-import Layout from "@/components/layout";
 import { motion } from "framer-motion";
 import {  FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
 import ComponentGrid from "@/components/home/component-grid";
@@ -8,13 +7,15 @@ import Image from "next/image";
 import Header from "@/components/layout/header";
 import Subheader from "@/components/layout/subheader";
 import { features, dictSkills, certifications, buttons, projects } from "@/lib/data";
+import Button from "@/components/layout/Button";
+import ButtonGradient from "@/components/svg/ButtonGradient";
 
 
 export default function Home() {
   return (
-    <Layout>
+
       <motion.div
-        className="container px-5 xl:px-0 md:py-10"
+        className="container px-5 xl:px-0 md:py-20"
         initial="hidden"
         whileInView="show"
         animate="show"
@@ -44,25 +45,18 @@ export default function Home() {
         </motion.h2>
       </motion.div>
 
-       
+
         <motion.div
           className="max-w-[600px] mx-auto mt-6 flex flex-wrap items-center justify-center space-x-2 md:space-x-5"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
-          {buttons.map(({ title, link, icon }, i) => (
-              <a
-                key={i}
-                className="flex max-w-fit items-center justify-center mspace-x-2 rounded-full border border-slate-800 bg-slate-900 px-3 md:px-5 py-2 my-2 text-sm text-white shadow-md transition-colors hover:border-slate-700"
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {icon}
-                <p className="px-2">{title}</p>
-              </a>
+          {buttons.map(({ title, link, icon }, i) => (     
+            <Button key={i} href={link} icon={icon}>{title}</Button>   
           ))}
+         
        
         </motion.div>
+        <ButtonGradient />
 
         <div className="py-6 md:py-12"></div>
             <Subheader>
@@ -82,10 +76,10 @@ export default function Home() {
                 <div className="flex flex-wrap w-full md:w-3/4 -mx-1">
                   {dictSkills[skill].map((item, j) => {
                     return ( 
-                      <motion.div key={j} variants={FADE_DOWN_ANIMATION_VARIANTS}  className="w-auto border border-teal-600 bg-teal-600 rounded px-2 md:px-3 py-1 shadow m-1">
+                      <motion.div key={j} variants={FADE_DOWN_ANIMATION_VARIANTS}  className="w-auto border border-teal-200/50 bg-teal-200/50 rounded px-2 md:px-3 py-1 shadow m-1">
                         
                         <motion.p
-                        className="bg-gradient-to-br from-white to-slate-50 bg-clip-text font-display  font-bold text-transparent drop-shadow-sm text-sm md:text-lg text-left"
+                        className="text-white  font-semibold drop-shadow-sm text-sm md:text-base font-code"
                         variants={FADE_DOWN_ANIMATION_VARIANTS}
                         >
                           {item}
@@ -178,6 +172,5 @@ export default function Home() {
         
       </motion.div>
     
-    </Layout>
   );
 }

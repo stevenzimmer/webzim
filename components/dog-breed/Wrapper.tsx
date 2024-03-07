@@ -82,7 +82,7 @@ export default function DogBreedWrapper() {
     {state.currentQuestion && (
       <div className="w-full pb-20">
           <div className="text-center mb-6">
-              <span className="text-zing-300 mr-3">
+              <span className="text-zinc-300 mr-3">
                   <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="32"
@@ -123,11 +123,14 @@ export default function DogBreedWrapper() {
                   );
               })}
           </div>
+          <div className="text-center">
           <Header>
           {state.currentQuestion.breed.replace("-", " ")}
           </Header>
+          </div>
+      
         
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 px-5 py-20">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 px-5 py-12">
               {state.currentQuestion?.photos?.map(
                   (photo: string, i: number) => {
                       return (

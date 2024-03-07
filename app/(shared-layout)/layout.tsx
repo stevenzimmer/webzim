@@ -1,12 +1,11 @@
 "use client"
-import Layout from "@/components/layout";
 import { motion } from "framer-motion";
 import {  FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
 export default function RootLayout({ children }: {
   children: React.ReactNode
 }) {
   return (
-    <Layout>
+
       <motion.div
         className="container  px-5 xl:px-0 md:py-20"
         initial="hidden"
@@ -31,6 +30,6 @@ export default function RootLayout({ children }: {
           {children}
         </motion.div>
     </motion.div>
-  </Layout>
+
   )
 }

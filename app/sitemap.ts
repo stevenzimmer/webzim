@@ -5,11 +5,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://webdevzim.com',
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'monthly',
       priority: 1,
     },
     {
       url: 'https://webdevzim.com/zimgpt',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://webdevzim.com/floating-clock',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
