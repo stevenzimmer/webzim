@@ -34,7 +34,7 @@ export default function ZimGPT() {
             <ChatMessage />
           
             <Loader />
-            <div className='w-full flex flex-col justify-center items-center my-12 relative bottom-0 z-10  '>
+            <div className='w-full my-12 relative z-10  '>
               <Input />
             </div>
 

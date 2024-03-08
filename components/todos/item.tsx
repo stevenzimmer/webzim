@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import type { Todo } from "@/lib/types";
 
@@ -15,14 +15,16 @@ export default function TodoItem({
   todos: Todo[];
   setTodos: (todos: Todo[]) => void;
 }) {
+  const ref = useRef<HTMLInputElement>(null);
   const [isEditing, setIsEditing] = useState(false);
 
   const [error, setError] = useState("");
 
-  // const handleDelete = () => {
-  //   const newTodos = todos.filter((_, i) => i !== index);
-  //   setTodos(newTodos);
-  // };
+  const handleDelete = () => {
+    const newTodos = todos.filter((_, i) => i !== index);
+    setTodos(newTodos);
+    localStorage.setItem("todos", JSON.stringify(newTodos));
+  };
 
   const handleEdit = () => {
     setIsEditing(true);
@@ -42,7 +44,8 @@ export default function TodoItem({
     setTodos(newTodos);
     localStorage.setItem("todos", JSON.stringify(newTodos));
     setIsEditing(false);
-    // setError("");
+    ref.current?.focus();
+ 
   };
 
   const handleTodoComplete = () => {
@@ -61,6 +64,7 @@ export default function TodoItem({
       <div className="w-3/4">
         <div className="flex items-center">
           <input
+            ref={ref}
             className="mx-2"
             type="checkbox"
             onChange={handleTodoComplete}
@@ -100,7 +104,7 @@ export default function TodoItem({
         )}
       </div>
       <div className="w-1/4 px-2">
-        {!todo.completed && (
+        {!todo.completed ? (
           <>
             {isEditing ? (
               <button
@@ -117,13 +121,15 @@ export default function TodoItem({
                 Edit Item
               </button>
             )}
-            {/* <button
+           
+          </>
+        ) : (
+            <button
               onClick={handleDelete}
               className="mx-1 whitespace-nowrap rounded border border-red-900 bg-red-800 px-3 py-2 text-white"
             >
               Delete Item
-            </button> */}
-          </>
+            </button> 
         )}
       </div>
     </div>

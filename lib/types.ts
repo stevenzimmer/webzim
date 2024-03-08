@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, RefObject, SetStateAction } from "react";
 export type ISItemProp = {
   artist: string;
   title: string;
@@ -23,6 +23,7 @@ export type DictItem = {
   nofollow?: boolean;
   tech?: string[];
   sameTab?: boolean;
+  
 }
 
 export type DictSkills = {
@@ -53,6 +54,7 @@ export type ZimAppContext = {
   isLoading: boolean;
   setIsLoading: Dispatch<SetStateAction<boolean>>;
   toggleMenu: ()  => void;
+  ref: RefObject<HTMLInputElement>;
 };
 
 export type Todo =  {

@@ -1,11 +1,13 @@
 "use client";
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef } from 'react'
 import ZimGPTContext from "@/context/zimgpt";
 import type { Chat, Message } from "@/lib/types"
 ;
 export default function Layout({ children}: {
   children: React.ReactNode
 }) {
+
+  const ref = useRef<HTMLInputElement>(null);
 
   const [message, setMessage] = useState<Message | null>(null);
 
@@ -23,7 +25,6 @@ export default function Layout({ children}: {
 
 
   useEffect(() => {
-
 
     if(localStorage.getItem("previousChats")) {
       setPreviousChats(JSON.parse(localStorage.getItem("previousChats") as string ));
@@ -86,6 +87,7 @@ export default function Layout({ children}: {
         isLoading,
         setIsLoading,
         toggleMenu,
+        ref
         
       }
     }>{children}</ZimGPTContext.Provider>
