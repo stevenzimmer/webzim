@@ -13,19 +13,18 @@ export default function TicTacToe() {
   return (
 <>
       <div className="py-20 px-6 max-w-[800px] mx-auto">
-        <div className="container">
-          <Link href="/" className="font-bold mb-4 block text-white">&#8592; Back to Portfolio</Link>
-      
+  
+          <div className='text-center'>
           <Header>Tic Tac Toe</Header>
+          </div>
+     
 
-          <p className="text-center text-xl mb-6 text-white mt-6">
+          <p className="text-center text-xl my-12 text-white ">
             A showcase of React, State Management, and TailwindCSS.
           </p>
           <TicTacToeWrapper />
         
       </div>
-      </div>
-      <div className="py-20"></div>
       </>
 
   )

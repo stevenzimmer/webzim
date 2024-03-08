@@ -6,15 +6,15 @@ export const metadata: Metadata = {
   title: 'Floating Clock | Web Dev Zim Project',
   description: 'A showcase of JavaScript Date object, CSS positioning, and color contrast management.',
 };
+import Nav from '@/components/layout/Nav';
 export default function FloatingClock() {
   
   return (
-
+    <>
+    <Nav />
       <div className='container px-6 py-20'>
-        <div className='relative px-6'>
-          <div className='mb-6 lg:mb-0 lg:absolute left-0 top-0 bottom-0 z-10'>
-          <Link href="/" className="font-bold  block text-slate-800 p-6 hover:bg-slate-100 bg-white rounded shadow-md">&#8592; Back to Portfolio</Link>
-          </div>
+        <div className='relative '>
+          
           <div className='text-center'>
           <Header>Floating Clock</Header>
           </div>
@@ -26,5 +26,6 @@ export default function FloatingClock() {
         </div>
       
       </div>
+      </>
   )
 }

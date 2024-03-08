@@ -1,5 +1,4 @@
 "use client"
-import Balancer from "react-wrap-balancer";
 import { motion } from "framer-motion";
 import {  FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
 

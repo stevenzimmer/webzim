@@ -10,11 +10,12 @@ import { features, dictSkills, certifications, buttons, projects } from "@/lib/d
 import Button from "@/components/layout/Button";
 import ButtonGradient from "@/components/svg/ButtonGradient";
 import Pill from "@/components/shared/pill";
-
+import Nav from "@/components/layout/Nav";
 
 export default function Home() {
   return (
-
+    <>
+      <Nav />
       <motion.div
         className="container px-5 xl:px-0 py-12 md:py-20"
         initial="hidden"
@@ -61,7 +62,7 @@ export default function Home() {
         </motion.div>
         <ButtonGradient />
 
-        <div className="py-6 md:py-12"></div>
+        <div id="skills" className="py-6 md:py-12"></div>
             <Subheader>
             Web Dev Toolbox
             </Subheader>
@@ -90,14 +91,14 @@ export default function Home() {
          
         </motion.div>
 
-        <div className="py-6 md:py-12"></div>
+        <div id="work" className="py-6 md:py-12"></div>
         <Subheader>
         Recent Freelance Work
         </Subheader>
 
        
         {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
-        <div className="grid mx-auto w-full max-w-screen-lg animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:px-5 md:grid-cols-2 xl:px-0">
+        <div className="grid mx-auto w-full max-w-screen-lg animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 lg:px-5 md:grid-cols-2 xl:px-0">
         {features.map((props, i: number) => (
           <Card
             key={i}
@@ -107,7 +108,7 @@ export default function Home() {
         </div>
 
 
-        <div className="py-6 md:py-12"></div>
+        <div id="projects" className="py-6 md:py-12"></div>
 
        
         <Subheader>
@@ -115,7 +116,7 @@ export default function Home() {
         </Subheader>
         
       {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
-      <div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:px-5 md:grid-cols-2 lg:grid-cols-3 xl:px-0">
+      <div className="grid mx-auto w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 lg:px-5 md:grid-cols-2 lg:grid-cols-3 xl:px-0">
         {projects.map(({ title, description, demo, href, large, bullets,logo, subtitle }, i) => (
           <Card
             key={i}
@@ -166,6 +167,6 @@ export default function Home() {
         </motion.div>
         
       </motion.div>
-    
+      </>
   );
 }

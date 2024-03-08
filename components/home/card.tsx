@@ -35,7 +35,7 @@ export default function Card({
         </>
       )}
     
-          <div className="relative w-full overflow-hidden bg-teal-200/50 ">
+          <div className="relative w-full overflow-hidden bg-teal-200/50 h-[112px] ">
           {logo ? (
             <Image src={logo} alt={`${title} logo`} className="grayscale mx-auto   bg-transparent" width={200} height={200} />
             ) : (
@@ -45,7 +45,7 @@ export default function Card({
        
           
    
-      <div className="px-6 pt-6 pb-3">
+      <div className="px-6 md:px-0 lg:px-6 pt-6 pb-3">
         {title && (
           <h3 className={`bg-gradient-to-br from-white to-slate-50 bg-clip-text font-display text-xl font-bold text-transparent md:text-2xl md:font-normal text-center mb-3`}>
           <Balancer>{title}</Balancer>
@@ -53,7 +53,7 @@ export default function Card({
         )}
         
      
-        <div className="prose-md leading-normal text-white md:prose max-w-full px-6 pb-3">
+        <div className="prose-md leading-normal text-white md:prose max-w-full px-6 md:px-0 lg:px-6 pb-3">
           {bullets && (
               <ul className="list-disc text-left text-white ">
                 {bullets.map((bullet, i) => (

@@ -1,41 +1,9 @@
 import type { Metadata } from 'next'
 import "@/styles/globals.css";
-// import type { AppProps } from "next/app";
-// import type { Session } from "next-auth";
 import { Provider as RWBProvider } from "react-wrap-balancer";
-// import localFont from "next/font/local";
-// import { Inter } from "next/font/google";
-// import { Github, LinkedIn, Email } from "@/components/shared/icons";
 import { DOMAIN } from "@/lib/constants";
 import Footer from '@/components/layout/footer';
-// const sfPro = localFont({
-//   src: "../styles/SF-Pro-Display-Medium.otf",
-//   variable: "--font-sf",
-// });
-
-// const inter = Inter({
-//   variable: "--font-inter",
-//   subsets: ["latin"],
-// });
-
-// const buttons = [
-//   {
-//     link: "https://github.com/stevenzimmer",
-//     title: "GitHub",
-//     icon: <Github />
-//   },
-//   {
-//     link: "https://www.linkedin.com/in/webdevzim/",
-//     title: "LinkedIn",
-//     icon: <LinkedIn />
-//   },
-//   {
-//     link: "mailto:webdevzim@gmail.com",
-//     title: "webdevzim@gmail.com",
-//     icon: <Email />
-//   },
-// ];
-
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   metadataBase: new URL(DOMAIN),
@@ -70,6 +38,7 @@ export default function RootLayout({
       <body className='dark:bg-black/80'>
         
       <RWBProvider>
+        
         <main>
           {children}
         </main>
