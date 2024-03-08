@@ -12,7 +12,7 @@ export default function TicTacToe() {
 
   return (
 <>
-      <div className="py-20 px-6 max-w-[800px] mx-auto">
+      <div className="py-6 px-6 max-w-[800px] mx-auto">
   
           <div className='text-center'>
           <Header>Tic Tac Toe</Header>
@@ -23,7 +23,7 @@ export default function TicTacToe() {
             A showcase of React, State Management, and TailwindCSS.
           </p>
           <TicTacToeWrapper />
-        
+          <div className='py-6'></div>
       </div>
       </>
 
