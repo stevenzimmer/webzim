@@ -7,7 +7,7 @@ export default function MobileBGOverlay() {
   return (
     <>
      {mobileOpen && (
-        <div className="absolute w-full h-full inset-0 bg-black/80 z-0 md:hidden" onClick={toggleMenu}></div>
+        <div className="absolute w-full h-full inset-0 bg-black/80 z-0 lg:hidden" onClick={toggleMenu}></div>
       )}</>
   )
 }

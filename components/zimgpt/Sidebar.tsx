@@ -15,7 +15,7 @@ export default function Sidebar() {
     <>
     <MobileBGOverlay />
     
-    <aside className={`w-4/5 md:w-1/4 h-screen p-6 flex flex-col justify-between bg-slate-800   absolute md:relative z-50 transition-transform duration-200 shadow-lg md:-translate-x-0 ${mobileOpen ? "" : "-translate-x-full "  }` }>
+    <aside className={`w-4/5 lg:w-1/4 h-screen p-6 flex flex-col justify-between bg-slate-800  absolute lg:relative z-50 transition-transform duration-200 shadow-lg lg:-translate-x-0 ${mobileOpen ? "" : "-translate-x-full "  }` }>
     
      
       <Close />
@@ -23,7 +23,7 @@ export default function Sidebar() {
     
        <AllottedChats />
       <nav className='border-t py-6 my-6 h-full'>
-        <div className="md:hidden">
+        <div className="lg:hidden">
         <Subheader >Previous Chats</Subheader>
         </div>
         
@@ -34,9 +34,7 @@ export default function Sidebar() {
         
         </ul>
       
-      </nav>
-      <Link href="/" className="font-bold  block text-slate-800 p-6 hover:bg-slate-100 bg-white rounded shadow-md">&#8592; Back to Portfolio</Link>
-  
+      </nav>  
  
     </aside>
     </>

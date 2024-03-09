@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <footer className="bg-slate-800 py-3 text-black w-full">
           <div className="container px-6">
-            <div className="flex flex-wrap justify-around flex-row-reverse">
-              <div className="flex items-center mb-3 sm:mb-0">
+            <div className="flex flex-wrap justify-around flex-row-reverse items-center">
+              <div className="flex items-center  xs:mb-0">
               {buttons.map(({  link, icon }, i) => (
               <a
                 key={i}
@@ -23,7 +23,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center">
                 
-              <p className="text-center md:text-right text-slate-100">
+              <p className="text-center md:text-right text-slate-100 py-3">
               {d.getFullYear()} &nbsp; <span className='font-code'>Web Dev Zim LLC</span> &nbsp; | &nbsp; All Rights Reserved
             </p>
               </div>
