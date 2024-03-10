@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = require("tailwindcss/defaultTheme");
 const plugin = require("tailwindcss/plugin");
-import { fontFamily } from "tailwindcss/defaultTheme";
 
 module.exports = {
   content: [
@@ -48,7 +48,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-sora)", ...fontFamily.sans],
         code: "var(--font-code)",
-        grotesk: "var(--font-grotesk)"
+        grotesk: "var(--font-grotesk)",
       },
       spacing: {
         0.25: "0.0625rem",

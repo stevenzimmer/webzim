@@ -1,12 +1,8 @@
 "use client";
-import {useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from "react";
 import ZimGPTContext from "@/context/zimgpt";
-import type { Chat, Message } from "@/lib/types"
-;
-export default function Layout({ children}: {
-  children: React.ReactNode
-}) {
-
+import type { Chat, Message } from "@/lib/types";
+export default function Layout({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLInputElement>(null);
 
   const [message, setMessage] = useState<Message | null>(null);
@@ -21,59 +17,54 @@ export default function Layout({ children}: {
 
   const toggleMenu = () => {
     setMobileOpen(!mobileOpen);
-  }
-
+  };
 
   useEffect(() => {
-
-    if(localStorage.getItem("previousChats")) {
-      setPreviousChats(JSON.parse(localStorage.getItem("previousChats") as string ));
+    if (localStorage.getItem("previousChats")) {
+      setPreviousChats(
+        JSON.parse(localStorage.getItem("previousChats") as string),
+      );
     }
-   
   }, []);
 
   useEffect(() => {
-   if(!currentTitle && prompt && message) {
-    setCurrentTitle(prompt);
-   }
+    if (!currentTitle && prompt && message) {
+      setCurrentTitle(prompt);
+    }
 
-   if( currentTitle && prompt && message) {
-    
- 
-    setPreviousChats( (prevChats) => (
-      [...prevChats, 
+    if (currentTitle && prompt && message) {
+      setPreviousChats((prevChats) => [
+        ...prevChats,
         {
           title: currentTitle,
           role: "user",
-          content: prompt
-        }
-      ]));
-    
-    setPreviousChats( (prevChats) => (
-      [...prevChats, 
-        
+          content: prompt,
+        },
+      ]);
+
+      setPreviousChats((prevChats) => [
+        ...prevChats,
+
         {
           title: currentTitle,
           content: message?.content || "",
-          role: message?.role || ""
-        }
-      ]));
+          role: message?.role || "",
+        },
+      ]);
 
-    setPrompt("");
-   
-  }}, [message, currentTitle]);
+      setPrompt("");
+    }
+  }, [message, currentTitle]);
 
   useEffect(() => {
-    if(previousChats.length > 0) {
-    
-    localStorage.setItem("previousChats", JSON.stringify(previousChats));
-  }
+    if (previousChats.length > 0) {
+      localStorage.setItem("previousChats", JSON.stringify(previousChats));
+    }
   }, [previousChats]);
 
-
   return (
-    <ZimGPTContext.Provider value={
-      {
+    <ZimGPTContext.Provider
+      value={{
         message,
         setMessage,
         prompt,
@@ -87,9 +78,10 @@ export default function Layout({ children}: {
         isLoading,
         setIsLoading,
         toggleMenu,
-        ref
-        
-      }
-    }>{children}</ZimGPTContext.Provider>
-  )
+        ref,
+      }}
+    >
+      {children}
+    </ZimGPTContext.Provider>
+  );
 }

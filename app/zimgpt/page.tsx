@@ -1,5 +1,5 @@
-import { Metadata } from 'next';
-import Header from '@/components/layout/header'
+import { Metadata } from "next";
+import Header from "@/components/layout/header";
 import Input from "@/components/zimgpt/input";
 import AllottedChats from "@/components/zimgpt/allottedChats";
 import Hamburger from "@/components/zimgpt/hamburger";
@@ -9,42 +9,43 @@ import Loader from "@/components/zimgpt/Loader";
 import Nav from "@/components/layout/Nav";
 
 export const metadata: Metadata = {
-  title: 'ZimGPT | WebDev Zim Project',
-  description: 'A showcase of the OpenAI API and SDK, React, TypeScript, State Management, and Context API.',
+  title: "ZimGPT | WebDev Zim Project",
+  description:
+    "A showcase of the OpenAI API and SDK, React, TypeScript, State Management, and Context API.",
 };
 
 export default function ZimGPT() {
-
   return (
-    <div className='text-slate-50 flex relative'>
+    <div className="relative flex text-slate-50">
       <Sidebar />
-      <section className='h-screen w-full p-6  overflow-scroll ' >
+      <section className="h-screen w-full overflow-scroll  p-6 ">
         <Nav />
-        <div className="max-w-[650px] mx-auto py-12 lg:py-20">
-          <div className="flex justify-center items-center w-full">
+        <div className="mx-auto max-w-[650px] py-12 lg:py-20">
+          <div className="flex w-full items-center justify-center">
             <Hamburger />
             <div>
               <Header>ZimGPT </Header>
             </div>
           </div>
-        
+
           <AllottedChats />
           <div className="my-12 ">
-      
             <ChatMessage />
-          
+
             <Loader />
-            <div className='w-full my-12 relative z-10  '>
+            <div className="relative z-10 my-12 w-full  ">
               <Input />
             </div>
 
-          <p className='text-slate-300 text-sm mt-6 text-center'>
-          ZimGPT is far from perfect and can make mistakes. Consider checking important information. Also API calls are not free nor cheap so users are limited to 10 chat messages. Please chat responsibly. :)
-          </p>
+            <p className="mt-6 text-center text-sm text-slate-300">
+              ZimGPT is far from perfect and can make mistakes. Consider
+              checking important information. Also API calls are not free nor
+              cheap so users are limited to 10 chat messages. Please chat
+              responsibly. :)
+            </p>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
-
