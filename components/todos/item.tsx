@@ -1,7 +1,5 @@
 "use client";
-
-import { useState, useRef } from "react";
-
+import { useState, useRef, RefObject, useEffect } from "react";
 import type { Todo } from "@/lib/types";
 
 export default function TodoItem({
@@ -15,7 +13,8 @@ export default function TodoItem({
   todos: Todo[];
   setTodos: (todos: Todo[]) => void;
 }) {
-  const ref = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const [isEditing, setIsEditing] = useState(false);
 
   const [error, setError] = useState("");
@@ -24,18 +23,25 @@ export default function TodoItem({
     const newTodos = todos.filter((_, i) => i !== index);
     setTodos(newTodos);
     localStorage.setItem("todos", JSON.stringify(newTodos));
+    // ref.current?.focus();
   };
 
   const handleEdit = () => {
     setIsEditing(true);
+    inputRef.current?.focus();
   };
+
+  useEffect(() => {
+    if (isEditing) {
+      inputRef.current?.focus();
+    }
+  }, [isEditing]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newTodos = [...todos];
     newTodos[index].title = e.target.value;
     setTodos(newTodos);
     localStorage.setItem("todos", JSON.stringify(newTodos));
-    // setValue(e.target.value);
   };
 
   const handleSave = () => {
@@ -44,16 +50,12 @@ export default function TodoItem({
     setTodos(newTodos);
     localStorage.setItem("todos", JSON.stringify(newTodos));
     setIsEditing(false);
-    ref.current?.focus();
- 
   };
 
   const handleTodoComplete = () => {
     // setCompleted(!completed);
     const newTodos = [...todos];
     newTodos[index].completed = !todo.completed;
-    console.log({ newTodos });
-    console.log({ index });
     setTodos(newTodos);
     setIsEditing(false);
     localStorage.setItem("todos", JSON.stringify(newTodos));
@@ -64,7 +66,6 @@ export default function TodoItem({
       <div className="w-3/4">
         <div className="flex items-center">
           <input
-            ref={ref}
             className="mx-2"
             type="checkbox"
             onChange={handleTodoComplete}
@@ -74,10 +75,11 @@ export default function TodoItem({
           {isEditing ? (
             <div className="relative w-full">
               <input
-                className="rounded border w-full text-slate-900 p-3"
+                className="w-full rounded border p-3 text-slate-900"
                 onChange={handleChange}
                 type="text"
                 value={todo.title}
+                ref={inputRef}
               />
               {/* <div onClick={() => setIsEditing(false)} className="absolute right-2 top-1  w-8 h-8 rounded-full bg-red-500 opacity-50"></div> */}
             </div>
@@ -87,13 +89,7 @@ export default function TodoItem({
                 todo.completed ? "bg-teal-100/50" : "bg-slate-400"
               }`}
             >
-
-              {todo.completed ? (
-                <s>{todo.title}</s>
-              ) : (
-                todo.title
-              )}
-        
+              {todo.completed ? <s>{todo.title}</s> : todo.title}
             </div>
           )}
         </div>
@@ -121,15 +117,14 @@ export default function TodoItem({
                 Edit Item
               </button>
             )}
-           
           </>
         ) : (
-            <button
-              onClick={handleDelete}
-              className="mx-1 whitespace-nowrap rounded border border-red-900 bg-red-800 px-3 py-2 text-white"
-            >
-              Delete Item
-            </button> 
+          <button
+            onClick={handleDelete}
+            className="mx-1 whitespace-nowrap rounded border border-red-900 bg-red-800 px-3 py-2 text-white"
+          >
+            Delete Item
+          </button>
         )}
       </div>
     </div>
