@@ -46,12 +46,14 @@
     "use-immer": "^0.8.1"
   },
   "devDependencies": {
+    "@gsap/react": "^2.1.0",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "@types/ms": "^0.7.31",
     "autoprefixer": "^10.4.16",
     "concurrently": "^7.6.0",
+    "gsap": "^3.12.5",
     "postcss": "^8.4.32",
     "prettier": "^2.8.2",
     "prettier-plugin-tailwindcss": "^0.2.1",

@@ -44,6 +44,16 @@ module.exports = {
           12: "#2E2A41",
           13: "#6C7275",
         },
+        apple: {
+          blue: "#2997FF",
+          grey: {
+            DEFAULT: "#86868b",
+            100: "#94928d",
+            200: "#afafaf",
+            300: "#42424570",
+          },
+          zinc: "#101010",
+        },
       },
       fontFamily: {
         sans: ["var(--font-sora)", ...fontFamily.sans],
