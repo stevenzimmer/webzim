@@ -21,7 +21,13 @@ export default function Navbar() {
         </div>
         <div className="flex items-center">
           <Image src={searchImg} alt="Search" width={18} height={18} />
-          <Image src={bagImg} alt="Bag" width={18} height={18} />
+          <Image
+            className="ml-5"
+            src={bagImg}
+            alt="Bag"
+            width={18}
+            height={18}
+          />
         </div>
       </nav>
     </header>

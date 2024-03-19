@@ -2,8 +2,10 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useEffect, useState } from "react";
+import { set } from "date-fns";
 
 export default function Hero() {
+  const [hydrate, setHydrate] = useState(false);
   const [videoSrc, setVideoSrc] = useState(
     window?.innerWidth > 760
       ? "/apple/assets/videos/hero.mp4"
