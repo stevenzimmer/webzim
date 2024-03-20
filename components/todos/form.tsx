@@ -2,13 +2,7 @@
 import { useState, Dispatch, SetStateAction, useRef, useEffect } from "react";
 import TodoItem from "./item";
 import type { Todo } from "@/lib/types";
-export default function TodoForm({
-  todos,
-  setTodos,
-}: {
-  todos: Todo[];
-  setTodos: Dispatch<SetStateAction<Todo[]>>;
-}) {
+export default function TodoForm() {
   const [value, setValue] = useState("");
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,6 +18,15 @@ export default function TodoForm({
       setValue("");
     }
   };
+
+  const [todos, setTodos] = useState<Todo[] | []>([]);
+
+  useEffect(() => {
+    const data = localStorage.getItem("todos");
+    if (data) {
+      setTodos(JSON.parse(data));
+    }
+  }, []);
 
   const incompleteTodos = todos.filter((todo) => !todo.completed);
 

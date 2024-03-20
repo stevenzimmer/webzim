@@ -9,9 +9,9 @@ import { hightlightsSlides } from "@/lib/constants";
 import Image from "next/image";
 
 export default function VideoCarousel() {
-  const videoRef = useRef([]);
-  const videoSpanRef = useRef([]);
-  const videoDivRef = useRef([]);
+  const videoRef = useRef<any>([]);
+  const videoSpanRef = useRef<any>([]);
+  const videoDivRef = useRef<any>([]);
 
   const [video, setVideo] = useState({
     isEnd: false,
@@ -24,6 +24,8 @@ export default function VideoCarousel() {
   const [loadedData, setLoadedData] = useState([]);
 
   const { isEnd, startPlay, videoId, isLastVideo, isPlaying } = video;
+
+  const currentVideoRef = videoRef.current[videoId];
 
   useGSAP(() => {
     gsap.to(`#slider`, {
@@ -87,23 +89,14 @@ export default function VideoCarousel() {
         },
       });
 
-      // console.log({ currentProgress });
-      // console.log(videoRef.current[videoId]);
-
       if (videoId === 0) {
         anim.restart();
       }
 
-      // console.log("current time", videoRef.current[videoId]?.currentTime);
-
-      // console.log("duration", hightlightsSlides[videoId].videoDuration);
-
-      // console.log("progress", anim.progress() * 100);
-
       // Update progress bar
       const animUpdate = () => {
         anim.progress(
-          videoRef.current[videoId]?.currentTime /
+          currentVideoRef["currentTime"] /
             hightlightsSlides[videoId].videoDuration,
         );
       };
@@ -115,25 +108,25 @@ export default function VideoCarousel() {
       }
     }
     if (startPlay) {
-      videoRef.current[videoId].play();
+      currentVideoRef.play();
     }
   }, [startPlay, videoId]);
 
   useEffect(() => {
     if (loadedData.length > hightlightsSlides.length - 1) {
       if (!isPlaying) {
-        videoRef.current[videoId].pause();
+        currentVideoRef.pause();
       } else {
-        startPlay && videoRef.current[videoId].play();
+        startPlay && currentVideoRef.play();
       }
     }
 
     // console.log({ loadedData });
   }, [startPlay, videoId, isPlaying, loadedData]);
 
-  const handleProcess = (type, i) => {
-    console.log("handle process");
-    console.log(type + " " + i);
+  const handleProcess = (type: string, i: number) => {
+    // console.log("handle process");
+    // console.log(type + " " + i);
 
     switch (type) {
       case "end":
@@ -178,8 +171,8 @@ export default function VideoCarousel() {
     }
   };
 
-  const handleLoadedMetaData = (i, e) => {
-    setLoadedData((pre) => [...pre, e]);
+  const handleLoadedMetaData = (i: number, e: any) => {
+    setLoadedData((pre) => [...pre, e] as any);
   };
 
   return (
@@ -230,7 +223,7 @@ export default function VideoCarousel() {
       </div>
       <div className="flex-center relative mt-10">
         <div className="flex-center rounded-full bg-apple-grey-300 px-7 py-5 backdrop-blur">
-          {videoRef.current.map((_, i) => (
+          {videoRef.current.map((_: string, i: number) => (
             <span
               key={i}
               ref={(el) => (videoDivRef.current[i] = el)}

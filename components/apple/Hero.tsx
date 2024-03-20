@@ -2,15 +2,10 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useEffect, useState } from "react";
-import { set } from "date-fns";
 
 export default function Hero() {
-  const [hydrate, setHydrate] = useState(false);
-  const [videoSrc, setVideoSrc] = useState(
-    window?.innerWidth > 760
-      ? "/apple/assets/videos/hero.mp4"
-      : "/apple/assets/videos/smallHero.mp4",
-  );
+  const [hydrated, setHydrated] = useState(false);
+  const [videoSrc, setVideoSrc] = useState("");
 
   const handleVideoSrcSet = () => {
     if (window.innerWidth > 760) {
@@ -21,11 +16,18 @@ export default function Hero() {
   };
 
   useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (!hydrated) {
+      handleVideoSrcSet();
+    }
     window.addEventListener("resize", handleVideoSrcSet);
     return () => {
       window.removeEventListener("resize", handleVideoSrcSet);
     };
-  }, []);
+  }, [hydrated]);
 
   useGSAP(() => {
     gsap.to("#hero-title", {
@@ -39,6 +41,8 @@ export default function Hero() {
       delay: 2,
     });
   }, []);
+
+  if (!videoSrc) return null;
   return (
     <section className="nav-height relative w-full bg-black py-20">
       <div className="h-5/6">
