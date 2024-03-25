@@ -42,7 +42,8 @@ export default function Hero() {
     });
   }, []);
 
-  if (!videoSrc) return null;
+  // if (!hydrated) return null;
+
   return (
     <section className="nav-height relative w-full bg-black py-20">
       <div className="h-5/6">
@@ -50,7 +51,7 @@ export default function Hero() {
           iPhone 15 pro
         </p>
         <div className="mx-auto w-9/12 md:w-10/12">
-          <video autoPlay muted playsInline={true} key={videoSrc}>
+          <video loop autoPlay muted playsInline={true} key={videoSrc}>
             <source src={videoSrc} type="video/mp4" />
           </video>
         </div>

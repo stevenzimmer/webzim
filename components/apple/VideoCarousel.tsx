@@ -1,9 +1,8 @@
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger);
 
-import { useEffect, useRef, useState } from "react";
 import { hightlightsSlides } from "@/lib/constants";
 
 import Image from "next/image";
@@ -25,7 +24,9 @@ export default function VideoCarousel() {
 
   const { isEnd, startPlay, videoId, isLastVideo, isPlaying } = video;
 
-  const currentVideoRef = videoRef.current[videoId];
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+  }, []);
 
   useGSAP(() => {
     gsap.to(`#slider`, {
@@ -33,6 +34,7 @@ export default function VideoCarousel() {
       duration: 0.5,
       ease: "power2.inOut",
     });
+
     gsap.to(`#video`, {
       scrollTrigger: {
         trigger: `#video`,
@@ -79,7 +81,7 @@ export default function VideoCarousel() {
         onComplete: () => {
           if (isPlaying) {
             gsap.to(videoDivRef.current[videoId], {
-              width: "12px",
+              width: "16px",
             });
 
             gsap.to(videoSpanRef.current[videoId], {
@@ -96,7 +98,7 @@ export default function VideoCarousel() {
       // Update progress bar
       const animUpdate = () => {
         anim.progress(
-          currentVideoRef["currentTime"] /
+          videoRef.current[videoId].currentTime /
             hightlightsSlides[videoId].videoDuration,
         );
       };
@@ -106,23 +108,26 @@ export default function VideoCarousel() {
       } else {
         gsap.ticker.remove(animUpdate);
       }
-    }
-    if (startPlay) {
-      currentVideoRef.play();
+
+      if (startPlay) {
+        videoRef.current[videoId].play();
+      }
     }
   }, [startPlay, videoId]);
 
   useEffect(() => {
     if (loadedData.length > hightlightsSlides.length - 1) {
       if (!isPlaying) {
-        currentVideoRef.pause();
+        videoRef.current[videoId].pause();
       } else {
-        startPlay && currentVideoRef.play();
+        startPlay && videoRef.current[videoId].play();
       }
     }
 
     // console.log({ loadedData });
   }, [startPlay, videoId, isPlaying, loadedData]);
+
+  console.log({ video });
 
   const handleProcess = (type: string, i: number) => {
     // console.log("handle process");
@@ -130,6 +135,8 @@ export default function VideoCarousel() {
 
     switch (type) {
       case "end":
+        console.log("end");
+
         setVideo((pre) => ({
           ...pre,
           isEnd: true,
@@ -138,6 +145,8 @@ export default function VideoCarousel() {
         break;
 
       case "last":
+        console.log("last");
+
         setVideo((pre) => ({
           ...pre,
           isLastVideo: true,
@@ -145,6 +154,8 @@ export default function VideoCarousel() {
         break;
 
       case "reset":
+        console.log("reset");
+
         setVideo((pre) => ({
           ...pre,
           isLastVideo: false,
@@ -153,6 +164,8 @@ export default function VideoCarousel() {
         break;
 
       case "pause":
+        console.log("pause");
+
         setVideo((pre) => ({
           ...pre,
           isPlaying: !pre.isPlaying,
@@ -160,6 +173,8 @@ export default function VideoCarousel() {
         break;
 
       case "play":
+        console.log("play");
+
         setVideo((pre) => ({
           ...pre,
           isPlaying: !pre.isPlaying,
@@ -227,7 +242,7 @@ export default function VideoCarousel() {
             <span
               key={i}
               ref={(el) => (videoDivRef.current[i] = el)}
-              className="relative mx-2 h-4  w-3 cursor-pointer rounded-full bg-apple-grey-200"
+              className="relative mx-2 h-4  w-4 cursor-pointer rounded-full bg-apple-grey-200"
             >
               <div
                 className="absolute h-full w-full rounded-full"
@@ -236,7 +251,22 @@ export default function VideoCarousel() {
             </span>
           ))}
         </div>
-        <button className="control-btn">
+        <button
+          className="control-btn"
+          onClick={
+            isLastVideo
+              ? () => {
+                  handleProcess("reset", videoId);
+                }
+              : !isPlaying
+              ? () => {
+                  handleProcess("play", videoId);
+                }
+              : () => {
+                  handleProcess("pause", videoId);
+                }
+          }
+        >
           <Image
             src={
               isLastVideo
@@ -251,19 +281,6 @@ export default function VideoCarousel() {
                 : !isPlaying
                 ? "Play icon"
                 : "Pause icon"
-            }
-            onClick={
-              isLastVideo
-                ? () => {
-                    handleProcess("reset", videoId);
-                  }
-                : !isPlaying
-                ? () => {
-                    handleProcess("play", videoId);
-                  }
-                : () => {
-                    handleProcess("pause", videoId);
-                  }
             }
             width={20}
             height={20}
