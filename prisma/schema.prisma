@@ -1,6 +1,7 @@
 datasource db {
   provider = "postgresql"
-  url = env("DATABASE_URL") // uses connection pooling
+  url      = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL") // Only needed when using a cloud provider that doesn't support the creation of new databases, like Heroku. Learn more: https://pris.ly/d/migrate-shadow
 }
 
 generator client {
@@ -36,6 +37,11 @@ model Session {
 
 model User {
   id            String    @id @default(cuid())
+  stripeCustomerId String?
+  totalDownloads Int      @default(0)
+  planActive    Boolean   @default(false)
+  planExpires   DateTime?
+  subscriptionId String?
   name          String?
   email         String?   @unique
   emailVerified DateTime?
@@ -60,4 +66,12 @@ model Product {
   imageId     String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+
+model Download {
+  id          String   @id @default(cuid())
+  userId      String
+  image      String
+  downloadedAt DateTime @default(now())
 }
