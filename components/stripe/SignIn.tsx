@@ -1,19 +1,18 @@
 "use client";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import { signIn } from "next-auth/react";
-import { useState } from "react";
 
 export default function SignIn() {
   const [email, setEmail] = useState("stevenzimmer40@gmail.com");
 
   async function SignInWithEmail(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
     console.log("sign in");
     console.log({ email });
     const signInResult = await signIn("email", {
       email,
       callbackUrl: `${window.location.origin}/stripe`,
-      redirect: false,
     });
 
     console.log({ signInResult });

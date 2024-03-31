@@ -9,7 +9,6 @@ export default function LogoutButton() {
         console.log("sign out");
         signOut({
           callbackUrl: `${window.location.origin}/stripe`,
-          redirect: false,
         });
       }}
     >

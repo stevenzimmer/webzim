@@ -3,10 +3,23 @@ import LogoutButton from "@/components/stripe/Logout";
 import SignIn from "@/components/stripe/SignIn";
 import { authOptions } from "@/utils/auth";
 import { getServerSession } from "next-auth";
+import prisma from "@/lib/prisma";
 
 export default async function Page() {
   const session = await getServerSession(authOptions);
-  console.log({ session });
+  // console.log({ session });
+  // const users = await prisma.user.findMany();
+
+  // console.log({ users });
+
+  // const user = await prisma.user.findFirst({
+  //   where: {
+  //     email: session?.user?.email,
+  //   },
+  // });
+
+  // console.log({ user });
+
   return (
     <>
       <Header className="text-center">Stripe</Header>
