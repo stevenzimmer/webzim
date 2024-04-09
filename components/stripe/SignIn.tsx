@@ -1,6 +1,6 @@
 "use client";
 import { FormEvent, useState } from "react";
-import { signIn } from "next-auth/react";
+// import { signIn } from "next-auth/react";
 
 export default function SignIn() {
   const [email, setEmail] = useState("stevenzimmer40@gmail.com");
@@ -10,18 +10,18 @@ export default function SignIn() {
 
     console.log("sign in");
     console.log({ email });
-    const signInResult = await signIn("email", {
-      email,
-      callbackUrl: `${window.location.origin}/stripe`,
-    });
+    // const signInResult = await signIn("email", {
+    //   email,
+    //   callbackUrl: `${window.location.origin}/stripe`,
+    // });
 
-    console.log({ signInResult });
+    // console.log({ signInResult });
 
     // if (!signInResult?.ok) {
     //   return;
     // }
 
-    console.log({ signInResult });
+    // console.log({ signInResult });
     // Call your server to send a sign-in email
   }
   return (
