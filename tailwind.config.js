@@ -74,8 +74,13 @@ module.exports = {
         // Tooltip
         "slide-up-fade": "slide-up-fade 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
         "slide-down-fade": "slide-down-fade 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+        slide: "slide 10s infinite linear",
       },
       keyframes: {
+        slide: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
         // Tooltip
         "slide-up-fade": {
           "0%": { opacity: 0, transform: "translateY(6px)" },

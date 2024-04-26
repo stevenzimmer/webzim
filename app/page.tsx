@@ -1,7 +1,5 @@
 "use client";
 import Card from "@/components/home/card";
-import { motion } from "framer-motion";
-import { FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
 import ComponentGrid from "@/components/home/component-grid";
 import Image from "next/image";
 import Header from "@/components/layout/header";
@@ -13,34 +11,19 @@ import {
   buttons,
   projects,
 } from "@/lib/data";
+
 import Button from "@/components/layout/Button";
 import ButtonGradient from "@/components/svg/ButtonGradient";
 import Pill from "@/components/shared/pill";
 import Nav from "@/components/layout/Nav";
+import LogosSlider from "@/components/home/LogosSlider";
 
 export default function Home() {
   return (
     <>
       <Nav />
-      <motion.div
-        className="container px-5 py-12 md:py-20 xl:px-0"
-        initial="hidden"
-        whileInView="show"
-        animate="show"
-        viewport={{ once: true }}
-        variants={{
-          hidden: {},
-          show: {
-            transition: {
-              staggerChildren: 0.1,
-            },
-          },
-        }}
-      >
-        <motion.div
-          className="mx-auto max-w-[600px]"
-          variants={FADE_DOWN_ANIMATION_VARIANTS}
-        >
+      <div className="container px-5 py-12 md:py-20 xl:px-0">
+        <div className="mx-auto max-w-[600px]">
           <Image
             src={`https://github.com/stevenzimmer.png`}
             alt="Steven Zimmer Headshot"
@@ -52,75 +35,66 @@ export default function Home() {
             <Header>Steven Zimmer</Header>
           </div>
 
-          <motion.h2
-            className="tagline mt-6 text-center text-white md:text-xl"
-            variants={FADE_DOWN_ANIMATION_VARIANTS}
-          >
+          <h2 className="tagline mt-6 text-center text-white md:text-xl">
             Full stack web developer specializing in modern web technologies,
             growth marketing, technical SEO, and CMS platforms, and excelling in
             dynamic, fast-paced, collaborative environments.
-          </motion.h2>
-        </motion.div>
+          </h2>
+        </div>
 
-        <motion.div
-          className="container mx-auto mt-6 flex flex-wrap items-center justify-center space-x-2 md:space-x-5 "
-          variants={FADE_DOWN_ANIMATION_VARIANTS}
-        >
+        <div className="container mx-auto mt-6 flex flex-wrap items-center justify-center space-x-2 md:space-x-5 ">
           {buttons.map(({ title, link, icon }, i) => (
             <Button key={i} href={link} icon={icon}>
               {title}
             </Button>
           ))}
-        </motion.div>
+        </div>
         <ButtonGradient />
-
-        <div id="skills" className="py-6 md:py-12">
+      </div>
+      <section className="overflow-hidden bg-slate-900 py-6">
+        <LogosSlider />
+      </section>
+      <div className="container px-5 py-12 md:pb-20 xl:px-0">
+        <div id="skills" className="py-6 md:pb-12">
           <Subheader>Web Dev Toolbox</Subheader>
 
-          <motion.div
-            variants={FADE_DOWN_ANIMATION_VARIANTS}
-            className="mx-auto max-w-[800px]"
-          >
+          <div className="mx-auto max-w-[800px]">
             {Object.keys(dictSkills).map((skill, i) => {
               return (
-                <motion.div
+                <div
                   key={i}
-                  variants={FADE_DOWN_ANIMATION_VARIANTS}
                   className="flex flex-wrap items-center border-b border-slate-500  py-6 first:pt-0 "
                 >
                   <div className="mb-3 w-full md:mb-0 md:w-1/4">
-                    <motion.p
-                      className="font-bold text-white md:text-2xl"
-                      variants={FADE_DOWN_ANIMATION_VARIANTS}
-                    >
-                      {skill}
-                    </motion.p>
+                    <p className="font-bold text-white md:text-2xl">{skill}</p>
                   </div>
                   <div className="-mx-1 flex w-full flex-wrap md:w-3/4">
                     {dictSkills[skill].map((item, j) => {
                       return <Pill key={j} item={item} />;
                     })}
                   </div>
-                </motion.div>
+                </div>
               );
             })}
-          </motion.div>
+          </div>
         </div>
 
         <div id="work" className="py-6 md:py-12">
           <Subheader>Recent Freelance Work</Subheader>
 
-          {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
           <div className="mx-auto grid w-full max-w-screen-lg animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:grid-cols-2 lg:px-5 xl:px-0">
-            {features.map((props, i: number) => (
-              <Card key={i} {...props} />
-            ))}
+            {features
+              .filter((feature) => {
+                return feature.bullets;
+              })
+              .map((props, i: number) => (
+                <Card key={i} {...props} />
+              ))}
           </div>
         </div>
         <div id="projects" className="py-6 md:py-12">
           <Subheader>Personal Projects</Subheader>
 
-          {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
           <div className="mx-auto grid w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:px-5 xl:px-0">
             {projects.map(
               (
@@ -163,16 +137,9 @@ export default function Home() {
 
         <Subheader>Certifications</Subheader>
 
-        <motion.div
-          variants={FADE_DOWN_ANIMATION_VARIANTS}
-          className="mx-auto grid max-w-5xl gap-4 md:grid-cols-2 "
-        >
+        <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-2 ">
           {certifications.map(({ title, src, link }, i) => (
-            <motion.div
-              key={i}
-              className="mb-12"
-              variants={FADE_DOWN_ANIMATION_VARIANTS}
-            >
+            <div key={i} className="mb-12">
               <a
                 className="mb-3 block"
                 target="_blank"
@@ -189,10 +156,10 @@ export default function Home() {
                 />
               </a>
               <p className="text-center font-bold text-white">{title}</p>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </>
   );
 }

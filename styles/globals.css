@@ -22,6 +22,9 @@
   scroll-behavior: smooth;
 }
 
+.slick-track {
+  @apply !flex items-center;
+}
 /* 
 
 .rotate-45 {

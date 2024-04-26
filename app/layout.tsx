@@ -3,7 +3,6 @@ import "@/styles/globals.css";
 import { Provider as RWBProvider } from "react-wrap-balancer";
 import { DOMAIN } from "@/lib/constants";
 import Footer from "@/components/layout/footer";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   metadataBase: new URL(DOMAIN),
