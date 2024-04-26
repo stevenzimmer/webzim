@@ -44,7 +44,7 @@ export default function LogosSlider() {
           return feature.demo;
         })
         .map((props, i: number) => (
-          <div className="!w-[150px]" key={i}>
+          <div className="!max-w-[150px] px-6 sm:px-0" key={i}>
             {props.demo && (
               <div className="w-full bg-transparent grayscale">
                 {props.demo}
@@ -52,17 +52,6 @@ export default function LogosSlider() {
             )}
           </div>
         ))}
-      {/* {features
-    .filter((feature) => {
-      return feature.demo;
-    })
-    .map((props, i: number) => (
-      <div className="w-full" key={i}>
-        {props.demo && (
-          <div className="bg-transparent grayscale">{props.demo}</div>
-        )}
-      </div>
-    ))} */}
     </Slider>
   );
 }
