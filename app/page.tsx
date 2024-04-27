@@ -51,9 +51,8 @@ export default function Home() {
         </div>
         <ButtonGradient />
       </div>
-      <section className="overflow-hidden bg-slate-900 py-6">
-        <LogosSlider />
-      </section>
+
+      <LogosSlider />
       <div className="container px-5 py-12 md:pb-20 xl:px-0">
         <div id="skills" className="py-6 md:pb-12">
           <Subheader>Web Dev Toolbox</Subheader>

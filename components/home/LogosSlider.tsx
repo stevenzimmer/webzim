@@ -1,50 +1,21 @@
-"use client";
-import { useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Marquee from "react-fast-marquee";
 import { features } from "@/lib/data";
-
+import { slate } from "tailwindcss/colors";
 export default function LogosSlider() {
-  const [settings] = useState({
-    dots: false,
-    infinite: true,
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-    centerMode: true,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-    ],
-  });
   return (
-    <Slider {...settings}>
+    <Marquee
+      className="h-full bg-slate-900 py-6"
+      direction="left"
+      pauseOnHover={true}
+      gradient={true}
+      gradientColor={slate[900]}
+    >
       {features
         .filter((feature) => {
           return feature.demo;
         })
         .map((props, i: number) => (
-          <div className="!max-w-[150px] px-6 sm:px-0" key={i}>
+          <div className="mx-6 !max-w-[150px] md:mx-12" key={i}>
             {props.demo && (
               <div className="w-full bg-transparent grayscale">
                 {props.demo}
@@ -52,6 +23,6 @@ export default function LogosSlider() {
             )}
           </div>
         ))}
-    </Slider>
+    </Marquee>
   );
 }
