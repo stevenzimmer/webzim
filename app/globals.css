@@ -74,7 +74,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-.rfm-overlay {
-  @apply top-0;
-}
