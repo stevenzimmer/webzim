@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: "Floating Clock | Web Dev Zim Project",
   description:
     "A showcase of JavaScript Date object, CSS positioning, and color contrast management.",
+  alternates: {
+    canonical: "/floating-clock",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 import Nav from "@/components/layout/Nav";
 export default function FloatingClock() {

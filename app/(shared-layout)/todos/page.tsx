@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: "Todos | Web Dev Zim Project",
   description:
     "A showcase of react, TypeScript,  persisted state management, and TailwindCSS.",
+  alternates: {
+    canonical: "/todos",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function Todos() {

@@ -6,9 +6,15 @@ import Footer from "@/components/layout/footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL(DOMAIN),
-  title: "Steven Zimmer | Full Stack Web Developer",
+  alternates: {
+    canonical: "/",
+  },
+  title: "Steven Zimmer - Web Developer & Technical Lead",
   description:
-    "Full stack problem solver specializing in web technologies, growth marketing, e-commerce, and CMS platforms.",
+    "Steven Zimmer is a web developer specializing in fast, responsive websites using modern technologies like Next.js, Sanity CMS, and Contentful. Steven leads technical efforts in go-to-market initiatives and programmatic SEO.",
+  keywords: [
+    "Steven Zimmer, Web Developer, Next.js, React, Sanity CMS, Hubspot CMS, Contentful, programmatic SEO, Technical Lead, Web Engineer",
+  ],
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -21,8 +27,65 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: DOMAIN,
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Steven Zimmer",
+  url: "https://webdevzim.com/",
+  image: "https://webdevzim.com/api/og",
+  sameAs: [
+    "https://github.com/stevenzimmer",
+    "https://www.linkedin.com/in/webdevzim/",
+    "https://twitter.com/webdevzim",
+  ],
+  jobTitle: "Software Engineer",
+  worksFor: {
+    "@type": "Organization",
+    name: "Atlassian",
+  },
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "UC Berkeley",
+  },
+  knowsAbout: [
+    "Web Development",
+    "Software Engineering",
+    "SEO",
+    "Next.js",
+    "Sanity CMS",
+    "Contentful",
+    "WordPress",
+    "Hubspot",
+    "Node.js",
+  ],
+  description:
+    "Steven Zimmer is a web developer specializing in building fast, responsive websites using modern technologies like Next.js, Sanity CMS, and Contentful. Steven leads technical efforts in go-to-market initiatives, website redesigns, CMS setups, and programmatic SEO.",
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "Work",
+    email: "mailto:webdevzim@gmail.com",
+  },
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Software Developer",
+    skills: [
+      "Web Development",
+      "Next.js",
+      "Sanity CMS",
+      "SEO",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "WordPress",
+      "Hubspot",
+      "Node.js",
+    ],
   },
 };
 
@@ -35,6 +98,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body className="dark:bg-black/80">
         <RWBProvider>
           <main>{children}</main>

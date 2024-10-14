@@ -4,6 +4,13 @@ import Nav from "@/components/layout/Nav";
 export const metadata: Metadata = {
   title: "Dog Breed Guessing Game | Web Zim Project",
   description: "Demonstration of state management using Immer and dog.ceo API",
+  alternates: {
+    canonical: "/dog-breed-guessing-game",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function DogBreedGuessingGame() {

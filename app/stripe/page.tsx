@@ -1,9 +1,23 @@
+import { Metadata } from "next";
 import Header from "@/components/layout/header";
 import LogoutButton from "@/components/stripe/Logout";
 import SignIn from "@/components/stripe/SignIn";
 // import { authOptions } from "@/utils/auth";
 import { getServerSession } from "next-auth";
 import prisma from "@/lib/prisma";
+
+export const metadata: Metadata = {
+  // title: "ZimGPT | WebDev Zim Project",
+  // description:
+  //   "A showcase of the OpenAI API and SDK, React, TypeScript, State Management, and Context API.",
+  alternates: {
+    canonical: "/stripe",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default async function Page() {
   // const session = await getServerSession(authOptions);
