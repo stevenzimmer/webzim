@@ -104,7 +104,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="dark:bg-black/80">
+      <body className="bg-black/80">
         <RWBProvider>
           <main>{children}</main>
           <Footer />

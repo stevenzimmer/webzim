@@ -6,7 +6,6 @@ export default function LogosSlider() {
     <Marquee
       className="h-full bg-slate-900 py-6"
       direction="left"
-      pauseOnHover={true}
       gradient={true}
       gradientColor={slate[900]}
     >
