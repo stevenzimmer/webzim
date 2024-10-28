@@ -39,7 +39,7 @@ export default function Card({
           <Image
             src={logo}
             alt={`${title} logo`}
-            className="mx-auto bg-transparent   grayscale"
+            className="mx-auto bg-transparent grayscale"
             width={200}
             height={200}
           />

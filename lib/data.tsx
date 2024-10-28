@@ -1,7 +1,5 @@
 import { Github, LinkedIn, Email, Download } from "@/components/shared/icons";
 import type { DictItem, DictSkills } from "./types";
-import { title } from "process";
-import { transform } from "framer-motion";
 
 // Frontend Skills
 export const dictSkills: DictSkills = {
@@ -83,6 +81,16 @@ export const dictSkills: DictSkills = {
 };
 
 export const features: DictItem[] = [
+  {
+    title: "Benji Bakes E-Commerce Website Development",
+    bullets: [
+      "Engineered the Benji Bakes website using React and Next.js, creating a responsive and intuitive user interface for a seamless online shopping experience.",
+      "Integrated Stripe for a secure end-to-end checkout process, implemented Nodemailer for efficient email communications and order confirmations, and utilized Zustand for robust state management throughout the site.",
+    ],
+    logo: "/logos/benji-bakes.png",
+    href: "https://www.benjibakes.com/",
+    nofollow: false,
+  },
   {
     title: "Loom and Atlassian Integration and Market Strategy Execution",
     bullets: [
