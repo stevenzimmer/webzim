@@ -11,7 +11,7 @@ export default function Header({
 }) {
   return (
     <motion.h1
-      className={`text-4xl font-semibold text-white md:text-7xl ${className}`}
+      className={`font-display text-4xl font-semibold leading-tight text-gradient md:text-7xl ${className}`}
       variants={FADE_DOWN_ANIMATION_VARIANTS}
     >
       {children}

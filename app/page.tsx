@@ -13,7 +13,6 @@ import {
 } from "@/lib/data";
 
 import Button from "@/components/layout/Button";
-import ButtonGradient from "@/components/svg/ButtonGradient";
 import Pill from "@/components/shared/pill";
 import Nav from "@/components/layout/Nav";
 import LogosSlider from "@/components/home/LogosSlider";
@@ -22,66 +21,121 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <div className="container px-5 py-12 md:py-20 xl:px-0">
-        <div className="mx-auto max-w-[600px]">
-          <Image
-            src={`https://github.com/stevenzimmer.png`}
-            alt="Steven Zimmer Headshot"
-            className="mx-auto mb-5 rounded-full border-4"
-            width="200"
-            height="200"
-          />
-          <div className="text-center">
-            <Header>Steven Zimmer</Header>
-          </div>
-
-          <h2 className="tagline mt-6 text-center text-white md:text-xl">
-            Full stack web developer specializing in modern web technologies,
-            growth marketing, technical SEO, and CMS platforms, and excelling in
-            dynamic, fast-paced, collaborative environments.
-          </h2>
-        </div>
-
-        <div className="container mx-auto mt-6 flex flex-wrap items-center justify-center space-x-2 md:space-x-5 ">
-          {buttons.map(({ title, link, icon }, i) => (
-            <Button key={i} href={link} icon={icon}>
-              {title}
-            </Button>
-          ))}
-        </div>
-        <ButtonGradient />
-      </div>
-
-      <LogosSlider />
-      <div className="container px-5 py-12 md:pb-20 xl:px-0">
-        <div id="skills" className="py-6 md:pb-12">
-          <Subheader>Web Dev Toolbox</Subheader>
-
-          <div className="mx-auto max-w-[800px]">
-            {Object.keys(dictSkills).map((skill, i) => {
-              return (
-                <div
-                  key={i}
-                  className="flex flex-wrap items-center border-b border-slate-500  py-6 first:pt-0 "
-                >
-                  <div className="mb-3 w-full md:mb-0 md:w-1/4">
-                    <p className="font-bold text-white md:text-2xl">{skill}</p>
+      <div className="relative overflow-hidden">
+        <section className="relative py-14 md:py-20">
+          <div className="pointer-events-none absolute -left-10 top-10 h-56 w-56 animate-float-slow rounded-full bg-sky-500/20 blur-3xl" />
+          <div className="pointer-events-none absolute right-0 top-24 h-64 w-64 animate-float-slower rounded-full bg-cyan-400/20 blur-3xl" />
+          <div className="container px-6">
+            <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="space-y-6">
+                <p className="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
+                  Full Stack Engineer
+                </p>
+                <Header>Steven Zimmer</Header>
+                <p className="text-lg text-slate-200 md:text-xl">
+                  Full stack engineer specializing in modern web platforms,
+                  growth engineering, technical SEO, and CMS architecture, with
+                  a track record of delivering scalable, high-performance
+                  systems in fast-paced, collaborative environments.
+                </p>
+                <div className="grid gap-3 text-sm text-slate-300 md:grid-cols-2">
+                  <div className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-sky-400" />
+                    <span>Modern product stacks with Next.js, React, and TypeScript</span>
                   </div>
-                  <div className="-mx-1 flex w-full flex-wrap md:w-3/4">
-                    {dictSkills[skill].map((item, j) => {
-                      return <Pill key={j} item={item} />;
-                    })}
+                  <div className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-cyan-400" />
+                    <span>Growth engineering and technical SEO execution</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-emerald-400" />
+                    <span>CMS platforms like Sanity, Contentful, and HubSpot</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400" />
+                    <span>Reusable systems and scalable delivery pipelines</span>
                   </div>
                 </div>
-              );
-            })}
+                <div className="flex flex-wrap gap-3">
+                  {buttons.map(({ title, link, icon }, i) => (
+                    <Button
+                      key={i}
+                      href={link}
+                      icon={icon}
+                      variant={
+                        title === "Resume" || title.includes("@")
+                          ? "primary"
+                          : "secondary"
+                      }
+                    >
+                      {title}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+              <div className="relative">
+                <div className="section-surface rounded-3xl p-6 shadow-xl shadow-slate-950/50">
+                  <div className="overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/70">
+                    <Image
+                      src={`https://github.com/stevenzimmer.png`}
+                      alt="Steven Zimmer headshot"
+                      className="h-full w-full object-cover"
+                      width="640"
+                      height="640"
+                      priority
+                    />
+                  </div>
+                  <div className="mt-6 space-y-4">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                        Focus Areas
+                      </p>
+                      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                        {[
+                          "Performance engineering",
+                          "Growth systems",
+                          "CMS architecture",
+                          "Design systems",
+                        ].map((item) => (
+                          <div
+                            key={item}
+                            className="rounded-xl border border-slate-800/70 bg-slate-900/70 px-4 py-3 text-sm font-semibold text-slate-100"
+                          >
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-sm text-slate-400">
+                      Building fast, accessible, and conversion-focused product
+                      experiences.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div id="work" className="py-6 md:py-12">
-          <Subheader>Recent Freelance Work</Subheader>
+        <section aria-label="Trusted by" className="py-6">
+          <div className="container px-6">
+            <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
+              Trusted by teams and founders
+            </p>
+          </div>
+          <LogosSlider />
+        </section>
 
-          <div className="mx-auto grid w-full max-w-screen-lg animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:grid-cols-2 lg:px-5 xl:px-0">
+        <section id="work" className="container px-6 py-16">
+          <div className="mx-auto max-w-3xl">
+            <Subheader>Recent Freelance Work</Subheader>
+            <p className="text-center text-base text-slate-300">
+              Select engagements focused on performance, growth, and highly
+              maintainable platforms.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-10 grid w-full max-w-screen-lg grid-cols-1 gap-6 md:grid-cols-2">
             {features
               .filter((feature) => {
                 return feature.bullets;
@@ -90,23 +144,20 @@ export default function Home() {
                 <Card key={i} {...props} />
               ))}
           </div>
-        </div>
-        <div id="projects" className="py-6 md:py-12">
-          <Subheader>Personal Projects</Subheader>
+        </section>
 
-          <div className="mx-auto grid w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:px-5 xl:px-0">
+        <section id="projects" className="container px-6 py-16">
+          <div className="mx-auto max-w-3xl">
+            <Subheader>Personal Projects</Subheader>
+            <p className="text-center text-base text-slate-300">
+              Experiments and side projects showcasing modern UI engineering.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-10 grid w-full max-w-screen-xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map(
               (
-                {
-                  title,
-                  description,
-                  demo,
-                  href,
-                  large,
-                  bullets,
-                  logo,
-                  subtitle,
-                },
+                { title, description, demo, href, large, bullets, logo, subtitle },
                 i,
               ) => (
                 <Card
@@ -130,34 +181,106 @@ export default function Home() {
               ),
             )}
           </div>
-        </div>
+        </section>
 
-        <div className="py-6 md:py-12"></div>
+        <section id="skills" className="container px-6 py-16">
+          <div className="mx-auto max-w-3xl">
+            <Subheader>Engineering Toolbox</Subheader>
+            <p className="text-center text-base text-slate-300">
+              A flexible stack spanning engineering foundations, CMS
+              architecture, and growth systems.
+            </p>
+          </div>
 
-        <Subheader>Certifications</Subheader>
+          <div className="mx-auto mt-12 max-w-5xl divide-y divide-slate-800/70">
+            {Object.keys(dictSkills).map((skill, i) => {
+              return (
+                <div
+                  key={i}
+                  className="flex flex-wrap items-center gap-4 py-6 first:pt-0"
+                >
+                  <div className="w-full md:w-1/4">
+                    <p className="font-display text-xl font-semibold text-slate-100">
+                      {skill}
+                    </p>
+                  </div>
+                  <div className="flex w-full flex-wrap md:w-3/4">
+                    {dictSkills[skill].map((item, j) => {
+                      return <Pill key={j} item={item} />;
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
 
-        <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-2 ">
-          {certifications.map(({ title, src, link }, i) => (
-            <div key={i} className="mb-12">
-              <a
-                className="mb-3 block"
-                target="_blank"
-                rel="noreferrer"
-                href={link}
-                title={title}
-              >
-                <Image
-                  className=" mx-auto aspect-video rounded-lg border object-cover shadow-md transition duration-200 hover:-translate-y-0.5 hover:border-blue-300"
-                  alt={title}
-                  src={src}
-                  width="1500"
-                  height="1000"
-                />
-              </a>
-              <p className="text-center font-bold text-white">{title}</p>
+        <section id="certifications" className="container px-6 py-16">
+          <div className="mx-auto max-w-3xl">
+            <Subheader>Certifications</Subheader>
+            <p className="text-center text-base text-slate-300">
+              Ongoing learning with a focus on modern frameworks and
+              best-in-class tooling.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-2">
+            {certifications.map(({ title, src, link }, i) => (
+              <div key={i} className="rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 shadow-lg shadow-slate-950/40">
+                <a
+                  className="mb-4 block overflow-hidden rounded-xl border border-slate-800/70"
+                  target="_blank"
+                  rel="noreferrer"
+                  href={link}
+                  title={title}
+                >
+                  <Image
+                    className="aspect-video w-full object-cover transition duration-300 hover:scale-[1.02]"
+                    alt={title}
+                    src={src}
+                    width="1500"
+                    height="1000"
+                  />
+                </a>
+                <p className="text-center text-sm font-semibold text-slate-100">
+                  {title}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="contact" className="container px-6 pb-20 pt-6">
+          <div className="section-surface mx-auto flex max-w-4xl flex-col items-center gap-6 rounded-3xl px-6 py-12 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
+              Let&apos;s build together
+            </p>
+            <h2 className="text-3xl font-semibold text-slate-100 md:text-4xl">
+              Ready to ship a fast, polished product experience?
+            </h2>
+            <p className="max-w-2xl text-base text-slate-300">
+              I partner with teams to design and engineer high-performing
+              systems that improve conversion, SEO, and long-term
+              maintainability.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {buttons.map(({ title, link, icon }, i) => (
+                <Button
+                  key={i}
+                  href={link}
+                  icon={icon}
+                  variant={
+                    title === "Resume" || title.includes("@")
+                      ? "primary"
+                      : "secondary"
+                  }
+                >
+                  {title}
+                </Button>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        </section>
       </div>
     </>
   );
