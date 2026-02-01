@@ -658,15 +658,15 @@ export const buttons = [
     icon: <LinkedIn className="w-5 fill-white" />,
   },
   {
-    link: "mailto:webdevzim@gmail.com",
-    title: "webdevzim@gmail.com",
+    link: "mailto:stevenzimmer40@gmail.com",
+    title: "stevenzimmer40@gmail.com",
     icon: <Email className="w-5 text-white" />,
   },
-  {
-    link: "/steven-zimmer-resume.pdf",
-    title: "Resume",
-    icon: <Download className="w-5 text-white" />,
-  },
+  // {
+  //   link: "/steven-zimmer-resume.pdf",
+  //   title: "Resume",
+  //   icon: <Download className="w-5 text-white" />,
+  // },
 ];
 
 export const projects: DictItem[] = [

@@ -69,7 +69,7 @@ const structuredData = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Work",
-    email: "mailto:webdevzim@gmail.com",
+    email: "mailto:stevenzimmer40@gmail.com",
   },
   hasOccupation: {
     "@type": "Occupation",
@@ -104,9 +104,15 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="bg-black/80">
+      <body className="bg-transparent">
+        <a
+          href="#content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-slate-900 focus:px-4 focus:py-2 focus:text-sm focus:text-slate-100"
+        >
+          Skip to content
+        </a>
         <RWBProvider>
-          <main>{children}</main>
+          <main id="content">{children}</main>
           <Footer />
         </RWBProvider>
       </body>

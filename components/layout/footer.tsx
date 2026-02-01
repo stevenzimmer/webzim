@@ -4,28 +4,30 @@ const d = new Date();
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-slate-800 py-3 text-black">
+    <footer className="w-full border-t border-slate-800/70 bg-slate-950/80 py-10">
       <div className="container px-6">
-        <div className="flex flex-row-reverse flex-wrap items-center justify-around">
-          <div className="xs:mb-0 flex  items-center">
-            {buttons.map(({ link, icon }, i) => (
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-sm text-slate-400">
+              {d.getFullYear()}
+              {"  "}
+              <span className="font-code text-slate-200">Web Dev Zim LLC</span>.
+              All rights reserved.
+            </p>
+          </div>
+          <div className="flex items-center gap-3">
+            {buttons.map(({ link, icon, title }, i) => (
               <a
                 key={i}
-                className="mx-2 text-slate-100"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-800 bg-slate-900/70 text-slate-100 transition hover:border-slate-500 hover:text-white"
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={title}
               >
                 {icon}
               </a>
             ))}
-          </div>
-          <div className="flex items-center">
-            <p className="py-3 text-center text-slate-100 md:text-right">
-              {d.getFullYear()} &nbsp;{" "}
-              <span className="font-code">Web Dev Zim LLC</span> &nbsp; | &nbsp;
-              All Rights Reserved
-            </p>
           </div>
         </div>
       </div>

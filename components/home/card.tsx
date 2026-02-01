@@ -15,14 +15,16 @@ export default function Card({
   nofollow,
   tech,
   sameTab,
+  subtitle,
+  description,
 }: DictItem) {
   return (
     <div
-      className={`relative col-span-1 overflow-hidden rounded-xl border-2 border-transparent bg-slate-700 shadow-md hover:bg-slate-800  ${
+      className={`group relative col-span-1 overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/60 shadow-lg shadow-slate-950/40 transition duration-300 hover:-translate-y-1 hover:border-slate-600/70 hover:bg-slate-900/80 ${
         large ? "md:col-span-2" : ""
       } ${
         href
-          ? "transition-transform duration-200 hover:-translate-y-0.5 hover:border-teal-300/50"
+          ? "cursor-pointer"
           : ""
       }`}
     >
@@ -34,34 +36,46 @@ export default function Card({
           className="absolute inset-0 z-10 h-full w-full"
         ></Link>
       )}
-      <div className="relative h-[113px] w-full overflow-hidden bg-teal-200/50 ">
+      <div className="relative flex h-[120px] w-full items-center justify-center overflow-hidden border-b border-slate-800/60 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">
         {logo ? (
           <Image
             src={logo}
             alt={`${title} logo`}
-            className="mx-auto bg-transparent grayscale"
+            className="mx-auto h-16 w-auto bg-transparent grayscale transition duration-300 group-hover:grayscale-0"
             width={200}
             height={200}
           />
         ) : (
-          <div className="flex  h-full items-center justify-center ">
-            <div className="flex w-48 justify-center">{demo}</div>
+          <div className="flex h-full items-center justify-center">
+            <div className="flex w-48 justify-center text-slate-200">
+              {demo}
+            </div>
           </div>
         )}
+        <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100">
+          <div className="absolute -left-6 -top-6 h-24 w-24 rounded-full bg-sky-500/20 blur-2xl" />
+          <div className="absolute -bottom-10 right-0 h-24 w-24 rounded-full bg-cyan-400/20 blur-2xl" />
+        </div>
       </div>
 
-      <div className="px-6 pb-3 pt-6 md:px-0 lg:px-6">
+      <div className="px-6 pb-6 pt-6">
         {title && (
           <h3
-            className={`font-display mb-3 bg-gradient-to-br from-white to-slate-50 bg-clip-text text-center text-xl font-bold text-transparent md:text-2xl md:font-normal`}
+            className="mb-2 text-center font-display text-xl font-semibold text-slate-100 md:text-2xl"
           >
             <Balancer>{title}</Balancer>
           </h3>
         )}
 
-        <div className="prose-md max-w-full px-6 pb-3 leading-normal text-white md:prose md:px-0 lg:px-6">
+        {(subtitle || description) && (
+          <p className="mb-4 text-center text-sm text-slate-400">
+            {subtitle || description}
+          </p>
+        )}
+
+        <div className="prose-md max-w-full leading-normal text-slate-200">
           {bullets && (
-            <ul className="list-disc text-left text-white ">
+            <ul className="list-disc text-left text-slate-200">
               {bullets.map((bullet, i) => (
                 <li key={i} className="mb-2">
                   {bullet}
@@ -77,10 +91,10 @@ export default function Card({
               <motion.div
                 key={i}
                 variants={FADE_DOWN_ANIMATION_VARIANTS}
-                className="m-1 w-auto rounded border border-teal-600 bg-teal-600 px-1 py-1 shadow md:px-3"
+                className="m-1 w-auto rounded-full border border-sky-400/40 bg-sky-500/10 px-3 py-1 shadow"
               >
                 <motion.p
-                  className="font-display bg-gradient-to-br from-white to-slate-50 bg-clip-text text-sm font-bold text-transparent drop-shadow-sm "
+                  className="font-display text-sm font-semibold text-slate-100"
                   variants={FADE_DOWN_ANIMATION_VARIANTS}
                 >
                   {skill}

@@ -1,11 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap");
 
 @tailwind base;
 @layer base {
   body {
-    @apply font-sans text-base;
+    @apply font-sans text-base antialiased text-slate-100;
+    background: radial-gradient(1200px 600px at 80% -10%, rgba(59, 130, 246, 0.18), transparent 60%),
+      radial-gradient(900px 500px at 0% 20%, rgba(45, 212, 191, 0.18), transparent 60%),
+      #0b1020;
+    min-height: 100%;
   }
 }
 @tailwind components;
@@ -20,6 +24,34 @@
 
 * {
   scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: #ffffff;
+}
+
+a,
+button {
+  @apply transition-colors duration-200;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.7),
+    0 0 0 6px rgba(2, 6, 23, 0.9);
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #e2e8f0 0%, #7dd3fc 40%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section-surface {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.7) 0%, rgba(2, 6, 23, 0.75) 100%);
+  border: 1px solid rgba(148, 163, 184, 0.15);
 }
 
 .slick-track {
