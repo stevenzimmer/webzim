@@ -34,9 +34,10 @@ export default function Home() {
                 <Header>Steven Zimmer</Header>
                 <p className="text-lg text-slate-200 md:text-xl">
                   Full stack engineer specializing in modern web platforms,
-                  growth engineering, technical SEO, and CMS architecture, with
-                  a track record of delivering scalable, high-performance
-                  systems in fast-paced, collaborative environments.
+                  AI tooling and model integration, growth engineering,
+                  technical SEO, and CMS architecture, with a track record of
+                  delivering scalable, high-performance systems in fast-paced,
+                  collaborative environments.
                 </p>
                 <div className="grid gap-3 text-sm text-slate-300 md:grid-cols-2">
                   <div className="flex items-start gap-2">
@@ -53,6 +54,10 @@ export default function Home() {
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400" />
+                    <span>AI toolchains and model integrations</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-rose-400" />
                     <span>Reusable systems and scalable delivery pipelines</span>
                   </div>
                 </div>
@@ -95,7 +100,7 @@ export default function Home() {
                           "Performance engineering",
                           "Growth systems",
                           "CMS architecture",
-                          "Design systems",
+                          "AI product prototyping",
                         ].map((item) => (
                           <div
                             key={item}
@@ -107,7 +112,7 @@ export default function Home() {
                       </div>
                     </div>
                     <p className="text-sm text-slate-400">
-                      Building fast, accessible, and conversion-focused product
+                      Building fast, accessible, and AI-assisted product
                       experiences.
                     </p>
                   </div>
@@ -187,8 +192,8 @@ export default function Home() {
           <div className="mx-auto max-w-3xl">
             <Subheader>Engineering Toolbox</Subheader>
             <p className="text-center text-base text-slate-300">
-              A flexible stack spanning engineering foundations, CMS
-              architecture, and growth systems.
+              A flexible stack spanning AI tooling, engineering foundations,
+              CMS architecture, and growth systems.
             </p>
           </div>
 
@@ -260,8 +265,8 @@ export default function Home() {
             </h2>
             <p className="max-w-2xl text-base text-slate-300">
               I partner with teams to design and engineer high-performing
-              systems that improve conversion, SEO, and long-term
-              maintainability.
+              systems that improve conversion, SEO, AI-enabled workflows, and
+              long-term maintainability.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {buttons.map(({ title, link, icon }, i) => (

@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  title: "Steven Zimmer - Web Developer & Technical Lead",
+  title: "Steven Zimmer - Full Stack Engineer & AI Integrations",
   description:
-    "Steven Zimmer is a web developer specializing in fast, responsive websites using modern technologies like Next.js, Sanity CMS, and Contentful. Steven leads technical efforts in go-to-market initiatives and programmatic SEO.",
+    "Steven Zimmer is a full stack engineer specializing in fast, responsive websites, AI toolchains, and model integrations using modern technologies like Next.js, Sanity CMS, and Contentful. Steven leads technical efforts in go-to-market initiatives and programmatic SEO.",
   keywords: [
-    "Steven Zimmer, Web Developer, Next.js, React, Sanity CMS, Hubspot CMS, Contentful, programmatic SEO, Technical Lead, Web Engineer",
+    "Steven Zimmer, Full Stack Engineer, AI Integrations, LLMs, Next.js, React, Sanity CMS, Hubspot CMS, Contentful, programmatic SEO, Technical Lead, Web Engineer",
   ],
   openGraph: {
     type: "website",
@@ -56,6 +56,8 @@ const structuredData = {
   knowsAbout: [
     "Web Development",
     "Software Engineering",
+    "AI Tooling",
+    "LLM Integration",
     "SEO",
     "Next.js",
     "Sanity CMS",
@@ -65,7 +67,7 @@ const structuredData = {
     "Node.js",
   ],
   description:
-    "Steven Zimmer is a web developer specializing in building fast, responsive websites using modern technologies like Next.js, Sanity CMS, and Contentful. Steven leads technical efforts in go-to-market initiatives, website redesigns, CMS setups, and programmatic SEO.",
+    "Steven Zimmer is a full stack engineer specializing in building fast, responsive websites and AI-assisted product experiences using modern technologies like Next.js, Sanity CMS, and Contentful. Steven leads technical efforts in go-to-market initiatives, website redesigns, CMS setups, programmatic SEO, and model integrations.",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Work",
@@ -76,6 +78,8 @@ const structuredData = {
     name: "Software Developer",
     skills: [
       "Web Development",
+      "AI Integrations",
+      "LLM Tooling",
       "Next.js",
       "Sanity CMS",
       "SEO",
