@@ -26,42 +26,21 @@ export default function Home() {
           <div className="pointer-events-none absolute -left-10 top-10 h-56 w-56 animate-float-slow rounded-full bg-sky-500/20 blur-3xl" />
           <div className="pointer-events-none absolute right-0 top-24 h-64 w-64 animate-float-slower rounded-full bg-cyan-400/20 blur-3xl" />
           <div className="container px-6">
-            <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-              <div className="space-y-6">
+            <div className="grid items-center gap-12 lg:grid-cols-2">
+              <div className="space-y-6 lg:px-6">
                 <p className="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
                   Full Stack Engineer
                 </p>
                 <Header>Steven Zimmer</Header>
-                <p className="text-lg text-slate-200 md:text-xl">
-                  Full stack engineer specializing in modern web platforms,
-                  AI tooling and model integration, growth engineering,
-                  technical SEO, and CMS architecture, with a track record of
-                  delivering scalable, high-performance systems in fast-paced,
+                <p className="mb-6 text-lg text-slate-200 md:text-xl">
+                  Full stack engineer specializing in modern web platforms, AI
+                  tooling and model integration, growth engineering, technical
+                  SEO, and CMS architecture, with a track record of delivering
+                  scalable, high-performance systems in fast-paced,
                   collaborative environments.
                 </p>
-                <div className="grid gap-3 text-sm text-slate-300 md:grid-cols-2">
-                  <div className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-sky-400" />
-                    <span>Modern product stacks with Next.js, React, and TypeScript</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-cyan-400" />
-                    <span>Growth engineering and technical SEO execution</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-emerald-400" />
-                    <span>CMS platforms like Sanity, Contentful, and HubSpot</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400" />
-                    <span>AI toolchains and model integrations</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-rose-400" />
-                    <span>Reusable systems and scalable delivery pipelines</span>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-3">
+
+                <div className="flex flex-wrap gap-3 py-6">
                   {buttons.map(({ title, link, icon }, i) => (
                     <Button
                       key={i}
@@ -78,7 +57,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <div className="relative">
+              <div className="relative lg:px-12">
                 <div className="section-surface rounded-3xl p-6 shadow-xl shadow-slate-950/50">
                   <div className="overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/70">
                     <Image
@@ -162,7 +141,16 @@ export default function Home() {
           <div className="mx-auto mt-10 grid w-full max-w-screen-xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map(
               (
-                { title, description, demo, href, large, bullets, logo, subtitle },
+                {
+                  title,
+                  description,
+                  demo,
+                  href,
+                  large,
+                  bullets,
+                  logo,
+                  subtitle,
+                },
                 i,
               ) => (
                 <Card
@@ -192,8 +180,8 @@ export default function Home() {
           <div className="mx-auto max-w-3xl">
             <Subheader>Engineering Toolbox</Subheader>
             <p className="text-center text-base text-slate-300">
-              A flexible stack spanning AI tooling, engineering foundations,
-              CMS architecture, and growth systems.
+              A flexible stack spanning AI tooling, engineering foundations, CMS
+              architecture, and growth systems.
             </p>
           </div>
 
@@ -231,7 +219,10 @@ export default function Home() {
 
           <div className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-2">
             {certifications.map(({ title, src, link }, i) => (
-              <div key={i} className="rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 shadow-lg shadow-slate-950/40">
+              <div
+                key={i}
+                className="rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 shadow-lg shadow-slate-950/40"
+              >
                 <a
                   className="mb-4 block overflow-hidden rounded-xl border border-slate-800/70"
                   target="_blank"
