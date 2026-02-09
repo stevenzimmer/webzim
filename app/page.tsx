@@ -143,7 +143,7 @@ export default function Home() {
           <div className="mx-auto mt-10 grid w-full max-w-screen-lg grid-cols-1 gap-6 md:grid-cols-2">
             {features
               .filter((feature) => {
-                return feature.bullets;
+                return feature.description || feature.bullets;
               })
               .map((props, i: number) => (
                 <Card key={i} {...props} />

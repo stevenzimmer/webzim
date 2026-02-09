@@ -22,11 +22,7 @@ export default function Card({
     <div
       className={`group relative col-span-1 overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/60 shadow-lg shadow-slate-950/40 transition duration-300 hover:-translate-y-1 hover:border-slate-600/70 hover:bg-slate-900/80 ${
         large ? "md:col-span-2" : ""
-      } ${
-        href
-          ? "cursor-pointer"
-          : ""
-      }`}
+      } ${href ? "cursor-pointer" : ""}`}
     >
       {href && (
         <Link
@@ -36,12 +32,12 @@ export default function Card({
           className="absolute inset-0 z-10 h-full w-full"
         ></Link>
       )}
-      <div className="relative flex h-[120px] w-full items-center justify-center overflow-hidden border-b border-slate-800/60 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">
+      <div className="relative flex h-[120px] w-full items-center justify-center overflow-hidden border-b border-slate-800/60 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 py-6">
         {logo ? (
           <Image
             src={logo}
             alt={`${title} logo`}
-            className="mx-auto h-16 w-auto bg-transparent grayscale transition duration-300 group-hover:grayscale-0"
+            className="py-3"
             width={200}
             height={200}
           />
@@ -58,30 +54,26 @@ export default function Card({
         </div>
       </div>
 
-      <div className="px-6 pb-6 pt-6">
+      <div className="px-12 py-6">
         {title && (
-          <h3
-            className="mb-2 text-center font-display text-xl font-semibold text-slate-100 md:text-2xl"
-          >
+          <h3 className="mb-3 text-center font-display text-xl font-semibold text-slate-100 md:text-2xl">
             <Balancer>{title}</Balancer>
           </h3>
         )}
 
-        {(subtitle || description) && (
-          <p className="mb-4 text-center text-sm text-slate-400">
-            {subtitle || description}
-          </p>
-        )}
-
         <div className="prose-md max-w-full leading-normal text-slate-200">
-          {bullets && (
-            <ul className="list-disc text-left text-slate-200">
-              {bullets.map((bullet, i) => (
-                <li key={i} className="mb-2">
-                  {bullet}
-                </li>
-              ))}
-            </ul>
+          {description ? (
+            <p className="mb-4 text-left text-slate-200">{description}</p>
+          ) : (
+            bullets && (
+              <ul className="list-disc text-left text-slate-200">
+                {bullets.map((bullet, i) => (
+                  <li key={i} className="mb-2">
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+            )
           )}
         </div>
 

@@ -98,20 +98,23 @@ export const ogDescription =
 export const features: DictItem[] = [
   {
     title: "Benji Bakes E-Commerce Website Development",
-    bullets: [
-      "Engineered the Benji Bakes website using React and Next.js, creating a responsive and intuitive user interface for a seamless online shopping experience.",
-      "Integrated Stripe for a secure end-to-end checkout process, implemented Nodemailer for efficient email communications and order confirmations, and utilized Zustand for robust state management throughout the site.",
-    ],
-    logo: "/logos/benji-bakes.png",
+    description:
+      "Built and launched a modern ecommerce experience for Benji Bakes that improved online ordering flow, streamlined operations, and created a reliable storefront that supports ongoing growth and repeat customer purchases.",
+    tech: ["React", "Next.js", "Stripe", "Nodemailer", "Zustand"],
+    logo: "/logos/benji-bakes-white.png",
     href: "https://www.benjibakes.com/",
     nofollow: false,
   },
   {
     title: "Loom and Atlassian Integration and Market Strategy Execution",
-    bullets: [
-      "Technical lead on the integration of Loom's brand with the Atlassian product suite, ensuring compliance with acquisition terms and seamless incorporation.",
-      "Collaborated with outreach team to optimize launch activities and market penetration of the go-to-market strategy for 'Loom for AI'.",
-      "Enhanced CMS functionality by developing self-service components for content managers using Sanity CMS and streamlining the content publishing processes.",
+    description:
+      "Led technical execution across the Loom and Atlassian integration, aligning implementation with acquisition requirements, improving launch readiness for Loom for AI, and enabling faster content operations through scalable CMS workflows.",
+    tech: [
+      "Sanity CMS",
+      "React",
+      "TypeScript",
+      "Design Systems",
+      "Go-to-Market",
     ],
     demo: (
       <svg
@@ -129,10 +132,9 @@ export const features: DictItem[] = [
   },
   {
     title: "Enhanced HubSpot CMS with Self-Service Drag-and-Drop Features",
-    bullets: [
-      "Pioneered the development of self-service components within the HubSpot CMS, employing HubL, HTML, CSS, and advanced Vanilla JavaScript for a customizable drag-and-drop editing experience.",
-      "Worked in tandem with the design team to ensure the website adhered to the brand's design system and collaborated on URL structure re-architecture for optimal SEO performance.",
-    ],
+    description:
+      "Designed and shipped self-serve HubSpot modules that gave content teams flexible drag-and-drop control, reduced developer bottlenecks, and improved consistency across design and SEO-critical page structures.",
+    tech: ["HubSpot", "HubL", "CSS", "JavaScript", "SEO"],
     demo: (
       <svg
         className="w-full text-teal-50"
@@ -159,10 +161,14 @@ export const features: DictItem[] = [
   },
   {
     title: "Scalable Web Infrastructure & Reusable Components",
-
-    bullets: [
-      "Collaborate with marketing and design teams to develop a scalable and high-performance web infrastructure, ensuring a consistent and engaging user experience across platforms.",
-      "Built a library of reusable components and templates, streamlining future development efforts for both web and email content creators.",
+    description:
+      "Partnered with design and marketing to establish a scalable web foundation and reusable component system that accelerated new page delivery, improved consistency, and supported both web and email production at scale.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Component Library",
+      "Email Templates",
+      "Design Systems",
     ],
     demo: (
       <svg
@@ -188,11 +194,16 @@ export const features: DictItem[] = [
     nofollow: true,
   },
   {
-    logo: "/logos/verta-logo.png",
+    logo: "/logos/verta-logo-white.png",
     title: "HubSpot CMS Rebuild to Enhance Brand Visibility",
-    bullets: [
-      "Rebuilt the company website on the HubSpot CMS platform, aligning with comprehensive rebranding efforts to enhance brand visibility and go-to-market initiatives.",
-      "Oversaw the development of web and email projects, assuming responsibility for technical marketing strategies and execution to drive engagement and conversion.",
+    description:
+      "Rebuilt the Verta website on HubSpot to support rebranding and go-to-market goals, creating a more cohesive digital presence while improving marketing execution across web and email campaigns.",
+    tech: [
+      "HubSpot CMS",
+      "Technical SEO",
+      "Marketing Automation",
+      "Email Development",
+      "Analytics",
     ],
 
     href: "https://www.verta.ai/",
@@ -201,9 +212,14 @@ export const features: DictItem[] = [
 
   {
     title: "Shopify Rebuild Boosts Revenue and Site Performance",
-    bullets: [
-      "In collaboration with design, led the development of the website rebuild to create high-performance pages that showcase products and align with brand identity.",
-      "Utilized Shopify API, Shopify CLI, and Liquid templating language to build a flexible, scalable, and user-friendly e-commerce platform, enhancing customer experience and online presence.",
+    description:
+      "Led a full Shopify rebuild focused on performance and merchandising, delivering a faster and more flexible storefront that improved customer experience and supported stronger ecommerce conversion outcomes.",
+    tech: [
+      "Shopify",
+      "Liquid",
+      "Shopify API",
+      "Shopify CLI",
+      "Performance Optimization",
     ],
     demo: (
       <svg
@@ -231,10 +247,14 @@ export const features: DictItem[] = [
 
   {
     title: "Unified WordPress Migration Boosts SEO and UX",
-    bullets: [
-      "Orchestrated a complex migration project consolidating multiple web properties from diverse CMS platforms (Webflow, Drupal) into a single, unified WordPress instance.",
-      "Led strategic planning and execution to ensure seamless integration, including the unification of URL structures for enhanced navigability and SEO optimization.",
-      "Meticulous attention to detail in data mapping, content restructuring, and ensuring functionality and design consistency across the consolidated platform, resulting in a cohesive web presence that improved user experience, site management efficiency, and overall digital brand coherence.",
+    description:
+      "Directed a complex multi-platform migration into a unified WordPress environment, improving governance, simplifying site management, and strengthening SEO and user experience through cleaner architecture and URL strategy.",
+    tech: [
+      "WordPress",
+      "Webflow Migration",
+      "Drupal Migration",
+      "Technical SEO",
+      "Content Architecture",
     ],
     demo: (
       <svg
@@ -262,10 +282,14 @@ export const features: DictItem[] = [
   },
   {
     title: "WordPress Optimization Spurs Traffic and Revenue",
-    bullets: [
-      "Spearheaded performance optimization initiatives for a WordPress-based affiliate website, implementing advanced caching, image optimization, and database optimization techniques.",
-      "These efforts significantly reduced page load times, improved search engine rankings, and enhanced user engagement metrics, driving increased traffic and affiliate revenue.",
-      "The project also required customizing WordPress themes and plugins to streamline content delivery and user interactions, ensuring a seamless and fast browsing experience for all users.",
+    description:
+      "Optimized a high-traffic WordPress affiliate site with focused performance and content-delivery improvements that reduced load times, increased organic visibility, and drove measurable gains in engagement and revenue.",
+    tech: [
+      "WordPress",
+      "Caching",
+      "Image Optimization",
+      "Database Optimization",
+      "Theme & Plugin Customization",
     ],
     href: "https://www.benzinga.com/",
     nofollow: true,
@@ -282,12 +306,18 @@ export const features: DictItem[] = [
     ),
   },
   {
-    logo: "/logos/nue-logo-dark.png",
+    logo: "/logos/nue-logo-dark-white.png",
     title: "Modern  Website with React, Next.js, AWS, and Headless CMS",
-    bullets: [
-      "Developed a modern, visually appealing company website utilizing React, Next.js, and a headless CMS architecture for dynamic content management.",
-      "Employed AWS S3, Amplify, and Cloudfront for efficient hosting and delivery of static assets, ensuring optimal site performance.",
-      "Integrated Framer Motion to craft a seamless and interactive user experience, elevating the site's engagement level.",
+    description:
+      "Delivered a modern marketing site built on a headless architecture, combining performance-focused hosting and polished interactions to improve content agility, brand presentation, and day-to-day publishing speed.",
+    tech: [
+      "React",
+      "Next.js",
+      "Headless CMS",
+      "AWS S3",
+      "AWS Amplify",
+      "CloudFront",
+      "Framer Motion",
     ],
     large: false,
     href: "https://www.nue.io",
@@ -517,10 +547,14 @@ export const features: DictItem[] = [
     ),
     title: "WordPress Rebuild Aligns with Strategic Rebrand",
     subtitle: "Acquired by Harness",
-    bullets: [
-      "Directed the rebuild of the company's website with WordPress CMS and a custom Gutenberg block theme, complementing a strategic rebranding effort.",
-      "Served as the technical lead for go-to-market strategies, driving the alignment of technical and marketing efforts for product launches.",
-      "Overhauled email automation processes and created user-friendly templates, streamlining marketing communications and engagement.",
+    description:
+      "Led a WordPress and Gutenberg rebuild aligned to rebrand and acquisition momentum, improving launch coordination across product and marketing while modernizing email systems for faster, more consistent campaign execution.",
+    tech: [
+      "WordPress",
+      "Gutenberg",
+      "Email Automation",
+      "Template Systems",
+      "Go-to-Market",
     ],
     href: "https://www.armory.io/",
     nofollow: true,
@@ -528,9 +562,15 @@ export const features: DictItem[] = [
 
   {
     title: "Front-End Web Development Course Leadership",
-    bullets: [
-      "Led a comprehensive 12-week course on front-end web development, equipping students with current industry practices and technologies.",
-      "Provided students with individualized technical support and constructive feedback, enhancing their learning outcomes and performance.",
+    description:
+      "Led a 12-week front-end development program focused on practical production skills, helping students ship stronger work through structured curriculum, hands-on projects, and targeted technical mentorship.",
+    tech: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Curriculum Design",
+      "Mentorship",
     ],
     href: "https://generalassemb.ly/instructors/steven-zimmer/16517",
     demo: (
@@ -577,44 +617,56 @@ export const features: DictItem[] = [
   },
 
   {
-    logo: "/logos/punchcut-logo.png",
+    logo: "/logos/punchcut-logo-white.png",
     title: "Website Optimization and Security Enhancement",
-    bullets: [
-      "Enhanced website performance and conducted technical SEO optimizations, significantly improving search visibility and user experience.",
-      "Identified and eradicated a sophisticated spam link infection, restoring website integrity and safeguarding against future security threats.",
+    description:
+      "Improved site performance and technical SEO while remediating a critical spam-link infection, restoring search integrity, hardening the platform, and delivering a safer, faster user experience.",
+    tech: [
+      "Technical SEO",
+      "Performance Optimization",
+      "Security Hardening",
+      "WordPress",
     ],
     href: "https://punchcut.com/",
     nofollow: true,
   },
   {
-    logo: "/logos/prokeep-logo.png",
+    logo: "/logos/prokeep-logo-white.png",
     title: "Webflow to HubSpot CMS Migration and Rebrand",
-    bullets: [
-      "Led the technical migration of the company website from Webflow to HubSpot CMS, facilitating content management and scalability.",
-      "Served as the technical lead during rebranding initiatives, ensuring a consistent and impactful brand representation across digital assets.",
-    ],
+    description:
+      "Owned migration from Webflow to HubSpot CMS during a company rebrand, enabling stronger content operations and delivering a more scalable, cohesive digital presence across key customer touchpoints.",
+    tech: ["Webflow", "HubSpot CMS", "Migration Planning", "Rebrand Rollout"],
     href: "https://www.prokeep.com/",
     nofollow: true,
   },
 
   {
-    logo: "/logos/bloomtech-logo-dark.png",
+    logo: "/logos/bloomtech-logo-dark-white.png",
     title: "Revamped Sign-Up and Activity Tracker Boosts Enrollment",
-    bullets: [
-      "Spearheaded a strategic revamp of the student sign-up process, resulting in a 30% increase in enrollments due to improved user experience.",
-      "Developed an innovative activity tracker to visualize student progress, boosting sprint completion rates by 15% through enhanced engagement and motivation.",
+    description:
+      "Redesigned core enrollment and student-progress experiences to reduce friction and increase motivation, contributing to meaningful gains in sign-ups and stronger completion behavior across learning sprints.",
+    tech: [
+      "React",
+      "UX Optimization",
+      "Product Analytics",
+      "Experimentation",
+      "Data Visualization",
     ],
     href: "https://www.bloomtech.com/",
     nofollow: true,
   },
 
   {
-    logo: "/logos/stanford-med-logo.png",
+    logo: "/logos/stanford-med-logo-white.png",
     title: "Drupal Upgrade and Server Architecture Overhaul",
-    bullets: [
-      "Managed Drupal upgrades from version 7 to 9, ensuring the website's technology stack was up-to-date and secure.",
-      "Transitioned websites to a more robust server architecture, enhancing site reliability and performance.",
-      "Integrated websites with Box and SAML authentication, improving user access management and security protocols.",
+    description:
+      "Executed major platform modernization work for Stanford Medicine, including Drupal upgrades, infrastructure improvements, and enterprise authentication integrations to improve reliability, security, and operational resilience.",
+    tech: [
+      "Drupal 7",
+      "Drupal 9",
+      "Server Architecture",
+      "SAML",
+      "Box Integration",
     ],
     large: false,
     href: "https://med.stanford.edu/",

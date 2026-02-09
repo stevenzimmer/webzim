@@ -23,8 +23,7 @@ export type DictItem = {
   nofollow?: boolean;
   tech?: string[];
   sameTab?: boolean;
-  
-}
+};
 
 export type DictSkills = {
   [key: string]: string[];
