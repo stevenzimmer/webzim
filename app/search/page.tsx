@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
-import prisma from "@/lib/prisma";
 
 interface PageProps {
   searchParams: {
