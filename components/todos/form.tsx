@@ -4,22 +4,24 @@ import TodoItem from "./item";
 import type { Todo } from "@/lib/types";
 export default function TodoForm() {
   const [value, setValue] = useState("");
+  const [todos, setTodos] = useState<Todo[] | []>([]);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (value) {
-      setTodos([
+      const newTodos = [
         ...todos,
         {
           title: value,
           completed: false,
         },
-      ]);
+      ];
+      setTodos(newTodos);
+      localStorage.setItem("todos", JSON.stringify(newTodos));
       setValue("");
     }
   };
-
-  const [todos, setTodos] = useState<Todo[] | []>([]);
 
   useEffect(() => {
     const data = localStorage.getItem("todos");
@@ -43,6 +45,8 @@ export default function TodoForm() {
           className="w-full rounded border border-slate-100 bg-slate-100 text-slate-900 shadow-lg"
           value={value}
           type="text"
+          aria-label="New task"
+          placeholder="Add a task"
           onChange={(e) => setValue(e.target.value)}
         />
         <button

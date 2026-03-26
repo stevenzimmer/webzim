@@ -80,10 +80,20 @@ https://user-images.githubusercontent.com/28986134/212368288-12f41e37-aa8c-4e0a-
 - [TypeScript](https://www.typescriptlang.org/) – Static type checker for end-to-end typesafety
 - [Prettier](https://prettier.io/) – Opinionated code formatter for consistent code style
 - [ESLint](https://eslint.org/) – Pluggable linter for Next.js and TypeScript
+- [Vitest](https://vitest.dev/) – Unit testing for utilities and synchronous React components
+- [Playwright](https://playwright.dev/) – End-to-end browser testing against the local Next.js app
 
 ### Miscellaneous
 
 - [Vercel Analytics](https://vercel.com/analytics) – Track unique visitors, pageviews, and more in a privacy-friendly way
+
+## Testing
+
+- `npm run test` starts Vitest in watch mode.
+- `npm run test:unit` runs the Vitest suite once.
+- `npm run test:e2e` runs the Playwright suite against a local Next.js dev server.
+
+The current Vitest toolchain in this repo uses Vite 8, which requires Node `^20.19.0 || >=22.12.0`. If unit tests fail to boot on older Node versions, upgrade Node before running the Vitest commands.
 
 ## Author
 

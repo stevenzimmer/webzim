@@ -58,6 +58,7 @@ export default function SearchBar() {
         <button
           disabled={isSearching}
           onClick={handleSearch}
+          aria-label="Search"
           className="absolute inset-y-0 right-0 z-10 h-full w-16 rounded-l-none bg-black disabled:cursor-not-allowed disabled:opacity-50"
         >
           {isSearching ? (

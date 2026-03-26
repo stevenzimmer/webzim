@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { redirect } from "next/navigation";
 
 interface PageProps {
   searchParams: {
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
 export default function Page({ searchParams }: PageProps) {
   const { q } = searchParams;
   if (Array.isArray(q) || !q) {
-    return redirect("/search");
+    return null;
   }
   return <div>{q}</div>;
 }
