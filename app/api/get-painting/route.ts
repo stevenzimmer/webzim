@@ -1,61 +1,47 @@
 import { NextRequest, NextResponse } from "next/server";
-import type { NextApiResponse } from 'next'
-// import { Configuration, OpenAIApi } from "openai";
-import OpenAI from "openai";
+import type { NextApiResponse } from "next";
+import { getOpenAIClient } from "@/lib/openai";
 
-// const configuration = new Configuration({
-//   apiKey: process.env.OPEN_AI_KEY
-// });
-
-const openai = new OpenAI({
-  apiKey: process.env.OPEN_AI_KEY  
-})
- 
 type ResponseData = {
-  data: string
-}
- 
+  data: string;
+};
+
 export async function POST(
   req: NextRequest,
-  res: NextApiResponse<ResponseData>
+  res: NextApiResponse<ResponseData>,
 ) {
-  const {prompt} = await req.json();
+  const { prompt } = await req.json();
 
-  if( typeof prompt === "string") {
-
-
+  if (typeof prompt === "string") {
     try {
-    
-        const response = await openai.images.generate({
-          model:"dall-e-3",
-          prompt: prompt,
-          n:1,
-          size: "1024x1024"
-        });
+      const openai = getOpenAIClient();
+      const response = await openai.images.generate({
+        model: "dall-e-3",
+        prompt,
+        n: 1,
+        size: "1024x1024",
+      });
 
       return NextResponse.json({
-        aiPrompt: response.data[0].revised_prompt, 
-        img: response.data[0].url 
+        aiPrompt: response.data[0].revised_prompt,
+        img: response.data[0].url,
       }, {
-        status: 200
+        status: 200,
       });
-    
     } catch (error) {
-      // console.log({error});
       return NextResponse.json({
-        error
+        error:
+          error instanceof Error ? error.message : "OpenAI request failed",
       }, {
-        status: 404
+        status: 500,
       });
     }
   } else {
-
     return NextResponse.json({
-      text: "Input provided is not allowed" 
+      text: "Input provided is not allowed",
     }, {
-      status: 500
-    })
-
+      status: 500,
+    });
   }
 }
 

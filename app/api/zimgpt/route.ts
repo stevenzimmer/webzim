@@ -1,47 +1,42 @@
 import { NextRequest, NextResponse } from "next/server";
-import type { NextApiResponse } from 'next'
-import OpenAI from "openai";
+import type { NextApiResponse } from "next";
+import { getOpenAIClient } from "@/lib/openai";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPEN_AI_KEY  
-})
- 
 type ResponseData = {
-  data: string
-}
- 
+  data: string;
+};
+
 export async function POST(
   req: NextRequest,
-  res: NextApiResponse<ResponseData>
+  res: NextApiResponse<ResponseData>,
 ) {
-
-  const {prompt} = await req.json();
-  // console.log({prompt})
+  const { prompt } = await req.json();
 
   try {
+    const openai = getOpenAIClient();
     const completion = await openai.chat.completions.create({
-      messages: [{
-        role: "user",
-        content: prompt
-      }],
+      messages: [
+        {
+          role: "user",
+          content: prompt,
+        },
+      ],
       model: "gpt-3.5-turbo",
       max_tokens: 100,
       stream: false,
     });
 
-
     return NextResponse.json({
-      completion
+      completion,
     }, {
-      status: 200
+      status: 200,
     });
-
   } catch (error) {
-    // console.log({error});
     return NextResponse.json({
-      message: "Error"
+      message:
+        error instanceof Error ? error.message : "OpenAI request failed",
     }, {
-      status: 500
+      status: 500,
     });
   }
 
