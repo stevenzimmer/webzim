@@ -69,9 +69,9 @@ describe("dog breed reducer", () => {
   });
 
   it("rewards correct guesses, grants bonus time after three in a row, and advances the question", () => {
-    vi.spyOn(Math, "random").mockReturnValueOnce(0).mockReturnValueOnce(0.75);
+    vi.spyOn(Math, "random").mockReturnValue(0.75);
 
-    const startingState = reduce(
+    const state = reduce(
       {
         ...initialState,
         playing: true,
@@ -88,14 +88,22 @@ describe("dog breed reducer", () => {
           "https://images.dog.ceo/breeds/labrador/g.jpg",
           "https://images.dog.ceo/breeds/shiba/h.jpg",
         ],
+        currentQuestion: {
+          breed: "pug",
+          photos: [
+            "https://images.dog.ceo/breeds/pug/a.jpg",
+            "https://images.dog.ceo/breeds/beagle/b.jpg",
+            "https://images.dog.ceo/breeds/boxer/c.jpg",
+            "https://images.dog.ceo/breeds/corgi/d.jpg",
+          ],
+          answer: 0,
+        },
       },
-      { type: "startPlaying" },
-    );
-
-    const state = reduce(startingState, {
+      {
       type: "guessAttempt",
-      value: startingState.currentQuestion.answer,
-    });
+      value: 0,
+      },
+    );
 
     expect(state.points).toBe(3);
     expect(state.inARow).toBe(0);
