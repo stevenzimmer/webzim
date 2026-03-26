@@ -7,5 +7,3 @@ export { default as Twitter } from "./twitter";
 export { default as LinkedIn } from "./linkedin";
 export { default as Email } from "./email";
 export { default as Download } from "./download";
-
-

@@ -20,9 +20,6 @@ export default function QuizPage() {
 
       <Header>All Quizzes</Header>
       <Suspense fallback={<div>Loading Quizzes...</div>}>
-        {/* <Quizzes  />
-         */}
-        {/* @ts-expect-error Server Component */}
         <Quizzes />
       </Suspense>
     </>

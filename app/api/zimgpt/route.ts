@@ -26,25 +26,30 @@ export async function POST(
       stream: false,
     });
 
-    return NextResponse.json({
-      completion,
-    }, {
-      status: 200,
-    });
+    return NextResponse.json(
+      {
+        completion,
+      },
+      {
+        status: 200,
+      },
+    );
   } catch (error) {
-    return NextResponse.json({
-      message:
-        error instanceof Error ? error.message : "OpenAI request failed",
-    }, {
-      status: 500,
-    });
+    return NextResponse.json(
+      {
+        message:
+          error instanceof Error ? error.message : "OpenAI request failed",
+      },
+      {
+        status: 500,
+      },
+    );
   }
 
   // if( typeof prompt === "string") {
 
-
   //   try {
-    
+
   //       const response = await openai.images.generate({
   //         model:"dall-e-3",
   //         prompt: prompt,
@@ -53,12 +58,12 @@ export async function POST(
   //       });
 
   //     return NextResponse.json({
-  //       aiPrompt: response.data[0].revised_prompt, 
-  //       img: response.data[0].url 
+  //       aiPrompt: response.data[0].revised_prompt,
+  //       img: response.data[0].url
   //     }, {
   //       status: 200
   //     });
-    
+
   //   } catch (error) {
   //     console.log({error});
   //     return NextResponse.json({
@@ -70,7 +75,7 @@ export async function POST(
   // } else {
 
   //   return NextResponse.json({
-  //     text: "Input provided is not allowed" 
+  //     text: "Input provided is not allowed"
   //   }, {
   //     status: 500
   //   })
@@ -79,7 +84,6 @@ export async function POST(
 }
 
 // // console.log(process.env.OPEN_AI_KEY);
-
 
 // export default async function handler(req, res) {
 
@@ -93,7 +97,7 @@ export async function POST(
 //     });
 
 //     console.log(response.data);
-  
+
 //     res.status(200).json({ payload: response.data, img: response.data.data[0].url });
 //   } else {
 //     res.status(200).json({ text: "Input provided is not allowed" });

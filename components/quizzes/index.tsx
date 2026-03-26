@@ -2,9 +2,7 @@ import Link from "next/link";
 import postgres from "postgres";
 const sql = postgres(process.env.DATABASE_URL!);
 
-
 export default async function Quizzes() {
- 
   // const quizzes = await sql`SELECT * FROM quiz`
   // Create quizzes table
   // await sql`DROP TABLE quizzes`;
@@ -29,5 +27,5 @@ export default async function Quizzes() {
     <ul>
       {/* {quizzes.map(quiz => <li key={quiz.id}><Link href={`/quizzes/${quiz.id}`}>{quiz.name}</Link></li>)} */}
     </ul>
-  )
+  );
 }

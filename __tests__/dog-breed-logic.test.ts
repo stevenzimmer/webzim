@@ -4,14 +4,18 @@ import { describe, expect, it, vi } from "vitest";
 import { initialState } from "@/lib/dog-breed/initialState";
 import onlyUniqueBreeds from "@/lib/dog-breed/onlyUniqueBreeds";
 import ourReducer from "@/lib/dog-breed/reducer";
+import type { Action, DogQuestion } from "@/lib/dog-breed/types";
 
-function reduce(
-  state: typeof initialState,
-  action: { type: string; value?: any },
-) {
+function reduce(state: typeof initialState, action: Action) {
   return produce(state, (draft) => {
     ourReducer(draft, action);
   });
+}
+
+function expectQuestion(
+  question: typeof initialState.currentQuestion,
+): asserts question is DogQuestion {
+  expect(question).not.toBeNull();
 }
 
 describe("onlyUniqueBreeds", () => {
@@ -60,6 +64,7 @@ describe("dog breed reducer", () => {
     expect(state.points).toBe(0);
     expect(state.strikes).toBe(0);
     expect(state.timeRemaining).toBe(30);
+    expectQuestion(state.currentQuestion);
     expect(state.currentQuestion.photos).toEqual(
       state.bigCollection.slice(0, 4),
     );
@@ -100,14 +105,15 @@ describe("dog breed reducer", () => {
         },
       },
       {
-      type: "guessAttempt",
-      value: 0,
+        type: "guessAttempt",
+        value: 0,
       },
     );
 
     expect(state.points).toBe(3);
     expect(state.inARow).toBe(0);
     expect(state.timeRemaining).toBe(15);
+    expectQuestion(state.currentQuestion);
     expect(state.currentQuestion.photos).toEqual([
       "https://images.dog.ceo/breeds/doberman/e.jpg",
       "https://images.dog.ceo/breeds/husky/f.jpg",

@@ -12,7 +12,7 @@ export default function RootLayout({
       <Nav />
 
       <motion.div
-        className="container  px-5 md:py-20 xl:px-0"
+        className="container px-5 md:py-20 xl:px-0"
         initial="hidden"
         whileInView="show"
         animate="show"

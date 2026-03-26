@@ -1,16 +1,15 @@
 import { buttons } from "@/lib/data";
 
-const d = new Date();
-
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="w-full border-t border-slate-800/70 bg-slate-950/80 py-10">
       <div className="container px-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-sm text-slate-400">
-              {d.getFullYear()}
-              {"  "}
+              {currentYear}{" "}
               <span className="font-code text-slate-200">Web Dev Zim LLC</span>.
               All rights reserved.
             </p>

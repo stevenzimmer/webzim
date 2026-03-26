@@ -41,9 +41,9 @@ export default function Home() {
                 </p>
 
                 <div className="flex flex-wrap gap-3 py-6">
-                  {buttons.map(({ title, link, icon }, i) => (
+                  {buttons.map(({ title, link, icon }) => (
                     <Button
-                      key={i}
+                      key={link}
                       href={link}
                       icon={icon}
                       variant={
@@ -124,8 +124,8 @@ export default function Home() {
               .filter((feature) => {
                 return feature.description || feature.bullets;
               })
-              .map((props, i: number) => (
-                <Card key={i} {...props} />
+              .map((props) => (
+                <Card key={props.title} {...props} />
               ))}
           </div>
         </section>
@@ -140,21 +140,18 @@ export default function Home() {
 
           <div className="mx-auto mt-10 grid w-full max-w-screen-xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map(
-              (
-                {
-                  title,
-                  description,
-                  demo,
-                  href,
-                  large,
-                  bullets,
-                  logo,
-                  subtitle,
-                },
-                i,
-              ) => (
+              ({
+                title,
+                description,
+                demo,
+                href,
+                large,
+                bullets,
+                logo,
+                subtitle,
+              }) => (
                 <Card
-                  key={i}
+                  key={title}
                   href={href}
                   title={title}
                   description={description || ""}
@@ -186,10 +183,10 @@ export default function Home() {
           </div>
 
           <div className="mx-auto mt-12 max-w-5xl divide-y divide-slate-800/70">
-            {Object.keys(dictSkills).map((skill, i) => {
+            {Object.keys(dictSkills).map((skill) => {
               return (
                 <div
-                  key={i}
+                  key={skill}
                   className="flex flex-wrap items-center gap-4 py-6 first:pt-0"
                 >
                   <div className="w-full md:w-1/4">
@@ -198,8 +195,8 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="flex w-full flex-wrap md:w-3/4">
-                    {dictSkills[skill].map((item, j) => {
-                      return <Pill key={j} item={item} />;
+                    {dictSkills[skill].map((item) => {
+                      return <Pill key={item} item={item} />;
                     })}
                   </div>
                 </div>
@@ -218,9 +215,9 @@ export default function Home() {
           </div>
 
           <div className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-2">
-            {certifications.map(({ title, src, link }, i) => (
-              <div
-                key={i}
+            {certifications.map(({ title, src, link }) => (
+              <article
+                key={link}
                 className="rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 shadow-lg shadow-slate-950/40"
               >
                 <a
@@ -241,7 +238,7 @@ export default function Home() {
                 <p className="text-center text-sm font-semibold text-slate-100">
                   {title}
                 </p>
-              </div>
+              </article>
             ))}
           </div>
         </section>
@@ -251,7 +248,7 @@ export default function Home() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
               Let&apos;s build together
             </p>
-            <h2 className="text-3xl font-semibold text-slate-100 md:text-4xl">
+            <h2 className="text-balance text-3xl font-semibold text-slate-100 md:text-4xl">
               Ready to ship a fast, polished product experience?
             </h2>
             <p className="max-w-2xl text-base text-slate-300">
@@ -260,9 +257,9 @@ export default function Home() {
               long-term maintainability.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              {buttons.map(({ title, link, icon }, i) => (
+              {buttons.map(({ title, link, icon }) => (
                 <Button
-                  key={i}
+                  key={link}
                   href={link}
                   icon={icon}
                   variant={

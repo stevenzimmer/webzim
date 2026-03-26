@@ -85,7 +85,7 @@ export default function TodoItem({
             </div>
           ) : (
             <div
-              className={`w-full rounded  p-3 ${
+              className={`w-full rounded p-3 ${
                 todo.completed ? "bg-teal-100/50" : "bg-slate-400"
               }`}
             >

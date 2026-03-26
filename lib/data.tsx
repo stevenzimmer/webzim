@@ -392,7 +392,7 @@ export const features: DictItem[] = [
     nofollow: true,
     demo: (
       <svg
-        className="w-full text-teal-50 "
+        className="w-full text-teal-50"
         stroke="currentColor"
         fill="currentColor"
         viewBox="0 0 471.1 63.8"
@@ -424,7 +424,7 @@ export const features: DictItem[] = [
     title: "Atlassian",
     demo: (
       <svg
-        className="w-full text-teal-50 "
+        className="w-full text-teal-50"
         stroke="currentColor"
         fill="currentColor"
         viewBox="0 0 282 48"
@@ -467,7 +467,7 @@ export const features: DictItem[] = [
     title: "Anaplan",
     demo: (
       <svg
-        className="w-full text-teal-50 "
+        className="w-full text-teal-50"
         stroke="currentColor"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -481,7 +481,7 @@ export const features: DictItem[] = [
     title: "Udemy Business",
     demo: (
       <svg
-        className="w-full text-teal-50 "
+        className="w-full text-teal-50"
         stroke="currentColor"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -558,7 +558,7 @@ export const features: DictItem[] = [
     title: "Intertrust",
     demo: (
       <svg
-        className="w-full text-teal-50 "
+        className="w-full text-teal-50"
         stroke="currentColor"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -622,7 +622,7 @@ export const features: DictItem[] = [
   {
     demo: (
       <svg
-        className="w-full text-teal-50 "
+        className="w-full text-teal-50"
         stroke="currentColor"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"

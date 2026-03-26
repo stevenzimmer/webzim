@@ -1,7 +1,18 @@
-import { useRouter } from "next/router";
-import { Dispatch, SetStateAction, ReactNode, useRef } from "react";
-import * as PopoverPrimitive from "@radix-ui/react-popover";
+"use client";
+
+import type { Dispatch, ReactNode, SetStateAction } from "react";
+import { useRef } from "react";
+import type { PanInfo } from "framer-motion";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import * as PopoverPrimitive from "@radix-ui/react-popover";
+
+type PopoverProps = {
+  children: ReactNode;
+  content: ReactNode | string;
+  align?: "center" | "start" | "end";
+  openPopover: boolean;
+  setOpenPopover: Dispatch<SetStateAction<boolean>>;
+};
 
 export default function Popover({
   children,
@@ -9,29 +20,29 @@ export default function Popover({
   align = "center",
   openPopover,
   setOpenPopover,
-}: {
-  children: ReactNode;
-  content: ReactNode | string;
-  align?: "center" | "start" | "end";
-  openPopover: boolean;
-  setOpenPopover: Dispatch<SetStateAction<boolean>>;
-}) {
+}: PopoverProps) {
   const mobilePopoverRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
   const transitionProps = { type: "spring", stiffness: 500, damping: 30 };
 
-  async function handleDragEnd(_: any, info: any) {
+  const handleDragEnd = async (
+    _: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo,
+  ) => {
     const offset = info.offset.y;
     const velocity = info.velocity.y;
     const height =
-      mobilePopoverRef.current?.getBoundingClientRect().height || 0;
+      mobilePopoverRef.current?.getBoundingClientRect().height ?? 0;
+
     if (offset > height / 2 || velocity > 800) {
       await controls.start({ y: "100%", transition: transitionProps });
       setOpenPopover(false);
-    } else {
-      controls.start({ y: 0, transition: transitionProps });
+      return;
     }
-  }
+
+    controls.start({ y: 0, transition: transitionProps });
+  };
+
   return (
     <>
       <div className="md:hidden">{children}</div>
@@ -44,7 +55,7 @@ export default function Popover({
               className="group fixed inset-x-0 bottom-0 z-40 w-screen cursor-grab active:cursor-grabbing md:hidden"
               initial={{ y: "100%" }}
               animate={{
-                y: openPopover ? 0 : "100%",
+                y: 0,
                 transition: transitionProps,
               }}
               exit={{ y: "100%" }}
@@ -63,9 +74,11 @@ export default function Popover({
                 {content}
               </div>
             </motion.div>
-            <motion.div
+            <motion.button
               key="mobile-popover-backdrop"
-              className="fixed inset-0 z-30 bg-gray-100 bg-opacity-10 backdrop-blur md:hidden"
+              type="button"
+              aria-label="Close popover"
+              className="fixed inset-0 z-30 bg-gray-100/10 backdrop-blur md:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -74,14 +87,14 @@ export default function Popover({
           </>
         )}
       </AnimatePresence>
-      <PopoverPrimitive.Root>
+      <PopoverPrimitive.Root open={openPopover} onOpenChange={setOpenPopover}>
         <PopoverPrimitive.Trigger className="hidden md:inline-flex" asChild>
           {children}
         </PopoverPrimitive.Trigger>
         <PopoverPrimitive.Content
-          sideOffset={4}
+          sideOffset={8}
           align={align}
-          className="z-20 hidden animate-slide-up-fade items-center rounded-md border border-gray-200 bg-white drop-shadow-lg md:block"
+          className="z-20 hidden items-center rounded-md border border-gray-200 bg-white drop-shadow-lg radix-side-top:animate-slide-down-fade radix-side-bottom:animate-slide-up-fade md:block"
         >
           {content}
         </PopoverPrimitive.Content>

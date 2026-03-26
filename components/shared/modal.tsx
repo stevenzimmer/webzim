@@ -1,79 +1,85 @@
 "use client";
-import { useRouter } from "next/router";
-import {
-  Dispatch,
-  SetStateAction,
-  useCallback,
-  useEffect,
-  useRef,
-} from "react";
-import FocusTrap from "focus-trap-react";
+
+import type { Dispatch, ReactNode, SetStateAction } from "react";
+import { useCallback, useEffect, useRef } from "react";
+import type { PanInfo } from "framer-motion";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import FocusTrap from "focus-trap-react";
+import { cn } from "@/lib/utils";
+
+type ModalProps = {
+  children: ReactNode;
+  showModal: boolean;
+  setShowModal: Dispatch<SetStateAction<boolean>>;
+  bgColor?: string;
+  closeWithX?: boolean;
+};
+
+const transitionProps = {
+  type: "spring",
+  stiffness: 500,
+  damping: 30,
+} as const;
 
 export default function Modal({
   children,
   showModal,
   setShowModal,
   bgColor = "bg-white",
-  closeWithX,
-}: {
-  children: React.ReactNode;
-  showModal: boolean;
-  setShowModal: Dispatch<SetStateAction<boolean>>;
-  bgColor?: string;
-  closeWithX?: boolean;
-}) {
-  const router = useRouter();
-  const { key } = router.query;
+  closeWithX = false,
+}: ModalProps) {
   const mobileModalRef = useRef<HTMLDivElement>(null);
-  const desktopModalRef = useRef(null);
+  const desktopModalRef = useRef<HTMLDivElement>(null);
+  const controls = useAnimation();
 
-  const closeModal = useCallback(
-    (closeWithX?: boolean) => {
-      if (closeWithX) {
-        return;
-      } else if (key) {
-        router.push("/");
-      } else {
-        setShowModal(false);
-      }
-    },
-    [key, router, setShowModal],
-  );
-
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === "Escape" && !closeWithX) {
+  const closeModal = useCallback(() => {
+    if (!closeWithX) {
       setShowModal(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [closeWithX, setShowModal]);
 
   useEffect(() => {
-    document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
-  }, [onKeyDown]);
+    if (!showModal) {
+      return;
+    }
 
-  const controls = useAnimation();
-  const transitionProps = { type: "spring", stiffness: 500, damping: 30 };
-  useEffect(() => {
     controls.start({
       y: 0,
       transition: transitionProps,
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [controls, showModal]);
 
-  async function handleDragEnd(_: any, info: any) {
+  useEffect(() => {
+    if (!showModal) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [closeModal, showModal]);
+
+  const handleDragEnd = async (
+    _: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo,
+  ) => {
     const offset = info.offset.y;
     const velocity = info.velocity.y;
-    const height = mobileModalRef.current?.getBoundingClientRect().height || 0;
+    const height = mobileModalRef.current?.getBoundingClientRect().height ?? 0;
+
     if (offset > height / 2 || velocity > 800) {
       await controls.start({ y: "100%", transition: transitionProps });
       closeModal();
-    } else {
-      controls.start({ y: 0, transition: transitionProps });
+      return;
     }
-  }
+
+    controls.start({ y: 0, transition: transitionProps });
+  };
 
   return (
     <AnimatePresence>
@@ -95,7 +101,10 @@ export default function Modal({
               dragConstraints={{ top: 0, bottom: 0 }}
             >
               <div
-                className={`h-7 ${bgColor} rounded-t-4xl -mb-1 flex w-full items-center justify-center border-t border-gray-200`}
+                className={cn(
+                  "rounded-t-4xl -mb-1 flex h-7 w-full items-center justify-center border-t border-gray-200",
+                  bgColor,
+                )}
               >
                 <div className="-mr-1 h-1 w-6 rounded-full bg-gray-300 transition-all group-active:rotate-12" />
                 <div className="h-1 w-6 rounded-full bg-gray-300 transition-all group-active:-rotate-12" />
@@ -109,21 +118,23 @@ export default function Modal({
               initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.95 }}
-              onMouseDown={(e) => {
-                if (desktopModalRef.current === e.target) {
-                  closeModal(closeWithX);
+              onMouseDown={(event) => {
+                if (desktopModalRef.current === event.target) {
+                  closeModal();
                 }
               }}
             >
               {children}
             </motion.div>
-            <motion.div
+            <motion.button
               key="backdrop"
-              className="fixed inset-0 z-30 bg-gray-100 bg-opacity-10 backdrop-blur"
+              type="button"
+              aria-label="Close dialog"
+              className="fixed inset-0 z-30 bg-gray-100/10 backdrop-blur"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => closeModal(closeWithX)}
+              onClick={closeModal}
             />
           </div>
         </FocusTrap>
