@@ -9,10 +9,6 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./lib/**/*.tsx",
   ],
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
-  prefix: "",
   theme: {
     container: {
       center: true,
@@ -107,11 +103,9 @@ module.exports = {
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
-    require("daisyui"),
-    plugin(({ addVariant, addBase, addComponents, addUtilities }) => {
+    plugin(({ addVariant, addComponents, addUtilities }) => {
       addVariant("radix-side-top", '&[data-side="top"]');
       addVariant("radix-side-bottom", '&[data-side="bottom"]');
-      addBase({});
       addComponents({
         ".button": {
           "@apply font-code text-sm font-semibold tracking-widest": {},

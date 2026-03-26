@@ -1,7 +1,10 @@
-import { motion } from 'framer-motion'
-import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants'
+import { motion } from "framer-motion";
+import { FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
 
-export default function Pill({item, size = "lg"}: {
+export default function Pill({
+  item,
+  size = "lg",
+}: {
   item: string;
   size?: "lg" | "sm";
 }) {
@@ -17,5 +20,5 @@ export default function Pill({item, size = "lg"}: {
         {item}
       </motion.p>
     </motion.div>
-  )
+  );
 }

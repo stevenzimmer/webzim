@@ -1,26 +1,32 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-
+import Image from "next/image";
 import { hightlightsSlides } from "@/lib/constants";
 
-import Image from "next/image";
+type VideoState = {
+  isEnd: boolean;
+  startPlay: boolean;
+  videoId: number;
+  isLastVideo: boolean;
+  isPlaying: boolean;
+};
 
 export default function VideoCarousel() {
-  const videoRef = useRef<any>([]);
-  const videoSpanRef = useRef<any>([]);
-  const videoDivRef = useRef<any>([]);
-
-  const [video, setVideo] = useState({
+  const videoRef = useRef<Array<HTMLVideoElement | null>>([]);
+  const videoSpanRef = useRef<Array<HTMLDivElement | null>>([]);
+  const videoDivRef = useRef<Array<HTMLSpanElement | null>>([]);
+  const [video, setVideo] = useState<VideoState>({
     isEnd: false,
     startPlay: false,
     videoId: 0,
     isLastVideo: false,
     isPlaying: false,
   });
-
-  const [loadedData, setLoadedData] = useState([]);
+  const [loadedData, setLoadedData] = useState<number[]>([]);
 
   const { isEnd, startPlay, videoId, isLastVideo, isPlaying } = video;
 
@@ -55,7 +61,15 @@ export default function VideoCarousel() {
 
     if (videoSpanRef.current[videoId]) {
       // Animate
-      let anim = gsap.to(videoSpanRef.current[videoId], {
+      const currentVideo = videoRef.current[videoId];
+      const currentProgressIndicator = videoSpanRef.current[videoId];
+      const currentProgressTrack = videoDivRef.current[videoId];
+
+      if (!currentVideo || !currentProgressIndicator || !currentProgressTrack) {
+        return;
+      }
+
+      const anim = gsap.to(currentProgressIndicator, {
         onUpdate: () => {
           const progress = Math.ceil(anim.progress() * 100);
 
@@ -63,16 +77,16 @@ export default function VideoCarousel() {
             currentProgress = progress;
 
             // Set width of progress bar
-            gsap.to(videoDivRef.current[videoId], {
+            gsap.to(currentProgressTrack, {
               width:
                 window.innerWidth < 760
                   ? "10vw"
                   : window.innerWidth < 1200
-                  ? "10vw"
-                  : "4vw",
+                    ? "10vw"
+                    : "4vw",
             });
 
-            gsap.to(videoSpanRef.current[videoId], {
+            gsap.to(currentProgressIndicator, {
               width: `${currentProgress}%`,
               backgroundColor: "white",
             });
@@ -80,11 +94,11 @@ export default function VideoCarousel() {
         },
         onComplete: () => {
           if (isPlaying) {
-            gsap.to(videoDivRef.current[videoId], {
+            gsap.to(currentProgressTrack, {
               width: "16px",
             });
 
-            gsap.to(videoSpanRef.current[videoId], {
+            gsap.to(currentProgressIndicator, {
               backgroundColor: "#afafaf",
             });
           }
@@ -98,8 +112,7 @@ export default function VideoCarousel() {
       // Update progress bar
       const animUpdate = () => {
         anim.progress(
-          videoRef.current[videoId].currentTime /
-            hightlightsSlides[videoId].videoDuration,
+          currentVideo.currentTime / hightlightsSlides[videoId].videoDuration,
         );
       };
 
@@ -110,33 +123,27 @@ export default function VideoCarousel() {
       }
 
       if (startPlay) {
-        videoRef.current[videoId].play();
+        currentVideo.play();
       }
     }
-  }, [startPlay, videoId]);
+  }, [isPlaying, startPlay, videoId]);
 
   useEffect(() => {
     if (loadedData.length > hightlightsSlides.length - 1) {
       if (!isPlaying) {
-        videoRef.current[videoId].pause();
+        videoRef.current[videoId]?.pause();
       } else {
-        startPlay && videoRef.current[videoId].play();
+        if (startPlay) {
+          videoRef.current[videoId]?.play();
+        }
       }
     }
-
-    // console.log({ loadedData });
   }, [startPlay, videoId, isPlaying, loadedData]);
 
-  console.log({ video });
-
   const handleProcess = (type: string, i: number) => {
-    // console.log("handle process");
-    // console.log(type + " " + i);
 
     switch (type) {
       case "end":
-        console.log("end");
-
         setVideo((pre) => ({
           ...pre,
           isEnd: true,
@@ -145,8 +152,6 @@ export default function VideoCarousel() {
         break;
 
       case "last":
-        console.log("last");
-
         setVideo((pre) => ({
           ...pre,
           isLastVideo: true,
@@ -154,8 +159,6 @@ export default function VideoCarousel() {
         break;
 
       case "reset":
-        console.log("reset");
-
         setVideo((pre) => ({
           ...pre,
           isLastVideo: false,
@@ -164,8 +167,6 @@ export default function VideoCarousel() {
         break;
 
       case "pause":
-        console.log("pause");
-
         setVideo((pre) => ({
           ...pre,
           isPlaying: !pre.isPlaying,
@@ -173,8 +174,6 @@ export default function VideoCarousel() {
         break;
 
       case "play":
-        console.log("play");
-
         setVideo((pre) => ({
           ...pre,
           isPlaying: !pre.isPlaying,
@@ -186,8 +185,10 @@ export default function VideoCarousel() {
     }
   };
 
-  const handleLoadedMetaData = (i: number, e: any) => {
-    setLoadedData((pre) => [...pre, e] as any);
+  const handleLoadedMetaData = (index: number) => {
+    setLoadedData((previous) =>
+      previous.includes(index) ? previous : [...previous, index],
+    );
   };
 
   return (
@@ -205,7 +206,9 @@ export default function VideoCarousel() {
                     i === 1 && "translate-x-44"
                   } pointer-events-none`}
                   muted
-                  ref={(el) => (videoRef.current[i] = el)}
+                  ref={(element) => {
+                    videoRef.current[i] = element;
+                  }}
                   onEnded={() =>
                     i !== hightlightsSlides.length - 1
                       ? handleProcess("end", i)
@@ -217,11 +220,11 @@ export default function VideoCarousel() {
                       isPlaying: true,
                     }));
                   }}
-                  onLoadedMetadata={(e) => handleLoadedMetaData(i, e)}
+                  onLoadedMetadata={() => handleLoadedMetaData(i)}
                 >
                   <source src={list.video} type="video/mp4" />
                 </video>
-                <div className="absolute  left-[5%] top-12 z-10 text-white">
+                <div className="absolute left-[5%] top-12 z-10 text-white">
                   {list.textLists.map((text, j) => (
                     <div
                       key={j}
@@ -238,16 +241,20 @@ export default function VideoCarousel() {
       </div>
       <div className="flex-center relative mt-10">
         <div className="flex-center rounded-full bg-apple-grey-300 px-7 py-5 backdrop-blur">
-          {videoRef.current.map((_: string, i: number) => (
+          {videoRef.current.map((_, i) => (
             <span
               key={i}
-              ref={(el) => (videoDivRef.current[i] = el)}
-              className="relative mx-2 h-4  w-4 cursor-pointer rounded-full bg-apple-grey-200"
+              ref={(element) => {
+                videoDivRef.current[i] = element;
+              }}
+              className="relative mx-2 h-4 w-4 cursor-pointer rounded-full bg-apple-grey-200"
             >
               <div
                 className="absolute h-full w-full rounded-full"
-                ref={(el) => (videoSpanRef.current[i] = el)}
-              ></div>
+                ref={(element) => {
+                  videoSpanRef.current[i] = element;
+                }}
+              />
             </span>
           ))}
         </div>
@@ -259,12 +266,12 @@ export default function VideoCarousel() {
                   handleProcess("reset", videoId);
                 }
               : !isPlaying
-              ? () => {
-                  handleProcess("play", videoId);
-                }
-              : () => {
-                  handleProcess("pause", videoId);
-                }
+                ? () => {
+                    handleProcess("play", videoId);
+                  }
+                : () => {
+                    handleProcess("pause", videoId);
+                  }
           }
         >
           <Image
@@ -272,15 +279,15 @@ export default function VideoCarousel() {
               isLastVideo
                 ? "/apple/assets/images/replay.svg"
                 : !isPlaying
-                ? "/apple/assets/images/play.svg"
-                : "/apple/assets/images/pause.svg"
+                  ? "/apple/assets/images/play.svg"
+                  : "/apple/assets/images/pause.svg"
             }
             alt={
               isLastVideo
                 ? "Replay icon"
                 : !isPlaying
-                ? "Play icon"
-                : "Pause icon"
+                  ? "Play icon"
+                  : "Pause icon"
             }
             width={20}
             height={20}

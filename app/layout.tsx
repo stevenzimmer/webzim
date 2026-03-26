@@ -1,8 +1,26 @@
 import type { Metadata } from "next";
+import { Sora, Space_Grotesk, Source_Code_Pro } from "next/font/google";
 import "@/styles/globals.css";
-import { Provider as RWBProvider } from "react-wrap-balancer";
 import { DOMAIN } from "@/lib/constants";
 import Footer from "@/components/layout/footer";
+
+const sora = Sora({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sora",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-grotesk",
+});
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-code",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(DOMAIN),
@@ -94,14 +112,15 @@ const structuredData = {
 };
 
 export default function RootLayout({
-  // Layouts must accept a children prop.
-  // This will be populated with nested layouts or pages
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${sora.variable} ${spaceGrotesk.variable} ${sourceCodePro.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
@@ -115,10 +134,8 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <RWBProvider>
-          <main id="content">{children}</main>
-          <Footer />
-        </RWBProvider>
+        <main id="content">{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -19,13 +19,13 @@ export default function FloatingClock() {
     <>
       <Nav />
       <div className="container px-6 py-20">
-        <div className="relative ">
+        <div className="relative">
           <div className="text-center">
             <Header>Floating Clock</Header>
           </div>
         </div>
 
-        <div className="relative mb-20 mt-12  min-h-[300px] rounded-lg bg-slate-800 shadow-lg md:min-h-[600px] ">
+        <div className="relative mb-20 mt-12 min-h-[300px] rounded-lg bg-slate-800 shadow-lg md:min-h-[600px]">
           <Clock />
         </div>
       </div>

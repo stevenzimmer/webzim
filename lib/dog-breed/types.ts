@@ -1,12 +1,18 @@
+export type DogImage = string;
 
+export type DogQuestion = {
+  breed: string;
+  photos: DogImage[];
+  answer: number;
+};
 
 export type InitialState = {
   points: number;
   strikes: number;
   timeRemaining: number;
   highScore: number;
-  bigCollection: any[];
-  currentQuestion: any;
+  bigCollection: DogImage[];
+  currentQuestion: DogQuestion | null;
   playing: boolean;
   fetchCount: number;
   inARow: number;
@@ -14,7 +20,7 @@ export type InitialState = {
 
 export type Action =
   | { type: "receiveHighScore"; value: number }
-  | { type: "decreaseTime"; }
+  | { type: "decreaseTime" }
   | { type: "guessAttempt"; value: number }
-  | { type: "addToCollection"; value: string }
-  | { type: "startPlaying"; };
+  | { type: "addToCollection"; value: DogImage[] }
+  | { type: "startPlaying" };

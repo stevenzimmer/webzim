@@ -6,7 +6,7 @@ export default function AllottedChats() {
   return (
     <>
       {previousChats.length >= 20 && (
-        <div className="mt-6 rounded bg-amber-700 p-3 ">
+        <div className="mt-6 rounded bg-amber-700 p-3">
           <p className="mb-3 text-sm text-slate-300">
             You have exceeded the number of chats messages allotted for testing.
             You are welcome to review your previous chats.

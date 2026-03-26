@@ -21,7 +21,6 @@ export async function POST(
 ) {
   const rawBody = await req.text();
   const signature = req.headers.get("stripe-signature");
-  // console.log({rawBody, signature});
   let event;
   try {
     event = stripe.webhooks.constructEvent(
@@ -30,7 +29,6 @@ export async function POST(
       process.env.STRIPE_WEBHOOK_SECRET!,
     );
   } catch (error: any) {
-    // console.log({error});
     return NextResponse.json(
       {
         message: error.message || "Error",
@@ -42,7 +40,6 @@ export async function POST(
   }
   if (event.type === "checkout.session.completed") {
     const session = event.data.object;
-    console.log({ session });
 
     return NextResponse.json(
       {

@@ -1,9 +1,9 @@
-import Balancer from "react-wrap-balancer";
-import Link from "next/link";
 import Image from "next/image";
-import type { DictItem } from "@/lib/types";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
+import type { DictItem } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 export default function Card({
   title,
@@ -18,26 +18,39 @@ export default function Card({
   subtitle,
   description,
 }: DictItem) {
+  const isInternalHref = href?.startsWith("/") ?? false;
+  const isExternalHref = Boolean(href && !isInternalHref && !sameTab);
+
   return (
-    <div
-      className={`group relative col-span-1 overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/60 shadow-lg shadow-slate-950/40 transition duration-300 hover:-translate-y-1 hover:border-slate-600/70 hover:bg-slate-900/80 ${
-        large ? "md:col-span-2" : ""
-      } ${href ? "cursor-pointer" : ""}`}
+    <article
+      className={cn(
+        "group relative col-span-1 overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/60 shadow-lg shadow-slate-950/40 transition duration-300 hover:-translate-y-1 hover:border-slate-600/70 hover:bg-slate-900/80",
+        large && "md:col-span-2",
+        href && "cursor-pointer",
+      )}
     >
-      {href && (
+      {href && isInternalHref && (
         <Link
-          rel={`${nofollow ? "nofollow noreferrer" : "noopener"}`}
-          href={`${href}`}
-          target={!sameTab ? "_blank" : ""}
+          href={href}
           className="absolute inset-0 z-10 h-full w-full"
-        ></Link>
+          aria-label={`View ${title}`}
+        />
+      )}
+      {href && !isInternalHref && (
+        <a
+          href={href}
+          rel={nofollow ? "nofollow noreferrer" : "noopener noreferrer"}
+          target={isExternalHref ? "_blank" : undefined}
+          className="absolute inset-0 z-10 h-full w-full"
+          aria-label={`View ${title}`}
+        />
       )}
       <div className="relative flex h-[120px] w-full items-center justify-center overflow-hidden border-b border-slate-800/60 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 py-6">
         {logo ? (
           <Image
             src={logo}
             alt={`${title} logo`}
-            className="py-3"
+            className="h-auto w-auto py-3"
             width={200}
             height={200}
           />
@@ -55,10 +68,13 @@ export default function Card({
       </div>
 
       <div className="px-12 py-6">
-        {title && (
-          <h3 className="mb-3 text-center font-display text-xl font-semibold text-slate-100 md:text-2xl">
-            <Balancer>{title}</Balancer>
-          </h3>
+        <h3 className="mb-3 text-center font-display text-xl font-semibold text-slate-100 md:text-2xl">
+          <span className="text-balance">{title}</span>
+        </h3>
+        {subtitle && (
+          <p className="mb-3 text-center text-sm uppercase tracking-[0.2em] text-slate-400">
+            {subtitle}
+          </p>
         )}
 
         <div className="prose-md max-w-full leading-normal text-slate-200">
@@ -67,8 +83,8 @@ export default function Card({
           ) : (
             bullets && (
               <ul className="list-disc text-left text-slate-200">
-                {bullets.map((bullet, i) => (
-                  <li key={i} className="mb-2">
+                {bullets.map((bullet) => (
+                  <li key={bullet} className="mb-2">
                     {bullet}
                   </li>
                 ))}
@@ -78,10 +94,10 @@ export default function Card({
         </div>
 
         {tech && (
-          <div className="flex flex-wrap justify-center gap-1 ">
-            {tech.map((skill, i) => (
+          <div className="flex flex-wrap justify-center gap-1">
+            {tech.map((skill) => (
               <motion.div
-                key={i}
+                key={skill}
                 variants={FADE_DOWN_ANIMATION_VARIANTS}
                 className="m-1 w-auto rounded-full border border-sky-400/40 bg-sky-500/10 px-3 py-1 shadow"
               >
@@ -96,6 +112,6 @@ export default function Card({
           </div>
         )}
       </div>
-    </div>
+    </article>
   );
 }

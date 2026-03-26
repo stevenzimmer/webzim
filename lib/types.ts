@@ -1,4 +1,5 @@
-import { Dispatch, RefObject, SetStateAction } from "react";
+import type { Dispatch, ReactNode, RefObject, SetStateAction } from "react";
+
 export type ISItemProp = {
   artist: string;
   title: string;
@@ -9,14 +10,14 @@ export type ISItemProp = {
     peakPosition: number;
     weeksOnChart: number;
   };
-}
+};
 
 export type DictItem = {
   title: string;
   subtitle?: string;
   logo?: string;
   description?: string;
-  demo?: React.ReactNode;
+  demo?: ReactNode;
   href?: string;
   bullets?: string[];
   large?: boolean;
@@ -25,19 +26,16 @@ export type DictItem = {
   sameTab?: boolean;
 };
 
-export type DictSkills = {
-  [key: string]: string[];
-}
+export type DictSkills = Record<string, string[]>;
 
 export type Message = {
-  content: string | "";
-  role: string | "";
-}
-
+  content: string;
+  role: string;
+};
 
 export interface Chat extends Message {
   title: string;
-} 
+}
 
 export type ZimAppContext = {
   message: Message | null;
@@ -52,11 +50,11 @@ export type ZimAppContext = {
   setMobileOpen: Dispatch<SetStateAction<boolean>>;
   isLoading: boolean;
   setIsLoading: Dispatch<SetStateAction<boolean>>;
-  toggleMenu: ()  => void;
+  toggleMenu: () => void;
   ref: RefObject<HTMLInputElement>;
 };
 
-export type Todo =  {
+export type Todo = {
   title: string;
   completed: boolean;
-}
+};

@@ -21,7 +21,7 @@ export default function ZimGPT() {
   return (
     <div className="relative flex text-slate-50">
       <Sidebar />
-      <section className="h-screen w-full overflow-scroll  p-6 ">
+      <section className="h-screen w-full overflow-scroll p-6">
         <Nav />
         <div className="mx-auto max-w-[650px] py-12 lg:py-20">
           <div className="flex w-full items-center justify-center">
@@ -32,11 +32,11 @@ export default function ZimGPT() {
           </div>
 
           <AllottedChats />
-          <div className="my-12 ">
+          <div className="my-12">
             <ChatMessage />
 
             <Loader />
-            <div className="relative z-10 my-12 w-full  ">
+            <div className="relative z-10 my-12 w-full">
               <Input />
             </div>
 

@@ -1,6 +1,6 @@
 "use client";
 import ZimGPTContext from "@/context/zimgpt";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect } from "react";
 
 export default function Input({}) {
   const { setMessage, prompt, setPrompt, previousChats, setIsLoading, ref } =
@@ -31,7 +31,6 @@ export default function Input({}) {
 
       ref.current?.focus();
     } catch (error) {
-      console.log({ error });
     }
   };
 
@@ -61,7 +60,7 @@ export default function Input({}) {
       <button
         disabled={isDisabled}
         onClick={getMessages}
-        className="absolute right-0 h-full w-1/4  rounded bg-teal-800 disabled:cursor-not-allowed disabled:bg-teal-200/50 disabled:text-teal-900 md:w-1/5 md:text-lg lg:right-1 lg:w-1/6 lg:translate-x-full"
+        className="absolute right-0 h-full w-1/4 rounded bg-teal-800 disabled:cursor-not-allowed disabled:bg-teal-200/50 disabled:text-teal-900 md:w-1/5 md:text-lg lg:right-1 lg:w-1/6 lg:translate-x-full"
         type="submit"
       >
         Submit

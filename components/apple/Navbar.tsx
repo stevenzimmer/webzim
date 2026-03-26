@@ -8,7 +8,7 @@ export default function Navbar() {
       <nav className="container flex w-full items-center justify-between">
         <Image src={appleImg} alt="Apple Logo" width={14} height={18} />
         <div className="">
-          <ul className="flex ">
+          <ul className="flex">
             {navLists.map((nav, i) => (
               <li
                 className="cursor-pointer px-5 text-sm text-apple-grey transition-all duration-200 ease-in-out hover:text-white"

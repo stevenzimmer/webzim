@@ -21,7 +21,7 @@ export default function TicTacToe() {
         <Header>Tic Tac Toe</Header>
       </div>
 
-      <p className="my-12 text-center text-xl text-white ">
+      <p className="my-12 text-center text-xl text-white">
         A showcase of React, State Management, and TailwindCSS.
       </p>
 

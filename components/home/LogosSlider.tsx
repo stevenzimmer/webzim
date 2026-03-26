@@ -16,7 +16,7 @@ export default function LogosSlider() {
         .map((props, i: number) => (
           <div className="mx-6 !max-w-[150px] md:mx-12" key={i}>
             {props.demo && (
-              <div className="w-full bg-transparent grayscale opacity-80 transition duration-300 hover:opacity-100">
+              <div className="w-full bg-transparent opacity-80 grayscale transition duration-300 hover:opacity-100">
                 {props.demo}
               </div>
             )}
