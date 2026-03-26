@@ -141,8 +141,6 @@ export default function VideoCarousel() {
   }, [startPlay, videoId, isPlaying, loadedData]);
 
   const handleProcess = (type: string, i: number) => {
-    // console.log("handle process");
-    // console.log(type + " " + i);
 
     switch (type) {
       case "end":

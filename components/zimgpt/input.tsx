@@ -1,6 +1,6 @@
 "use client";
 import ZimGPTContext from "@/context/zimgpt";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect } from "react";
 
 export default function Input({}) {
   const { setMessage, prompt, setPrompt, previousChats, setIsLoading, ref } =
@@ -31,7 +31,6 @@ export default function Input({}) {
 
       ref.current?.focus();
     } catch (error) {
-      console.log({ error });
     }
   };
 

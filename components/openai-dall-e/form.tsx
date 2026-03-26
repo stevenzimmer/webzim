@@ -22,7 +22,6 @@ export default function Form() {
         body: JSON.stringify({ prompt }),
       });
       const data = await response.json();
-      // console.log({data});
       setAiPrompt(data.aiPrompt);
       setAnswer(data.img);
       setIsLoading(false);
