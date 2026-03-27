@@ -11,7 +11,7 @@
 
 ## Project Structure & Module Organization
 
-This repository is a Next.js 14 app with most routes under `app/` and a small amount of legacy code in `pages/` for older API and OG routes. Reusable UI lives in `components/`, shared helpers and hooks live in `lib/` and `utils/`, and Prisma schema/migrations are in `prisma/`. Static files belong in `public/`; global and module styles are in `styles/` plus route-level CSS such as `app/apple/index.css`.
+This repository is a Next.js 14 app with most routes under `app/` and a small amount of legacy code in `pages/` for older API and OG routes. Reusable UI lives in `components/`, shared helpers and hooks live in `lib/` and `utils/`. Static files belong in `public/`; global and module styles are in `styles/` plus route-level CSS such as `app/apple/index.css`.
 
 ## Build, Test, and Development Commands
 
@@ -24,7 +24,7 @@ This repository is a Next.js 14 app with most routes under `app/` and a small am
 
 ## Coding Style & Naming Conventions
 
-Use TypeScript-first React components where possible. Prettier is the source of truth: 2-space indentation, semicolons, trailing commas, `printWidth` 80, and Tailwind class sorting via `prettier-plugin-tailwindcss`. Use `PascalCase` for component files (`VideoCarousel.tsx`), `camelCase` for hooks and utilities (`use-scroll.ts`, `lib/prisma.ts`), and lowercase route folders in `app/`.
+Use TypeScript-first React components where possible. Prettier is the source of truth: 2-space indentation, semicolons, trailing commas, `printWidth` 80, and Tailwind class sorting via `prettier-plugin-tailwindcss`. Use `PascalCase` for component files (`VideoCarousel.tsx`), `camelCase` for hooks and utilities (`use-scroll.ts`), and lowercase route folders in `app/`.
 
 ## Testing Guidelines
 
