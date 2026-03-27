@@ -1,39 +1,40 @@
 import { MetadataRoute } from "next";
+import { DOMAIN } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://webdevzim.com",
+      url: DOMAIN,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: "https://webdevzim.com/zimgpt",
+      url: `${DOMAIN}/zimgpt`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://webdevzim.com/todos",
+      url: `${DOMAIN}/todos`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://webdevzim.com/floating-clock",
+      url: `${DOMAIN}/floating-clock`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://webdevzim.com/tic-tac-toe",
+      url: `${DOMAIN}/tic-tac-toe`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.5,
     },
     {
-      url: "https://webdevzim.com/dog-breed-guessing-game",
+      url: `${DOMAIN}/dog-breed-guessing-game`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.3,

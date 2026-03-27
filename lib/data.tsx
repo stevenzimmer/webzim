@@ -1,4 +1,4 @@
-import { Github, LinkedIn, Email, Download } from "@/components/shared/icons";
+import { Github, LinkedIn, Email } from "@/components/shared/icons";
 import type { DictItem, DictSkills } from "./types";
 
 // Frontend Skills
@@ -712,7 +712,6 @@ export const features: DictItem[] = [
       </svg>
     ),
   },
-
   {
     logo: "/logos/punchcut-logo-white.png",
     title: "Website Optimization and Security Enhancement",
@@ -786,40 +785,10 @@ export const buttons = [
     link: "mailto:stevenzimmer40@gmail.com",
     title: "stevenzimmer40@gmail.com",
     icon: <Email className="w-5 text-white" />,
-  },
-  // {
-  //   link: "/steven-zimmer-resume.pdf",
-  //   title: "Resume",
-  //   icon: <Download className="w-5 text-white" />,
-  // },
+  }
 ];
 
 export const projects: DictItem[] = [
-  // {
-  //   title: "Quizzes",
-  //   bullets: [ "Next JS, Postgres DB, React, State Management, and TailwindCSS."],
-
-  //   href: "/quizzes",
-  //   demo: (
-
-  //     <svg stroke="#a78bfa" fill="#a78bfa" strokeWidth="0" viewBox="0 0 24 24" className="w-16 text-violet-400" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"></path><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-5.99 13c-.59 0-1.05-.47-1.05-1.05 0-.59.47-1.04 1.05-1.04.59 0 1.04.45 1.04 1.04-.01.58-.45 1.05-1.04 1.05zm2.5-6.17c-.63.93-1.23 1.21-1.56 1.81-.13.24-.18.4-.18 1.18h-1.52c0-.41-.06-1.08.26-1.65.41-.73 1.18-1.16 1.63-1.8.48-.68.21-1.94-1.14-1.94-.88 0-1.32.67-1.5 1.23l-1.37-.57C11.51 5.96 12.52 5 13.99 5c1.23 0 2.08.56 2.51 1.26.37.61.58 1.73.01 2.57z"></path></svg>
-
-  //   ),
-  //   large:false
-
-  // },
-  // {
-  //   title: "Statamic CMS Demo",
-  //   bullets: [ "Developed a robust full-stack web application using Laravel, PHP, and Vanilla JavaScript, styled with TailwindCSS, and hosted on the Statamic CMS platform.", "This comprehensive project included setting up server management through Laravel Forge, ensuring optimal performance, security, and scalability.","The application featured a custom-built, responsive UI/UX design, seamless content management capabilities, and advanced functionality tailored to meet specific business needs.", "The successful deployment of this application on a managed server environment facilitated streamlined workflows, enhanced user engagement, and provided a solid foundation for future scalability and feature expansion."],
-
-  //   href: "https://statamic.webdevzim.com/",
-  //   demo: (
-  //     <svg className="w-16 text-slate-600"  stroke="currentColor" fill="currentColor" stroke-width="0" role="img" viewBox="0 0 24 24" height="200px" width="200px" xmlns="http://www.w3.org/2000/svg"><path d="M19.78 21.639c1.754 0 2.398-.756 2.398-2.607v-3.62c0-1.722.837-2.704 1.641-3.17.242-.145.242-.483 0-.644-.836-.531-1.64-1.642-1.64-3.122v-3.54c0-1.996-.548-2.575-2.302-2.575H4.123c-1.754 0-2.301.58-2.301 2.575v3.556c0 1.48-.805 2.59-1.641 3.122a.377.377 0 0 0 0 .643c.804.451 1.64 1.433 1.64 3.17v3.605c0 1.85.645 2.607 2.399 2.607zm-7.82-3.299c-1.883 0-3.25-.563-4.522-1.673a.891.891 0 0 1-.29-.676.83.83 0 0 1 .193-.563l.403-.515c.193-.242.402-.354.643-.354.274 0 .531.112.805.29a5.331 5.331 0 0 0 2.993.884c.885 0 1.593-.37 1.593-1.126 0-1.963-6.533-.885-6.533-5.294 0-2.366 1.93-3.685 4.441-3.685 1.77 0 3.074.515 4.04 1.126.24.161.402.483.402.805 0 .193-.049.37-.161.53l-.29.435c-.21.29-.45.435-.756.435-.21 0-.435-.08-.676-.193a5.07 5.07 0 0 0-2.398-.564c-.95 0-1.513.515-1.513 1.046 0 2.012 6.534.918 6.534 5.198 0 2.414-1.947 3.894-4.908 3.894z"></path></svg>
-
-  //   ),
-  //   large:false
-
-  // },
   {
     title: "ZimGPT",
     bullets: [

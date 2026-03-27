@@ -55,8 +55,8 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Steven Zimmer",
-  url: "https://webdevzim.com/",
-  image: "https://webdevzim.com/api/og",
+  url: `${DOMAIN}/`,
+  image: `${DOMAIN}/api/og`,
   sameAs: [
     "https://github.com/stevenzimmer",
     "https://www.linkedin.com/in/webdevzim/",
