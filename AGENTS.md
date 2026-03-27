@@ -11,7 +11,7 @@
 
 ## Project Structure & Module Organization
 
-This repository is a Next.js 14 app with most routes under `app/` and a small amount of legacy code in `pages/` for older API and OG routes. Reusable UI lives in `components/`, shared helpers and hooks live in `lib/` and `utils/`. Static files belong in `public/`; global and module styles are in `styles/` plus route-level CSS such as `app/apple/index.css`.
+This repository is a Next.js 14 app with most routes under `app/` and a small amount of legacy code in `pages/` for older API and OG routes. Reusable UI lives in `components/`, shared helpers and hooks live in `lib/`. Static files belong in `public/`; global and module styles are in `styles/`.
 
 ## Build, Test, and Development Commands
 
