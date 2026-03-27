@@ -1,6 +1,5 @@
 "use client";
 import Card from "@/components/home/card";
-import ComponentGrid from "@/components/home/component-grid";
 import Image from "next/image";
 import Header from "@/components/layout/header";
 import Subheader from "@/components/layout/subheader";
@@ -159,13 +158,7 @@ export default function Home() {
                   logo={logo}
                   subtitle={subtitle}
                   sameTab={true}
-                  demo={
-                    title === "Beautiful, reusable components" ? (
-                      <ComponentGrid />
-                    ) : (
-                      demo
-                    )
-                  }
+                  demo={demo}
                   large={large}
                 />
               ),
