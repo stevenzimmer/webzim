@@ -27,7 +27,7 @@ export default function HomeScreen() {
         <ul className="list-disc pl-8 text-white">
           <li>React</li>
           <li>TypeScript</li>
-          <li>TailwindCSS</li>
+          <li>Tailwind CSS</li>
           <li>Immer</li>
           <li>dog.ceo API</li>
         </ul>

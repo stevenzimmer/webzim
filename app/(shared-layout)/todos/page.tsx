@@ -5,7 +5,7 @@ import TodoForm from "@/components/todos/form";
 export const metadata: Metadata = {
   title: "Todos | Web Dev Zim Project",
   description:
-    "A showcase of react, TypeScript,  persisted state management, and TailwindCSS.",
+    "Persistent task app built with React, TypeScript, state management, and Tailwind CSS.",
   alternates: {
     canonical: "/todos",
   },

@@ -4,7 +4,8 @@ import TicTacToeWrapper from "@/components/tic-tac-toe/Wrapper";
 
 export const metadata: Metadata = {
   title: "Tic Tac Toe | WebDev Zim Project",
-  description: "A showcase of React, State Management, and Tailwind CSS.",
+  description:
+    "Interactive tic-tac-toe game built with React state management and Tailwind CSS.",
   alternates: {
     canonical: "/tic-tac-toe",
   },
@@ -22,7 +23,7 @@ export default function TicTacToe() {
       </div>
 
       <p className="my-12 text-center text-xl text-white">
-        A showcase of React, State Management, and TailwindCSS.
+        Interactive game built with React state management and Tailwind CSS.
       </p>
 
       <TicTacToeWrapper />

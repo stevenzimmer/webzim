@@ -16,7 +16,7 @@ test.describe("home page", () => {
     await expect(
       page.getByRole("heading", {
         level: 2,
-        name: "Ready to ship a fast, polished product experience?",
+        name: "Need a faster, clearer web platform?",
       }),
     ).toBeVisible();
   });
@@ -32,5 +32,23 @@ test.describe("home page", () => {
     await expect(
       page.getByRole("heading", { level: 2, name: "Personal Projects" }),
     ).toBeVisible();
+  });
+
+  test("opens mobile navigation in a drawer", async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto("/");
+
+    await page.getByRole("button", { name: "Open navigation menu" }).click();
+
+    await expect(
+      page.getByRole("navigation", { name: "Mobile primary" }),
+    ).toBeVisible();
+
+    await page.getByRole("link", { name: "Contact" }).click();
+
+    await expect(page).toHaveURL(/#contact$/);
+    await expect(
+      page.getByRole("navigation", { name: "Mobile primary" }),
+    ).toBeHidden();
   });
 });

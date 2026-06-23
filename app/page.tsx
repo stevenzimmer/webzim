@@ -21,22 +21,20 @@ export default function Home() {
     <>
       <Nav />
       <div className="relative overflow-hidden">
-        <section className="relative py-14 md:py-20">
+        <section className="relative py-6">
           <div className="pointer-events-none absolute -left-10 top-10 h-56 w-56 animate-float-slow rounded-full bg-sky-500/20 blur-3xl" />
           <div className="pointer-events-none absolute right-0 top-24 h-64 w-64 animate-float-slower rounded-full bg-cyan-400/20 blur-3xl" />
           <div className="container px-6">
-            <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="grid items-center md:grid-cols-2 lg:gap-12">
               <div className="space-y-6 lg:px-6">
                 <p className="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
                   Full Stack Engineer
                 </p>
                 <Header>Steven Zimmer</Header>
                 <p className="mb-6 text-lg text-slate-200 md:text-xl">
-                  Full stack engineer specializing in modern web platforms, AI
-                  tooling and model integration, growth engineering, technical
-                  SEO, and CMS architecture, with a track record of delivering
-                  scalable, high-performance systems in fast-paced,
-                  collaborative environments.
+                  I build fast web products, AI-enabled workflows, and content
+                  platforms that help teams launch cleaner experiences and grow
+                  organic demand.
                 </p>
 
                 <div className="flex flex-wrap gap-3 py-6">
@@ -56,9 +54,9 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <div className="relative lg:px-12">
+              <div className="relative md:px-12">
                 <div className="section-surface rounded-3xl p-6 shadow-xl shadow-slate-950/50">
-                  <div className="overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/70">
+                  <div className="mx-auto max-w-sm overflow-hidden rounded-2xl border border-slate-800/70 bg-slate-900/70">
                     <Image
                       src={`https://github.com/stevenzimmer.png`}
                       alt="Steven Zimmer headshot"
@@ -76,9 +74,9 @@ export default function Home() {
                       <div className="mt-3 grid gap-3 sm:grid-cols-2">
                         {[
                           "Performance engineering",
-                          "Growth systems",
-                          "CMS architecture",
-                          "AI product prototyping",
+                          "AI-enabled workflows",
+                          "CMS and content platforms",
+                          "Technical SEO",
                         ].map((item) => (
                           <div
                             key={item}
@@ -90,8 +88,8 @@ export default function Home() {
                       </div>
                     </div>
                     <p className="text-sm text-slate-400">
-                      Building fast, accessible, and AI-assisted product
-                      experiences.
+                      Full-stack engineering for product, marketing, and
+                      go-to-market teams.
                     </p>
                   </div>
                 </div>
@@ -113,12 +111,12 @@ export default function Home() {
           <div className="mx-auto max-w-3xl">
             <Subheader>Recent Freelance Work</Subheader>
             <p className="text-center text-base text-slate-300">
-              Select engagements focused on performance, growth, and highly
-              maintainable platforms.
+              Selected engagements across web performance, content systems,
+              technical SEO, and launch support.
             </p>
           </div>
 
-          <div className="mx-auto mt-10 grid w-full max-w-screen-lg grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="mx-auto mt-10 grid w-full max-w-screen-lg grid-cols-1 gap-3 sm:grid-cols-2 md:gap-6">
             {features
               .filter((feature) => {
                 return feature.description || feature.bullets;
@@ -133,7 +131,8 @@ export default function Home() {
           <div className="mx-auto max-w-3xl">
             <Subheader>Personal Projects</Subheader>
             <p className="text-center text-base text-slate-300">
-              Experiments and side projects showcasing modern UI engineering.
+              Small product builds that show modern React, API integration, and
+              interface engineering.
             </p>
           </div>
 
@@ -170,8 +169,8 @@ export default function Home() {
           <div className="mx-auto max-w-3xl">
             <Subheader>Engineering Toolbox</Subheader>
             <p className="text-center text-base text-slate-300">
-              A flexible stack spanning AI tooling, engineering foundations, CMS
-              architecture, and growth systems.
+              Tools I use to build reliable frontends, APIs, content workflows,
+              AI features, and growth infrastructure.
             </p>
           </div>
 
@@ -202,35 +201,46 @@ export default function Home() {
           <div className="mx-auto max-w-3xl">
             <Subheader>Certifications</Subheader>
             <p className="text-center text-base text-slate-300">
-              Ongoing learning with a focus on modern frameworks and
-              best-in-class tooling.
+              Platform training focused on CMS development, technical SEO, and
+              maintainable web systems.
             </p>
           </div>
 
           <div className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-2">
-            {certifications.map(({ title, src, link }) => (
+            {certifications.map(({ title, link }) => (
               <article
                 key={link}
                 className="rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 shadow-lg shadow-slate-950/40"
               >
                 <a
-                  className="mb-4 block overflow-hidden rounded-xl border border-slate-800/70"
+                  className="group block overflow-hidden rounded-xl border border-slate-800/70 bg-slate-950/80"
                   target="_blank"
                   rel="noreferrer"
                   href={link}
                   title={title}
                 >
-                  <Image
-                    className="aspect-video w-full object-cover transition duration-300 hover:scale-[1.02]"
-                    alt={title}
-                    src={src}
-                    width="1500"
-                    height="1000"
-                  />
+                  <div className="flex aspect-video flex-col justify-between p-6">
+                    <div className="flex items-center justify-between gap-4">
+                      <span className="rounded-full border border-orange-400/30 bg-orange-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-orange-200">
+                        HubSpot Academy
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="flex h-12 w-12 items-center justify-center rounded-full bg-orange-500 text-sm font-bold text-slate-950"
+                      >
+                        HS
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-display text-xl font-semibold text-slate-100 transition group-hover:text-sky-200">
+                        {title}
+                      </p>
+                      <p className="mt-2 text-sm text-slate-400">
+                        Verified credential
+                      </p>
+                    </div>
+                  </div>
                 </a>
-                <p className="text-center text-sm font-semibold text-slate-100">
-                  {title}
-                </p>
               </article>
             ))}
           </div>
@@ -242,12 +252,11 @@ export default function Home() {
               Let&apos;s build together
             </p>
             <h2 className="text-balance text-3xl font-semibold text-slate-100 md:text-4xl">
-              Ready to ship a fast, polished product experience?
+              Need a faster, clearer web platform?
             </h2>
             <p className="max-w-2xl text-base text-slate-300">
-              I partner with teams to design and engineer high-performing
-              systems that improve conversion, SEO, AI-enabled workflows, and
-              long-term maintainability.
+              I help teams turn complex product, CMS, and growth requirements
+              into maintainable systems that are easy to ship and easy to find.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {buttons.map(({ title, link, icon }) => (

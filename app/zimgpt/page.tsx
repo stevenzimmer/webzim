@@ -11,7 +11,7 @@ import Nav from "@/components/layout/Nav";
 export const metadata: Metadata = {
   title: "ZimGPT | WebDev Zim Project",
   description:
-    "A showcase of the OpenAI API and SDK, React, TypeScript, State Management, and Context API.",
+    "OpenAI API chat project built with React, TypeScript, shared state, and a Next.js interface.",
   alternates: {
     canonical: "/zimgpt",
   },

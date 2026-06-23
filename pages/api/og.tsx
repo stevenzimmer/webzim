@@ -47,8 +47,8 @@ export default async function GET() {
               fontFamily: "SF Pro",
             }}
           >
-            Full stack engineer specializing in modern web platforms, AI tooling
-            and model integration, and growth engineering.
+            Building fast web products, AI-enabled workflows, CMS platforms, and
+            technical SEO systems.
           </p>
           <div tw="mt-5 flex flex-wrap text-[#d1d5db]">
             {[
@@ -56,9 +56,9 @@ export default async function GET() {
                 "#38bdf8",
                 "Modern product stacks with Next.js, React, and TypeScript",
               ],
-              ["#22d3ee", "Growth engineering and technical SEO execution"],
-              ["#34d399", "CMS platforms: Sanity, Contentful, and HubSpot"],
-              ["#818cf8", "AI toolchains and model integrations"],
+              ["#22d3ee", "Technical SEO and growth infrastructure"],
+              ["#34d399", "CMS platforms: Sanity, Contentful, HubSpot"],
+              ["#818cf8", "AI integrations and workflow automation"],
             ].map(([color, text]) => (
               <div
                 key={text}
@@ -83,7 +83,7 @@ export default async function GET() {
           </div>
         </div>
 
-        <div tw="flex flex-col items-center w-5/12 px-18">
+        <div tw="flex flex-col items-center w-5/12 px-6">
           <div
             tw="flex flex-col border border-[#1f2937] bg-[#0b1120] p-4"
             style={{ borderRadius: 28 }}
@@ -94,7 +94,7 @@ export default async function GET() {
               alt="Steven Zimmer headshot"
             />
           </div>
-          <div tw=" flex flex-col w-full">
+          <div tw="flex flex-col w-full">
             <p
               tw="font-semibold uppercase text-[#94a3b8]"
               style={{
@@ -108,9 +108,9 @@ export default async function GET() {
             <div tw=" flex flex-wrap">
               {[
                 "Performance engineering",
-                "Growth systems",
-                "CMS architecture",
-                "AI product prototyping",
+                "AI-enabled workflows",
+                "CMS and content platforms",
+                "Technical SEO",
               ].map((item) => (
                 <div
                   key={item}

@@ -30,8 +30,7 @@ export default function Input({}) {
       setIsLoading(false);
 
       ref.current?.focus();
-    } catch (error) {
-    }
+    } catch (error) {}
   };
 
   const handlePromptChange = (e: React.ChangeEvent<any>) => {

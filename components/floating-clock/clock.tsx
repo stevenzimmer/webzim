@@ -1,13 +1,13 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, type CSSProperties } from "react";
 
 function Clock() {
   const [isClient, setIsClient] = useState<boolean>(false);
   const [currentTime, setCurrentTime] = useState<string>(
     new Date().toLocaleTimeString(),
   );
-  const [position, setPosition] = useState<object>({});
-  const [color, setColor] = useState<object>({});
+  const [position, setPosition] = useState<CSSProperties>({});
+  const [color, setColor] = useState<CSSProperties>({});
 
   useEffect(() => {
     setIsClient(true);

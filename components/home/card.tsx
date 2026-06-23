@@ -67,7 +67,7 @@ export default function Card({
         </div>
       </div>
 
-      <div className="px-12 py-6">
+      <div className="px-3 py-6 md:px-12">
         <h3 className="mb-3 text-center font-display text-xl font-semibold text-slate-100 md:text-2xl">
           <span className="text-balance">{title}</span>
         </h3>

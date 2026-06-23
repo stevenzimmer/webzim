@@ -7,9 +7,6 @@ interface PageProps {
 }
 
 export const metadata: Metadata = {
-  // title: "ZimGPT | WebDev Zim Project",
-  // description:
-  //   "A showcase of the OpenAI API and SDK, React, TypeScript, State Management, and Context API.",
   alternates: {
     canonical: "/search",
   },
