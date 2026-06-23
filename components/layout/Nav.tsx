@@ -1,7 +1,8 @@
 import Link from "next/link";
+import MobileNav from "@/components/layout/MobileNav";
 import { cn } from "@/lib/utils";
 
-const navItems = [
+export const navItems = [
   { href: "/#work", label: "Work" },
   { href: "/#projects", label: "Projects" },
   { href: "/#skills", label: "Skills" },
@@ -27,7 +28,11 @@ export default function Nav() {
               </span>
             </span>
           </Link>
-          <nav aria-label="Primary" className="w-full md:w-auto">
+          <MobileNav items={navItems} />
+          <nav
+            aria-label="Primary"
+            className="hidden w-full md:block md:w-auto"
+          >
             <ul className="flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-slate-200">
               {navItems.map(({ href, label }) => (
                 <li key={href}>

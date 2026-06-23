@@ -10,16 +10,6 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "hubspot-academy.s3.amazonaws.com",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "hubspot-credentials-na1.s3.amazonaws.com",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
         hostname: "charts-static.billboard.com",
         pathname: "/**",
       },

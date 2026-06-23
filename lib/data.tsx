@@ -19,9 +19,9 @@ export const dictSkills: DictSkills = {
     "Framer Motion",
   ],
   Backend: [
-    "Node JS",
-    "Next JS",
-    "Express JS",
+    "Node.js",
+    "Next.js",
+    "Express.js",
     "Remix",
     "PHP",
     "Laravel",
@@ -69,7 +69,7 @@ export const dictSkills: DictSkills = {
   ],
   CMS: ["WordPress", "HubSpot", "Sanity", "Strapi", "Contentful", "Webflow"],
   Marketing: [
-    "Hubspot",
+    "HubSpot",
     "Marketo",
     "Pardot",
     "Salesforce",
@@ -81,21 +81,21 @@ export const dictSkills: DictSkills = {
     "Google Tag Manager",
     "Google Search Console",
   ],
-  "UI Design": ["Figma", "Adobe ", "Sketch", "Lottie"],
+  "UI Design": ["Figma", "Adobe", "Sketch", "Lottie"],
 };
 
 export const ogDescription =
-  "I build React/Next.js products, AI-powered experiences, Shopify and HubSpot CMS sites, and marketing integrations for fast, scalable launches.";
+  "I build fast web products, AI-enabled workflows, CMS platforms, and technical SEO systems with React, Next.js, TypeScript, and modern content stacks.";
 
 export const features: DictItem[] = [
   {
-    title: "Webflow Development & Go-to-Market Support",
+    title: "Webflow Templates and Go-to-Market Systems",
     description:
-      "Built scalable templates for product pages and other marketing content, enabling faster launches and consistent page creation. Integrated form submission workflows with HubSpot CRM streamlining lead capture and optimizing marketing and sales funnels.",
+      "Built reusable Webflow templates and HubSpot form workflows so marketing teams could launch product pages faster and capture leads with cleaner CRM handoffs.",
     tech: [
       "Webflow",
-      "Hubspot",
-      "Google Analyics",
+      "HubSpot",
+      "Google Analytics",
       "Google Tag Manager",
       "Lottie",
       "A/B Testing",
@@ -193,18 +193,19 @@ export const features: DictItem[] = [
     nofollow: true,
   },
   {
-    title: "Benji Bakes E-Commerce Website Development",
+    title: "Benji Bakes E-Commerce Website",
     description:
-      "Built and launched a modern ecommerce experience for Benji Bakes that improved online ordering flow, streamlined operations, and created a reliable storefront that supports ongoing growth and repeat customer purchases.",
+      "Built a Next.js storefront with Stripe checkout and email workflows, giving Benji Bakes a faster ordering experience and a maintainable path for growth.",
     tech: ["React", "Next.js", "Stripe", "Nodemailer", "Zustand"],
     logo: "/logos/benji-bakes-white.png",
     href: "https://www.benjibakes.com/",
     nofollow: false,
   },
   {
-    title: "Loom and Atlassian Integration and Market Strategy Execution",
+    title: "Loom Launch Systems",
+    subtitle: "Acquired by Atlassian",
     description:
-      "Led technical execution across the Loom and Atlassian integration, aligning implementation with acquisition requirements, improving launch readiness for Loom for AI, and enabling faster content operations through scalable CMS workflows.",
+      "Supported Loom and Atlassian integration work with scalable CMS workflows, launch-ready pages, and front-end systems for AI-focused go-to-market moments.",
     tech: [
       "Sanity CMS",
       "Contentful CMS",
@@ -228,9 +229,9 @@ export const features: DictItem[] = [
     nofollow: true,
   },
   {
-    title: "Enhanced HubSpot CMS with Self-Service Drag-and-Drop Features",
+    title: "Self-Service HubSpot CMS Modules",
     description:
-      "Designed and shipped self-serve HubSpot modules that gave content teams flexible drag-and-drop control, reduced developer bottlenecks, and improved consistency across design and SEO-critical page structures.",
+      "Designed HubSpot modules that gave content teams drag-and-drop control while preserving design consistency, SEO structure, and developer velocity.",
     tech: ["HubSpot", "HubL", "CSS", "JavaScript", "SEO"],
     demo: (
       <svg
@@ -257,9 +258,9 @@ export const features: DictItem[] = [
     nofollow: true,
   },
   {
-    title: "Scalable Web Infrastructure & Reusable Components",
+    title: "Reusable Components for Web and Email",
     description:
-      "Partnered with design and marketing to establish a scalable web foundation and reusable component system that accelerated new page delivery, improved consistency, and supported both web and email production at scale.",
+      "Created shared component patterns for web and email production, helping teams ship pages and campaigns with less rework and stronger brand consistency.",
     tech: [
       "React",
       "TypeScript",
@@ -292,9 +293,10 @@ export const features: DictItem[] = [
   },
   {
     logo: "/logos/verta-logo-white.png",
-    title: "HubSpot CMS Rebuild to Enhance Brand Visibility",
+    title: "HubSpot CMS Rebuild for Brand Visibility",
+    subtitle: "Acquired by Cloudera",
     description:
-      "Rebuilt the Verta website on HubSpot to support rebranding and go-to-market goals, creating a more cohesive digital presence while improving marketing execution across web and email campaigns.",
+      "Rebuilt the Verta site on HubSpot CMS to support a rebrand, improve publishing workflows, and give marketing teams a cleaner web and email foundation.",
     tech: [
       "HubSpot CMS",
       "Technical SEO",
@@ -308,9 +310,9 @@ export const features: DictItem[] = [
   },
 
   {
-    title: "Shopify Rebuild Boosts Revenue and Site Performance",
+    title: "Shopify Rebuild for Revenue and Performance",
     description:
-      "Led a full Shopify rebuild focused on performance and merchandising, delivering a faster and more flexible storefront that improved customer experience and supported stronger ecommerce conversion outcomes.",
+      "Led a Shopify rebuild focused on speed, merchandising flexibility, and conversion paths, creating a stronger storefront for customer experience and revenue.",
     tech: [
       "Shopify",
       "Liquid",
@@ -343,9 +345,9 @@ export const features: DictItem[] = [
   },
 
   {
-    title: "Unified WordPress Migration Boosts SEO and UX",
+    title: "Unified WordPress Migration for SEO and UX",
     description:
-      "Directed a complex multi-platform migration into a unified WordPress environment, improving governance, simplifying site management, and strengthening SEO and user experience through cleaner architecture and URL strategy.",
+      "Directed a multi-platform migration into WordPress, simplifying governance and improving technical SEO, URL strategy, and user experience.",
     tech: [
       "WordPress",
       "Webflow Migration",
@@ -378,9 +380,9 @@ export const features: DictItem[] = [
     nofollow: true,
   },
   {
-    title: "WordPress Optimization Spurs Traffic and Revenue",
+    title: "WordPress Optimization for Traffic and Revenue",
     description:
-      "Optimized a high-traffic WordPress affiliate site with focused performance and content-delivery improvements that reduced load times, increased organic visibility, and drove measurable gains in engagement and revenue.",
+      "Improved a high-traffic WordPress affiliate site with performance, caching, image, and database work that supported organic visibility and revenue growth.",
     tech: [
       "WordPress",
       "Caching",
@@ -404,9 +406,9 @@ export const features: DictItem[] = [
   },
   {
     logo: "/logos/nue-logo-dark-white.png",
-    title: "Modern  Website with React, Next.js, AWS, and Headless CMS",
+    title: "Modern Website with Next.js and Headless CMS",
     description:
-      "Delivered a modern marketing site built on a headless architecture, combining performance-focused hosting and polished interactions to improve content agility, brand presentation, and day-to-day publishing speed.",
+      "Delivered a headless marketing site with Next.js, AWS, and polished interactions, improving content agility, brand presentation, and publishing speed.",
     tech: [
       "React",
       "Next.js",
@@ -645,7 +647,7 @@ export const features: DictItem[] = [
     title: "WordPress Rebuild Aligns with Strategic Rebrand",
     subtitle: "Acquired by Harness",
     description:
-      "Led a WordPress and Gutenberg rebuild aligned to rebrand and acquisition momentum, improving launch coordination across product and marketing while modernizing email systems for faster, more consistent campaign execution.",
+      "Led a WordPress and Gutenberg rebuild for a rebrand and acquisition push, improving launch coordination and modernizing email templates for faster campaigns.",
     tech: [
       "WordPress",
       "Gutenberg",
@@ -660,7 +662,7 @@ export const features: DictItem[] = [
   {
     title: "Front-End Web Development Course Leadership",
     description:
-      "Led a 12-week front-end development program focused on practical production skills, helping students ship stronger work through structured curriculum, hands-on projects, and targeted technical mentorship.",
+      "Led a 12-week front-end development program, mentoring students through production-focused HTML, CSS, JavaScript, React, and project work.",
     tech: [
       "HTML",
       "CSS",
@@ -716,7 +718,7 @@ export const features: DictItem[] = [
     logo: "/logos/punchcut-logo-white.png",
     title: "Website Optimization and Security Enhancement",
     description:
-      "Improved site performance and technical SEO while remediating a critical spam-link infection, restoring search integrity, hardening the platform, and delivering a safer, faster user experience.",
+      "Improved site speed and technical SEO while removing a spam-link infection, restoring search integrity, and hardening the WordPress platform.",
     tech: [
       "Technical SEO",
       "Performance Optimization",
@@ -730,7 +732,7 @@ export const features: DictItem[] = [
     logo: "/logos/prokeep-logo-white.png",
     title: "Webflow to HubSpot CMS Migration and Rebrand",
     description:
-      "Owned migration from Webflow to HubSpot CMS during a company rebrand, enabling stronger content operations and delivering a more scalable, cohesive digital presence across key customer touchpoints.",
+      "Migrated a rebranded site from Webflow to HubSpot CMS, giving marketing teams more scalable content operations across customer-facing pages.",
     tech: ["Webflow", "HubSpot CMS", "Migration Planning", "Rebrand Rollout"],
     href: "https://www.prokeep.com/",
     nofollow: true,
@@ -740,7 +742,7 @@ export const features: DictItem[] = [
     logo: "/logos/bloomtech-logo-dark-white.png",
     title: "Revamped Sign-Up and Activity Tracker Boosts Enrollment",
     description:
-      "Redesigned core enrollment and student-progress experiences to reduce friction and increase motivation, contributing to meaningful gains in sign-ups and stronger completion behavior across learning sprints.",
+      "Redesigned enrollment and student-progress experiences to reduce friction, improve motivation, and support stronger learning-sprint completion.",
     tech: [
       "React",
       "UX Optimization",
@@ -756,7 +758,7 @@ export const features: DictItem[] = [
     logo: "/logos/stanford-med-logo-white.png",
     title: "Drupal Upgrade and Server Architecture Overhaul",
     description:
-      "Executed major platform modernization work for Stanford Medicine, including Drupal upgrades, infrastructure improvements, and enterprise authentication integrations to improve reliability, security, and operational resilience.",
+      "Modernized Stanford Medicine web infrastructure with Drupal upgrades, server architecture work, and enterprise authentication integrations.",
     tech: [
       "Drupal 7",
       "Drupal 9",
@@ -785,14 +787,14 @@ export const buttons = [
     link: "mailto:stevenzimmer40@gmail.com",
     title: "stevenzimmer40@gmail.com",
     icon: <Email className="w-5 text-white" />,
-  }
+  },
 ];
 
 export const projects: DictItem[] = [
   {
     title: "ZimGPT",
     bullets: [
-      "A showcase of the OpenAI API and SDK, React, TypeScript, State Management, and Context API",
+      "OpenAI API chat experience built with React, TypeScript, and shared state.",
     ],
 
     href: "/zimgpt",
@@ -815,7 +817,7 @@ export const projects: DictItem[] = [
   {
     title: "Todos",
     bullets: [
-      "A showcase of react, TypeScript,  persisted state management, and TailwindCSS.",
+      "Persistent task app built with React, TypeScript, and Tailwind CSS.",
     ],
 
     href: "/todos",
@@ -841,7 +843,9 @@ export const projects: DictItem[] = [
   },
   {
     title: "Tic Tac Toe",
-    bullets: ["A showcase of React, State Management, and Tailwind CSS."],
+    bullets: [
+      "Interactive game built with React state management and Tailwind CSS.",
+    ],
 
     href: "/tic-tac-toe",
     demo: (
@@ -861,7 +865,7 @@ export const projects: DictItem[] = [
   {
     title: "Floating Clock",
     bullets: [
-      "A showcase of JavaScript Date object, CSS positioning, and color contrast management.",
+      "Clock interface using JavaScript date logic, positioning, and contrast-aware styling.",
     ],
 
     href: "/floating-clock",
@@ -883,7 +887,9 @@ export const projects: DictItem[] = [
   },
   {
     title: "Mdrn Dsgn",
-    bullets: ["A showcase of modern design trends on a fake company website."],
+    bullets: [
+      "Concept marketing site exploring responsive layout and visual systems.",
+    ],
 
     href: "https://mdrndsgn.webdevzim.com/",
     demo: (
@@ -903,7 +909,7 @@ export const projects: DictItem[] = [
   {
     title: "Stats and Graphs",
     bullets: [
-      "A demonstration of data visualization using random stats and charts library.",
+      "Data visualization demo using generated stats and chart components.",
     ],
 
     href: "https://stats.webdevzim.com/",
@@ -923,9 +929,7 @@ export const projects: DictItem[] = [
   },
   {
     title: "Box Scores App",
-    bullets: [
-      "A web app that displays box scores for NBA and MLB game scores.",
-    ],
+    bullets: ["Sports scores app for browsing NBA and MLB box score data."],
 
     href: "https://boxscores.webdevzim.com/",
     demo: (
@@ -957,7 +961,7 @@ export const projects: DictItem[] = [
   {
     title: "Dog Guessing Game",
     bullets: [
-      "Built using React, TypeScript, Tailwind, Vite, Immer and connect with the dog.ceo API.",
+      "Breed guessing game built with React, TypeScript, Tailwind, Vite, Immer, and the dog.ceo API.",
     ],
     href: "/dog-breed-guessing-game/",
     demo: (
@@ -980,21 +984,17 @@ export const certifications = [
   {
     title: "HubSpot CMS for Developers",
     link: "https://app.hubspot.com/academy/achievements/qqll3dz8/en/1/steven-zimmer/hubspot-cms-for-developers",
-    src: "https://hubspot-academy.s3.amazonaws.com/prod/tracks/user-badges/46809903/24a8e54b9a5a4dbebfebdbfe3d0aafc7.png",
   },
   {
     title: "HubSpot CMS for Developers II: Best Practices",
     link: "https://app.hubspot.com/academy/achievements/gg7782jv/en/1/steven-zimmer/hubspot-cms-for-developers-ii-best-practices",
-    src: "https://hubspot-credentials-na1.s3.amazonaws.com/prod/badges/user/f5ccf36a68f84ee2949af85df33007cd.png",
   },
   {
     title: "HubSpot SEO Certification",
     link: "https://app.hubspot.com/academy/achievements/lkmshnsl/en/1/steven-zimmer/seo",
-    src: "https://hubspot-credentials-na1.s3.amazonaws.com/prod/badges/user/dda9fb17f6c84d1eaa7a4e1311fa6c25.png",
   },
   {
     title: "HubSpot SEO II Certification",
     link: "https://app.hubspot.com/academy/achievements/1hqtt55s/en/1/steven-zimmer/seo-ii",
-    src: "https://hubspot-credentials-na1.s3.amazonaws.com/prod/badges/user/ff364760900d4f7b97c11c45de89f9f4.png",
   },
 ];
